@@ -2,6 +2,89 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b0c07f8-d87e-4651-a9bc-5c163e500384" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/example/pipeline.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/example/pipeline.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/example/pipeline.js" afterPath="$PROJECT_DIR$/resources/webmx/out/example/pipeline.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/example/pipeline.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/example/pipeline.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/base.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/base.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/base.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/base.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/base.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/base.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/core.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/core.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/core.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/core.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/core.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/evaluate.cljc" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/evaluate.cljc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/evaluate.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/evaluate.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/evaluate.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/evaluate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/evaluate.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/evaluate.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/integrity.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/integrity.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/integrity.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/integrity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/integrity.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/integrity.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/observer.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/observer.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/observer.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/observer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/observer.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/observer.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/synapse.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/synapse.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/synapse.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/synapse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/synapse.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/synapse.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/base.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/base.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/base.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/base.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/base.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/base.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/macros.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/macros.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/macros.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/macros.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/macros.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/macros.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/base.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/base.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/base.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/base.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/base.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/base.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/core.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/core.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/core.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/core.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/util/core.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/base.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/base.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/base.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/base.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gentle_intro.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gentle_intro.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gentle_intro.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gentle_intro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gentle_intro.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gentle_intro.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gloss.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gloss.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gloss.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gloss.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gloss.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/gloss.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/startwatch.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/startwatch.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/startwatch.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/startwatch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/startwatch.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/startwatch.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/testing.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/testing.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/testing.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/testing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/testing.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/testing.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/ticktock.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/ticktock.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/ticktock.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/ticktock.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/ticktock.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/ticktock.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todo.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todo.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todo.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todo.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todo.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomvc.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomvc.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomvc.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomvc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomvc.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomvc.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomx_list_item.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomx_list_item.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomx_list_item.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomx_list_item.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomx_list_item.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/todomx_list_item.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/gen.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/gen.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/gen.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/gen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/gen.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/gen.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/html.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/html.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/html.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/html.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/html.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/html.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/mxintro/rxtrak.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/mxintro/rxtrak.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/mxintro/rxtrak.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/mxintro/rxtrak.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/mxintro/rxtrak.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/mxintro/rxtrak.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/style.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/style.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/style.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/style.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/style.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/style.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/widget.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/widget.cljs.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/widget.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/widget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/widget.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/widget.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.cljc.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.cljc.cache.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/target/classes/META-INF/maven/com.tiltontec/webmx/pom.properties" afterPath="$PROJECT_DIR$/resources/webmx/target/classes/META-INF/maven/com.tiltontec/webmx/pom.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -197,27 +280,6 @@
             <path>
               <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
               <item name="spamux" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spamux" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spamux" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spamux" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -239,7 +301,7 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="cursive.last.file.extension./Users/kennethtilton/spamux/resources" value="cljs" />
   </component>
-  <component name="ReplState" timestamp="1522186375725">{:repl-history {:ide [], :local [{:command &quot;(let [chunk 100\n          total 2000000]\n      (let [chunks (partition-all chunk\n                     (email-records-test-gen total))]\n        (dorun\n          (map (fn [n c]\n                 (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n                   (into [] c) :append (pos? n)))\n            (range)\n            chunks))))&quot;, :offset 336, :ns &quot;spamux.batcher&quot;} {:command &quot;(let [chunk 100\n      total 5000000]\n  (let [chunks (partition-all chunk\n                 (email-records-test-gen total))]\n    (dorun\n      (map (fn [n c]\n             (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n               (into [] c) :append (pos? n)))\n        (range)\n        chunks))))&quot;, :offset 300, :ns &quot;spamux.genlist&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 371, :ns &quot;spamux.handler&quot;} {:command &quot;(defn now []\n  (System/currentTimeMillis))&quot;, :offset 42, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (reset! batch-abort? true)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 536, :ns &quot;spamux.handler&quot;} {:command &quot;(defn batch-abort []\n  (reset! batch-abort? true))&quot;, :offset 50, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 523, :ns &quot;spamux.handler&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1522187534669">{:repl-history {:ide [], :local [{:command &quot;(let [chunk 100\n          total 2000000]\n      (let [chunks (partition-all chunk\n                     (email-records-test-gen total))]\n        (dorun\n          (map (fn [n c]\n                 (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n                   (into [] c) :append (pos? n)))\n            (range)\n            chunks))))&quot;, :offset 336, :ns &quot;spamux.batcher&quot;} {:command &quot;(let [chunk 100\n      total 5000000]\n  (let [chunks (partition-all chunk\n                 (email-records-test-gen total))]\n    (dorun\n      (map (fn [n c]\n             (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n               (into [] c) :append (pos? n)))\n        (range)\n        chunks))))&quot;, :offset 300, :ns &quot;spamux.genlist&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 371, :ns &quot;spamux.handler&quot;} {:command &quot;(defn now []\n  (System/currentTimeMillis))&quot;, :offset 42, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (reset! batch-abort? true)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 536, :ns &quot;spamux.handler&quot;} {:command &quot;(defn batch-abort []\n  (reset! batch-abort? true))&quot;, :offset 50, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 523, :ns &quot;spamux.handler&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -567,7 +629,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/build.bat">
+    <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/build">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -575,7 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/build">
+    <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/build.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

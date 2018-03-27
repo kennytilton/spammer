@@ -14,13 +14,13 @@ var me = tiltontec.cell.base.c_model.call(null,slot_c_SHARP_);
 var cell = slot_c_SHARP_;
 var slot_name = tiltontec.cell.base.c_slot.call(null,slot_c_SHARP_);
 var cache = tiltontec.cell.base.c_value.call(null,slot_c_SHARP_);
-var _STAR_depender_STAR_21667 = tiltontec.cell.base._STAR_depender_STAR_;
+var _STAR_depender_STAR_21669 = tiltontec.cell.base._STAR_depender_STAR_;
 tiltontec.cell.base._STAR_depender_STAR_ = null;
 
-try{var _STAR_par_STAR_21668 = tiltontec.model.core._STAR_par_STAR_;
+try{var _STAR_par_STAR_21670 = tiltontec.model.core._STAR_par_STAR_;
 tiltontec.model.core._STAR_par_STAR_ = me;
 
-try{return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [tiltontec.webmx.gen.make_tag.call(null,"div",cljs.core.PersistentArrayMap.EMPTY,cljs.core.PersistentArrayMap.EMPTY,tiltontec.cell.core.make_c_formula.call(null,new cljs.core.Keyword(null,"code","code",1586293142),cljs.core.list(cljs.core.list(new cljs.core.Symbol("clojure.core","assert","clojure.core/assert",1581062626,null),new cljs.core.Symbol(null,"me","me",1501524834,null),"no me for cFkids"),cljs.core.list(new cljs.core.Symbol("tiltontec.model.core","the-kids","tiltontec.model.core/the-kids",-1146365346,null),cljs.core.list(new cljs.core.Symbol(null,"h1","h1",-256355935,null),cljs.core.PersistentArrayMap.EMPTY,"On your mark. Get set...open your browser console."),cljs.core.list(new cljs.core.Symbol(null,"clock","clock",746230400,null)))),new cljs.core.Keyword(null,"value","value",305978217),tiltontec.cell.base.unbound,new cljs.core.Keyword(null,"rule","rule",729973257),((function (_STAR_par_STAR_21668,_STAR_depender_STAR_21667,me,cell,slot_name,cache){
+try{return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [tiltontec.webmx.gen.make_tag.call(null,"div",cljs.core.PersistentArrayMap.EMPTY,cljs.core.PersistentArrayMap.EMPTY,tiltontec.cell.core.make_c_formula.call(null,new cljs.core.Keyword(null,"code","code",1586293142),cljs.core.list(cljs.core.list(new cljs.core.Symbol("clojure.core","assert","clojure.core/assert",1581062626,null),new cljs.core.Symbol(null,"me","me",1501524834,null),"no me for cFkids"),cljs.core.list(new cljs.core.Symbol("tiltontec.model.core","the-kids","tiltontec.model.core/the-kids",-1146365346,null),cljs.core.list(new cljs.core.Symbol(null,"h1","h1",-256355935,null),cljs.core.PersistentArrayMap.EMPTY,"On your mark. Get set...open your browser console."),cljs.core.list(new cljs.core.Symbol(null,"clock","clock",746230400,null)))),new cljs.core.Keyword(null,"value","value",305978217),tiltontec.cell.base.unbound,new cljs.core.Keyword(null,"rule","rule",729973257),((function (_STAR_par_STAR_21670,_STAR_depender_STAR_21669,me,cell,slot_name,cache){
 return (function (slot_c_SHARP___$1){
 var me__$1 = tiltontec.cell.base.c_model.call(null,slot_c_SHARP___$1);
 var cell__$1 = slot_c_SHARP___$1;
@@ -31,7 +31,7 @@ if(cljs.core.truth_(me__$1)){
 throw (new Error([cljs.core.str.cljs$core$IFn$_invoke$arity$1("Assert failed: "),cljs.core.str.cljs$core$IFn$_invoke$arity$1("no me for cFkids"),cljs.core.str.cljs$core$IFn$_invoke$arity$1("\n"),cljs.core.str.cljs$core$IFn$_invoke$arity$1("me")].join('')));
 }
 
-var _STAR_par_STAR_21669 = tiltontec.model.core._STAR_par_STAR_;
+var _STAR_par_STAR_21671 = tiltontec.model.core._STAR_par_STAR_;
 tiltontec.model.core._STAR_par_STAR_ = me__$1;
 
 try{if(cljs.core.truth_(tiltontec.model.core._STAR_par_STAR_)){
@@ -39,7 +39,7 @@ try{if(cljs.core.truth_(tiltontec.model.core._STAR_par_STAR_)){
 throw (new Error("Assert failed: tiltontec.model.core/*par*"));
 }
 
-return cljs.core.doall.call(null,cljs.core.remove.call(null,cljs.core.nil_QMARK_,cljs.core.flatten.call(null,(function (){var x__7615__auto__ = tiltontec.webmx.gen.make_tag.call(null,"h1",cljs.core.PersistentArrayMap.EMPTY,cljs.core.PersistentArrayMap.EMPTY,tiltontec.cell.core.make_c_formula.call(null,new cljs.core.Keyword(null,"code","code",1586293142),cljs.core.list(cljs.core.list(new cljs.core.Symbol("clojure.core","assert","clojure.core/assert",1581062626,null),new cljs.core.Symbol(null,"me","me",1501524834,null),"no me for cFkids"),cljs.core.list(new cljs.core.Symbol("tiltontec.model.core","the-kids","tiltontec.model.core/the-kids",-1146365346,null),"On your mark. Get set...open your browser console.")),new cljs.core.Keyword(null,"value","value",305978217),tiltontec.cell.base.unbound,new cljs.core.Keyword(null,"rule","rule",729973257),((function (_STAR_par_STAR_21669,me__$1,cell__$1,slot_name__$1,cache__$1,_STAR_par_STAR_21668,_STAR_depender_STAR_21667,me,cell,slot_name,cache){
+return cljs.core.doall.call(null,cljs.core.remove.call(null,cljs.core.nil_QMARK_,cljs.core.flatten.call(null,(function (){var x__7617__auto__ = tiltontec.webmx.gen.make_tag.call(null,"h1",cljs.core.PersistentArrayMap.EMPTY,cljs.core.PersistentArrayMap.EMPTY,tiltontec.cell.core.make_c_formula.call(null,new cljs.core.Keyword(null,"code","code",1586293142),cljs.core.list(cljs.core.list(new cljs.core.Symbol("clojure.core","assert","clojure.core/assert",1581062626,null),new cljs.core.Symbol(null,"me","me",1501524834,null),"no me for cFkids"),cljs.core.list(new cljs.core.Symbol("tiltontec.model.core","the-kids","tiltontec.model.core/the-kids",-1146365346,null),"On your mark. Get set...open your browser console.")),new cljs.core.Keyword(null,"value","value",305978217),tiltontec.cell.base.unbound,new cljs.core.Keyword(null,"rule","rule",729973257),((function (_STAR_par_STAR_21671,me__$1,cell__$1,slot_name__$1,cache__$1,_STAR_par_STAR_21670,_STAR_depender_STAR_21669,me,cell,slot_name,cache){
 return (function (slot_c_SHARP___$2){
 var me__$2 = tiltontec.cell.base.c_model.call(null,slot_c_SHARP___$2);
 var cell__$2 = slot_c_SHARP___$2;
@@ -50,7 +50,7 @@ if(cljs.core.truth_(me__$2)){
 throw (new Error([cljs.core.str.cljs$core$IFn$_invoke$arity$1("Assert failed: "),cljs.core.str.cljs$core$IFn$_invoke$arity$1("no me for cFkids"),cljs.core.str.cljs$core$IFn$_invoke$arity$1("\n"),cljs.core.str.cljs$core$IFn$_invoke$arity$1("me")].join('')));
 }
 
-var _STAR_par_STAR_21671 = tiltontec.model.core._STAR_par_STAR_;
+var _STAR_par_STAR_21673 = tiltontec.model.core._STAR_par_STAR_;
 tiltontec.model.core._STAR_par_STAR_ = me__$2;
 
 try{if(cljs.core.truth_(tiltontec.model.core._STAR_par_STAR_)){
@@ -59,18 +59,18 @@ throw (new Error("Assert failed: tiltontec.model.core/*par*"));
 }
 
 return cljs.core.doall.call(null,cljs.core.remove.call(null,cljs.core.nil_QMARK_,cljs.core.flatten.call(null,cljs.core._conj.call(null,cljs.core.List.EMPTY,"On your mark. Get set...open your browser console."))));
-}finally {tiltontec.model.core._STAR_par_STAR_ = _STAR_par_STAR_21671;
-}});})(_STAR_par_STAR_21669,me__$1,cell__$1,slot_name__$1,cache__$1,_STAR_par_STAR_21668,_STAR_depender_STAR_21667,me,cell,slot_name,cache))
+}finally {tiltontec.model.core._STAR_par_STAR_ = _STAR_par_STAR_21673;
+}});})(_STAR_par_STAR_21671,me__$1,cell__$1,slot_name__$1,cache__$1,_STAR_par_STAR_21670,_STAR_depender_STAR_21669,me,cell,slot_name,cache))
 ));
-return cljs.core._conj.call(null,(function (){var x__7615__auto____$1 = tiltontec.webmx.example.startwatch.clock.call(null);
-return cljs.core._conj.call(null,cljs.core.List.EMPTY,x__7615__auto____$1);
-})(),x__7615__auto__);
+return cljs.core._conj.call(null,(function (){var x__7617__auto____$1 = tiltontec.webmx.example.startwatch.clock.call(null);
+return cljs.core._conj.call(null,cljs.core.List.EMPTY,x__7617__auto____$1);
+})(),x__7617__auto__);
 })())));
-}finally {tiltontec.model.core._STAR_par_STAR_ = _STAR_par_STAR_21669;
-}});})(_STAR_par_STAR_21668,_STAR_depender_STAR_21667,me,cell,slot_name,cache))
+}finally {tiltontec.model.core._STAR_par_STAR_ = _STAR_par_STAR_21671;
+}});})(_STAR_par_STAR_21670,_STAR_depender_STAR_21669,me,cell,slot_name,cache))
 ))], null);
-}finally {tiltontec.model.core._STAR_par_STAR_ = _STAR_par_STAR_21668;
-}}finally {tiltontec.cell.base._STAR_depender_STAR_ = _STAR_depender_STAR_21667;
+}finally {tiltontec.model.core._STAR_par_STAR_ = _STAR_par_STAR_21670;
+}}finally {tiltontec.cell.base._STAR_depender_STAR_ = _STAR_depender_STAR_21669;
 }})));
 });
 tiltontec.webmx.example.startwatch.hits = cljs.core.atom.call(null,(0));
@@ -104,9 +104,9 @@ var es = ((tiltontec.util.core.now.call(null) - cljs.core.deref.call(null,tilton
 cljs.core.swap_BANG_.call(null,tiltontec.webmx.example.startwatch.hits,cljs.core.inc);
 
 if((es > (1))){
-var r_21672 = Math.round((cljs.core.deref.call(null,tiltontec.webmx.example.startwatch.hits) / es));
-if((r_21672 > cljs.core.deref.call(null,tiltontec.webmx.example.startwatch.maxr))){
-cljs.core.reset_BANG_.call(null,tiltontec.webmx.example.startwatch.maxr,r_21672);
+var r_21674 = Math.round((cljs.core.deref.call(null,tiltontec.webmx.example.startwatch.hits) / es));
+if((r_21674 > cljs.core.deref.call(null,tiltontec.webmx.example.startwatch.maxr))){
+cljs.core.reset_BANG_.call(null,tiltontec.webmx.example.startwatch.maxr,r_21674);
 } else {
 }
 } else {
