@@ -45,7 +45,7 @@
                       (let [mtx me]
                         (assert mtx)
                         [(div {}
-                           (h1 "Hello, Pipeline!")
+                           (h1 "Hello, Pipeline II!")
                            #_(button {:onclick #(pipe-start (mtx-pipeline me))}
                              "Prime")
                            (button {:onclick #(pipe-feed (mtx-pipeline me)

@@ -11,7 +11,9 @@
 
 (defroutes app-routes
   (GET "/" []
-    (resp/content-type (resp/resource-response "index.html" {:root "webmx"}) "text/html"))
+    (do
+      (println "New server!!!!!!!!!!!!!!!!!?")
+      (resp/content-type (resp/resource-response "index.html" {:root "webmx"}) "text/html")))
 
   (route/not-found "Not Found"))
 

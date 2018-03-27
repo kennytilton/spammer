@@ -91,7 +91,7 @@
     (let [seg-next (pseg-next-seg seg)]
       (loop [fst :init
              data nil]
-        
+
         ;;(pln :seg-fst-to fst)
         (mset!> seg :fst fst)
 
