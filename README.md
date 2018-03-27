@@ -4,9 +4,27 @@ How can we use a Web app to get the word out on healthy, effective herbal remedi
 
 ## Installation
 
-RSN. This is an exciting first: full-stack Matrix with a Clojure Ring server containing spam gen code and an mxWeb client providing a front-end to the spam gen capabilities. 
+In one terminal, `cd` to wherever you would like to clone this, then:
+````bash
+git clone https://github.com/kennytilton/spamux.git
+cd spamux
+lein ring headless-server
+````
+Make note of the port (3000? 3001?) on which the server starts. It will look like this:
+````bash
+Started server on port 3000
+````
+Now open another terminal and:
 
-We have reached "hello, world" meaning we can kick off a run hard-coded to go against a specific input file. Should be able to document a "hello world" demo today.
+````bash
+cd <wherever>/spamux/resources/webmx
+scripts/build
+````
+That takes a minute to complete. Now open a browser and navigate to `localhost:3000` or whatever port was observed above. You should see the header "Hello, SpamUX!?" and a tiny "Start" below that. I will try harder on the graphic design next time.
+
+Now keep an eye on the terminal where you ran Ring and click "Start". You should see that button turn to `Stop!` and if you are quick you can. Otherwise let it run. Either way some statistics appear in the terminal.
+
+Baby steps.
 
 ## Usage
 
