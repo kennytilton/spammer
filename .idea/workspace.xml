@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b0c07f8-d87e-4651-a9bc-5c163e500384" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/webmx/Synapses.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/pipeline/core.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/pipeline/pipeline.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/webmx/ticktock.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/spamux/batcher.clj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/spamux/genlist.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/.idea/workspace.xml" afterPath="$PROJECT_DIR$/resources/webmx/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/cljs_deps.js" afterPath="$PROJECT_DIR$/resources/webmx/out/cljs_deps.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/target/classes/META-INF/maven/com.tiltontec/webmx/pom.properties" afterPath="$PROJECT_DIR$/resources/webmx/target/classes/META-INF/maven/com.tiltontec/webmx/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spamux/handler.clj" afterPath="$PROJECT_DIR$/src/spamux/handler.clj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,11 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="batcher.clj" pinned="false" current-in-tab="true">
+      <file leaf-file-name="batcher.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spamux/batcher.clj">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="321">
               <caret line="161" column="24" lean-forward="false" selection-start-line="161" selection-start-column="24" selection-end-line="161" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -158,6 +159,11 @@
             <path>
               <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
               <item name="spamux" type="462c0819:PsiDirectoryNode" />
+              <item name="bulkinput" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spamux" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -165,30 +171,6 @@
               <item name="spamux" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="webmx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spamux" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spamux" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spamux" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-              <item name="webmx" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="spamux" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
@@ -214,7 +196,7 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="cursive.last.file.extension./Users/kennethtilton/spamux/resources" value="cljs" />
   </component>
-  <component name="ReplState" timestamp="1522182374643">{:repl-history {:ide [], :local [{:command &quot;(let [chunk 100\n          total 2000000]\n      (let [chunks (partition-all chunk\n                     (email-records-test-gen total))]\n        (dorun\n          (map (fn [n c]\n                 (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n                   (into [] c) :append (pos? n)))\n            (range)\n            chunks))))&quot;, :offset 336, :ns &quot;spamux.batcher&quot;} {:command &quot;(let [chunk 100\n      total 5000000]\n  (let [chunks (partition-all chunk\n                 (email-records-test-gen total))]\n    (dorun\n      (map (fn [n c]\n             (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n               (into [] c) :append (pos? n)))\n        (range)\n        chunks))))&quot;, :offset 300, :ns &quot;spamux.genlist&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 371, :ns &quot;spamux.handler&quot;} {:command &quot;(defn now []\n  (System/currentTimeMillis))&quot;, :offset 42, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (reset! batch-abort? true)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 536, :ns &quot;spamux.handler&quot;} {:command &quot;(defn batch-abort []\n  (reset! batch-abort? true))&quot;, :offset 50, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 523, :ns &quot;spamux.handler&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1522183294468">{:repl-history {:ide [], :local [{:command &quot;(let [chunk 100\n          total 2000000]\n      (let [chunks (partition-all chunk\n                     (email-records-test-gen total))]\n        (dorun\n          (map (fn [n c]\n                 (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n                   (into [] c) :append (pos? n)))\n            (range)\n            chunks))))&quot;, :offset 336, :ns &quot;spamux.batcher&quot;} {:command &quot;(let [chunk 100\n      total 5000000]\n  (let [chunks (partition-all chunk\n                 (email-records-test-gen total))]\n    (dorun\n      (map (fn [n c]\n             (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n               (into [] c) :append (pos? n)))\n        (range)\n        chunks))))&quot;, :offset 300, :ns &quot;spamux.genlist&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 371, :ns &quot;spamux.handler&quot;} {:command &quot;(defn now []\n  (System/currentTimeMillis))&quot;, :offset 42, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (reset! batch-abort? true)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 536, :ns &quot;spamux.handler&quot;} {:command &quot;(defn batch-abort []\n  (reset! batch-abort? true))&quot;, :offset 50, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 523, :ns &quot;spamux.handler&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -333,7 +315,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="93" y="67" width="1494" height="886" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -348,7 +329,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24966533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24966533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -471,14 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/webmx/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/webmx/src/spamux/core.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -563,6 +536,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="161" column="24" lean-forward="false" selection-start-line="161" selection-start-column="24" selection-end-line="161" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding />
         </state>
       </provider>
