@@ -28,25 +28,27 @@
                         [(div {}
                            (h1 "Hello, SpamUX!?")
                            (button
-                             {
-                              :id      "startxhr"
-                              :onclick #(let [me (mx-par (evt-tag %))]
-                                          (println :starting? (keys @me) @me)
-                                          (mset!> me :getnew true))
-                              }
-                             {
-                              :getnew   (cI false :ephemeral? true)
-                              :newtitle (cF (when-let [xhr (<mget me :ae)]
-                                              (when-let [r (xhr-response xhr)]
-                                                (println :bam!!!! r))))
+                             {:id      "startxhr"
+                              :onclick #(let [me (do (evt-tag %))]
+                                          (mset!> me :job-key
+                                            (case (<mget me :job-key)
+                                              nil :start
+                                              :start :stop
+                                              :stop :start)))
+                              :content (cF (or (when-let [xhr (<mget me :ae)]
+                                                 (when-let [r (xhr-response xhr)]
+                                                   (if (= 200 (:status r))
+                                                     (:body r)
+                                                     "<b>Something happened.</b>")))
+                                             "Start"))}
+                             {:job-key  (cI nil)
                               :ae       (cF+ [:obs (fn-obs
                                                      (println :ae-obs new old))]
-                                          (when (<mget me :getnew)
-                                            (do
-                                              (println :sending!!!-start)
-                                              (send-xhr "/start"))))
-                              }
-                             (span {:content "Start?!"})))])))))
+                                          (when-let [job (<mget me :job-key)]
+                                              (println :sending!!!-start job)
+                                              (send-xhr (case job
+                                                          :start "/start"
+                                                          :stop "/stop"))))}))])))))
 
 
 

@@ -1,5 +1,7 @@
 (ns spamux.handler
-  (:require [compojure.core :refer :all]
+  (:require [clojure.core.async
+             :refer [go chan go-loop <! <!! >!! >! timeout alt!!]]
+            [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [ring.middleware.file :refer [wrap-file]]
@@ -7,26 +9,34 @@
             [ring.util.mime-type :refer [ext-mime-type]]
             [ring.middleware.content-type :refer [wrap-content-type]]
             [ring.util.response :as resp]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [spamux.batcher :refer [batch-abort run-batch]]))
+
+(declare pln)
 
 (defroutes app-routes
   (GET "/" []
     (do
-      (println "New server!!!")
+      (pln "New server!!!")
       (resp/content-type (resp/resource-response "index.html" {:root "webmx"}) "text/html")))
 
   (GET "/start" []
     (do
-      (println "Start!!!!!!!!!!!!!!!!!")
+      (go (run-batch "em-300000-100.edn"))
       {:status  200
        :headers {"Content-Type" "text/html"}
        :body    "<h2>Stop!</h2>"}))
 
+  (GET "/stop" []
+    (do
+      (batch-abort)
+      {:status  200
+       :headers {"Content-Type" "text/html"}
+       :body    "<h2>Stopped!!</h2>"}))
+
   (route/not-found "Not Found"))
 
-(defn pln [& args]
-  (locking *out*
-    (println (str/join " " args))))
+
 
 (defn my-content-type-response
   "Adds a content-type header to response. See: wrap-content-type."
@@ -69,8 +79,6 @@
     (wrap-content-type)
     (wrap-defaults site-defaults)))
 
-;(def app
-;  (-> your-handler
-;    (wrap-resource "public")
-;    (wrap-content-type)
-;    (wrap-not-modified)))
+(defn pln [& args]
+  (locking *out*
+    (println (str/join " " args))))
