@@ -2,442 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b0c07f8-d87e-4651-a9bc-5c163e500384" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/bide/core.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/bide/core.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/bide/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/bide/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/bide/impl/helpers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/bide/impl/path.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/bide/impl/router.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/buffers.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/buffers.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/buffers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/buffers.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/channels.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/channels.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/channels.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/channels.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/dispatch.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/dispatch.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/dispatch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/dispatch.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/ioc_helpers.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/ioc_helpers.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/ioc_helpers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/ioc_helpers.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/protocols.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/protocols.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/protocols.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/protocols.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/timers.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/timers.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/timers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/core/async/impl/timers.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/pprint.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/pprint.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/pprint.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/pprint.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/reader.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/reader.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/reader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/reader.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/test.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/test.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/test.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/edn.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/edn.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/edn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/edn.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/impl/commons.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/impl/commons.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/impl/commons.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/impl/commons.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/impl/utils.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/impl/utils.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/impl/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/impl/utils.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/reader_types.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/reader_types.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/reader_types.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs/tools/reader/reader_types.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_deps.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/client.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/client.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/client.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/client.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/core.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/core.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/util.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/util.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/util.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_http/util.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/coerce.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/coerce.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/coerce.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/coerce.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/core.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/core.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/format.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/format.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/format.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/format.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/core.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/core.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/parse.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/parse.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/parse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/parse.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/unparse.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/unparse.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/unparse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cljs_time/internal/unparse.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/set.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/set.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/set.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/set.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/string.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/string.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/string.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/string.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/walk.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/walk.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/walk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/clojure/walk.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cognitect/transit.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cognitect/transit.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cognitect/transit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/cognitect/transit.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/com/cognitect/transit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/com/cognitect/transit/caching.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/com/cognitect/transit/delimiters.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/com/cognitect/transit/eq.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/com/cognitect/transit/handlers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/com/cognitect/transit/impl/decoder.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/com/cognitect/transit/impl/reader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/com/cognitect/transit/impl/writer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/com/cognitect/transit/types.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/com/cognitect/transit/util.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/example/pipeline.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/example/pipeline.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/example/pipeline.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/example/pipeline.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/a11y/aria/aria.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/a11y/aria/attributes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/a11y/aria/datatables.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/a11y/aria/roles.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/array/array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/asserts/asserts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/async/freelist.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/async/nexttick.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/async/run.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/async/workqueue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/base.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/crypt/base64.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/crypt/crypt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/date/date.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/date/datelike.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/date/duration.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/date/utcdatetime.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/debug/debug.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/debug/entrypointregistry.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/debug/error.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/debug/logbuffer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/debug/logger.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/debug/logrecord.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/deps.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/disposable/disposable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/disposable/idisposable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/browserfeature.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/classlist.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/dom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/forms.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/htmlelement.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/inputtype.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/nodetype.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/safe.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/selection.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/tagname.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/tags.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/dom/vendor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/editor/focus.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/browserevent.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/browserfeature.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/event.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/eventhandler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/eventid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/events.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/eventtarget.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/eventtype.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/keycodes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/keyhandler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/listenable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/listener.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/events/listenermap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/fs/url.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/functions/functions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/history/event.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/history/eventtype.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/history/html5history.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/legacyconversions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/safehtml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/safescript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/safestyle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/safestylesheet.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/safeurl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/sanitizer/attributewhitelist.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/sanitizer/csssanitizer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/sanitizer/htmlsanitizer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/sanitizer/tagblacklist.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/sanitizer/tagwhitelist.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/trustedresourceurl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/html/uncheckedconversions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/bidi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/compactnumberformatsymbols.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/currency.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/datetimeformat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/datetimesymbols.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/messageformat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/numberformat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/numberformatsymbols.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/ordinalrules.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/pluralrules.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/i18n/timezone.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/iter/iter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/json/json.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/labs/useragent/browser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/labs/useragent/engine.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/labs/useragent/platform.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/labs/useragent/util.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/log/log.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/math/box.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/math/coordinate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/math/integer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/math/irect.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/math/long.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/math/math.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/math/rect.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/math/size.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/mochikit/async/deferred.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/errorcode.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/eventtype.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/httpstatus.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/jsloader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/jsonp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/wrapperxmlhttpfactory.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/xhrio.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/xhriopool.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/xhrlike.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/xmlhttp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/net/xmlhttpfactory.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/object/object.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/promise/promise.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/promise/resolver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/promise/thenable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/reflect/reflect.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/string/const.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/string/string.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/string/stringbuffer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/string/stringformat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/string/typedstring.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/structs/collection.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/structs/heap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/structs/map.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/structs/node.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/structs/pool.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/structs/prioritypool.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/structs/priorityqueue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/structs/queue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/structs/set.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/structs/structs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/style/style.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/timer/timer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/ui/component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/ui/control.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/ui/controlcontent.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/ui/controlrenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/ui/idgenerator.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/ui/registry.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/uri/uri.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/uri/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/useragent/product.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/useragent/useragent.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/goog/window/window.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/no/en/core.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/no/en/core.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/no/en/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/no/en/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/encore.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/encore.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/encore.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/encore.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/truss.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/truss.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/truss.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/truss.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/truss/impl.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/truss/impl.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/truss/impl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/truss/impl.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/tufte.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/tufte.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/tufte.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/tufte.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/tufte/impl.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/tufte/impl.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/tufte/impl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/taoensso/tufte/impl.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/base.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/base.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/base.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/base.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/core.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/core.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/evaluate.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/evaluate.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/evaluate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/evaluate.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/integrity.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/integrity.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/integrity.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/integrity.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/observer.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/observer.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/observer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/observer.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/synapse.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/synapse.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/synapse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/cell/synapse.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/base.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/base.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/base.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/base.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/core.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/core.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/macros.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/macros.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/macros.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/model/macros.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/util/base.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/util/base.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/util/base.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/util/base.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/util/core.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/util/core.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/util/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/util/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/base.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/base.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/base.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/base.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/core.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/core.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/gentle_intro.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/gentle_intro.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/gentle_intro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/gentle_intro.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/gloss.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/gloss.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/gloss.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/gloss.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/pipeline/core.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/pipeline/core.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/pipeline/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/pipeline/core.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/pipeline/pipeline.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/pipeline/pipeline.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/pipeline/pipeline.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/pipeline/pipeline.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/startwatch.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/startwatch.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/startwatch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/startwatch.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/testing.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/testing.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/testing.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/testing.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/ticktock.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/ticktock.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/ticktock.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/ticktock.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todo.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todo.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todo.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todomvc.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todomvc.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todomvc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todomvc.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todomx_list_item.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todomx_list_item.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todomx_list_item.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/example/todomx_list_item.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/gen.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/gen.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/gen.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/gen.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/html.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/html.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/html.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/html.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/mxintro/rxtrak.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/mxintro/rxtrak.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/mxintro/rxtrak.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/mxintro/rxtrak.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/style.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/style.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/style.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/style.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/widget.cljs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/widget.cljs.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/widget.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/webmx/widget.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/xhr.cljc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/xhr.cljc.cache.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/xhr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/tiltontec/xhr.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/out/webmx.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/webmx/.idea/libraries/Leiningen__com_tiltontec_matrix_0_1_3_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/webmx/hide-webmx.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/.idea/modules.xml" afterPath="$PROJECT_DIR$/resources/webmx/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/.idea/workspace.xml" afterPath="$PROJECT_DIR$/resources/webmx/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/index.html" afterPath="$PROJECT_DIR$/resources/webmx/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/cljs_deps.js" afterPath="$PROJECT_DIR$/resources/webmx/out/cljs_deps.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.cljs" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.cljs.cache.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/core.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/core.cljs" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/core.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/core.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/core.cljs.cache.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/core.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/core.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/core.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/pipeline.cljs" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/pipeline.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/pipeline.cljs.cache.json" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/pipeline.cljs.cache.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/pipeline.js" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/pipeline.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/pipeline.js.map" afterPath="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/example/pipeline/pipeline.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/pipeline/core.cljs" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/pipeline/core.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/core.cljs" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/core.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/target/classes/META-INF/maven/com.tiltontec/webmx/pom.properties" afterPath="$PROJECT_DIR$/resources/webmx/target/classes/META-INF/maven/com.tiltontec/webmx/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/webmx.iml" afterPath="$PROJECT_DIR$/resources/webmx/webmx.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spamux/handler.clj" afterPath="$PROJECT_DIR$/src/spamux/handler.clj" />
@@ -451,74 +24,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="handler.clj" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/spamux/handler.clj">
+      <file leaf-file-name="build.bat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/build.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resource.clj" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/ring/ring-core/1.5.0/ring-core-1.5.0.jar!/ring/middleware/resource.clj">
+      <file leaf-file-name="build" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/build">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="defaults.clj" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/ring/ring-defaults/0.2.1/ring-defaults-0.2.1.jar!/ring/middleware/defaults.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="80" column="6" lean-forward="false" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content_type.clj" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/ring/ring-core/1.5.0/ring-core-1.5.0.jar!/ring/middleware/content_type.clj">
+      <file leaf-file-name="spamux" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/spamux">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="56" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="56" />
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/webmx/project.clj">
+      <file leaf-file-name="spamux.bat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/spamux.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="1" column="50" lean-forward="false" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project.clj">
+      <file leaf-file-name="spamux.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/spamux.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -534,7 +84,54 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="build.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/build.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.cljs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/pipeline/core.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spamux.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/out/spamux.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="handler.clj" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/spamux/handler.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="93" lean-forward="false" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="ClojureScript Namespace" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -547,6 +144,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/spamux/core.cljs" />
+        <option value="$PROJECT_DIR$/resources/webmx/spamux/core.cljs" />
+        <option value="$PROJECT_DIR$/resources/webmx/src/spamux/core.cljs" />
+        <option value="$PROJECT_DIR$/resources/webmx/scripts/spamux" />
+        <option value="$PROJECT_DIR$/resources/webmx/scripts/spamux.bat" />
+        <option value="$PROJECT_DIR$/resources/webmx/scripts/spamux.clj" />
         <option value="$PROJECT_DIR$/resources/webmx/index.html" />
         <option value="$PROJECT_DIR$/src/spamux/handler.clj" />
       </list>
@@ -599,6 +202,30 @@
             <path>
               <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
               <item name="spamux" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="webmx" type="462c0819:PsiDirectoryNode" />
+              <item name="webmx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spamux" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="webmx" type="462c0819:PsiDirectoryNode" />
+              <item name="webmx" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spamux" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="webmx" type="462c0819:PsiDirectoryNode" />
+              <item name="webmx" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="pipeline" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spamux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spamux" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -618,7 +245,9 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="cursive.last.file.extension./Users/kennethtilton/spamux/resources" value="cljs" />
   </component>
+  <component name="ReplState" timestamp="1522165551411">{:repl-history {:ide [], :local [], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -631,7 +260,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Clojure REPL.Unnamed">
+    <configuration name="Unnamed" type="ClojureREPL" factoryName="Local">
+      <setting name="replType" value="1" />
+      <module name="spamux" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -737,7 +374,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299866" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -768,14 +405,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/webmx/project.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -811,6 +440,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/spamux/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/spamux/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/ring/ring-defaults/0.2.1/ring-defaults-0.2.1.jar!/ring/middleware/defaults.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -827,6 +480,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/build.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/build.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/build">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/spamux">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/spamux.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="50" lean-forward="false" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/scripts/spamux.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/webmx/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -835,10 +544,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/src/spamux/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/pipeline/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/out/spamux.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/spamux/handler.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        <state relative-caret-position="255">
+          <caret line="15" column="93" lean-forward="false" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
           <folding />
         </state>
       </provider>
