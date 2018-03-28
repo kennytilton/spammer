@@ -50,7 +50,7 @@
 
   (GET "/runningstats" []
     (let [stats {:latest @latest-summary-stats
-                 :cum @cumulative-stats}]
+                 :cumulative @cumulative-stats}]
       (pln :responding-w-stats!! stats)
       {:status  200
        :headers {"Content-Type" "application/json"}

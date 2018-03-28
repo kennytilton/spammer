@@ -4,10 +4,13 @@
             [tiltontec.cell.base :refer [ia-type]]
             [tiltontec.cell.core :refer-macros [cF+ cF cFonce] :refer [cI]]
             [tiltontec.cell.observer :refer-macros [fn-obs]]
+            [tiltontec.cell.integrity
+             :refer-macros [with-cc with-integrity]
+             :refer []]
 
             [tiltontec.model.core
-             :refer [matrix mx-par <mget <mget mset!> mset!> mxi-find mxu-find-name
-                     mxu-find-type]
+             :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
+                     mxi-find mxu-find-name mxu-find-type]
              :as md]
 
             [tiltontec.xhr
@@ -16,7 +19,7 @@
                      xhr-selection xhr-to-map xhr-name-to-map xhr-response]]
 
             [tiltontec.webmx.gen :refer [evt-tag target-value]
-             :refer-macros [h1 h3 h4 h5 input div span button p b]]
+             :refer-macros [h1 h2 h3 h4 h5 input div span button p b]]
             [tiltontec.webmx.widget :refer [tag-checkbox]]
             [cljs.pprint :as pp]))
 
@@ -100,10 +103,20 @@
 (defn watched-stats [me]
   (div {}
     {:name "watcher"
-     :xhr   (cF (when-let [on? (<mget (md/mxu-find-name me "watch-progress") :on?)]
-                  (pln :on-see on?)
+     :reload (cI 0) ;;d/f hackkk
+     :xhr   (cF (when (and (<mget (md/mxu-find-name me "watch-progress") :on?)
+                        (<mget me :reload))
+                  (pln :requesting-running!!!)
                   (send-xhr :get-runnin "/runningstats" {:accept :json})))
-     :stats (cF (when-let [xhr (<mget me :xhr)]
+     :stats (cF+ [:obs (fn-obs
+                              (when new
+                                (pln :obs-new!!!!)
+                                (js/setTimeout #(mswap!> me :reload inc)
+                                  2000)
+                                #_
+                                (with-cc
+                                  (mswap!> me :reload inc))))]
+              (when-let [xhr (<mget me :xhr)]
                   (when-let [r (xhr-response xhr)]
                     (println
                       (if (= 200 (:status r))
@@ -113,9 +126,11 @@
                       (:body r)
                       {:oops (:status r)}))))}
     (div
+      (h2 "Running stats")
+      (div
       (when-let [ss (<mget (md/mxu-find-name me "watcher") :stats)]
         (for [[k v] ss]
-          (json-view (name k) v))))))
+          (json-view (name k) v)))))))
 
 
 (defn matrix-build! []
