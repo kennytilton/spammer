@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b0c07f8-d87e-4651-a9bc-5c163e500384" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/.idea/workspace.xml" afterPath="$PROJECT_DIR$/resources/webmx/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spamux/handler.clj" afterPath="$PROJECT_DIR$/src/spamux/handler.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/gen.cljc" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/gen.cljc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/html.cljs" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/html.cljs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +29,18 @@
       <file leaf-file-name="core.cljs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state relative-caret-position="454">
+              <caret line="127" column="67" lean-forward="false" selection-start-line="127" selection-start-column="67" selection-end-line="127" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -39,6 +51,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="249">
               <caret line="111" column="10" lean-forward="false" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gen.cljc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/gen.cljc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="37" column="10" lean-forward="false" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="html.cljs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/html.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="161" column="12" lean-forward="false" selection-start-line="161" selection-start-column="12" selection-end-line="161" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -56,7 +88,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>millis</find>
       <find>timeMillis</find>
       <find>bulk-input-build</find>
       <find>getnew</find>
@@ -70,10 +101,20 @@
       <find>parse</find>
       <find>with-cc</find>
       <find>cF+</find>
+      <find>mxu-find-type</find>
+      <find>find-tag</find>
+      <find>mxu-find-tag</find>
+      <find>obs-bu</find>
+      <find>lock</find>
+      <find>requesta</find>
+      <find>millis</find>
     </findStrings>
     <replaceStrings>
       <replace>geturi</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/resources/webmx</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -96,18 +137,19 @@
         <option value="$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.cljc" />
         <option value="$PROJECT_DIR$/project.clj" />
         <option value="$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/evaluate.cljc" />
-        <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/gen.cljc" />
         <option value="$PROJECT_DIR$/src/spamux/genlist.clj" />
         <option value="$PROJECT_DIR$/test/dart/score.clj" />
         <option value="$PROJECT_DIR$/src/spamux/batcher.clj" />
         <option value="$PROJECT_DIR$/src/spamux/handler.clj" />
+        <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/gen.cljc" />
+        <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/html.cljs" />
         <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="93" />
-    <option name="y" value="67" />
+    <option name="x" value="186" />
+    <option name="y" value="71" />
     <option name="width" value="1494" />
     <option name="height" value="886" />
   </component>
@@ -204,8 +246,9 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="cursive.last.file.extension./Users/kennethtilton/spamux/resources" value="cljs" />
     <property name="cursive.last.file.extension./Users/kennethtilton/spamux/test" value="clj" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/webmx" />
   </component>
-  <component name="ReplState" timestamp="1522263518546">{:repl-history {:ide [], :local [{:command &quot;(let [chunk 100\n          total 2000000]\n      (let [chunks (partition-all chunk\n                     (email-records-test-gen total))]\n        (dorun\n          (map (fn [n c]\n                 (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n                   (into [] c) :append (pos? n)))\n            (range)\n            chunks))))&quot;, :offset 336, :ns &quot;spamux.batcher&quot;} {:command &quot;(let [chunk 100\n      total 5000000]\n  (let [chunks (partition-all chunk\n                 (email-records-test-gen total))]\n    (dorun\n      (map (fn [n c]\n             (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n               (into [] c) :append (pos? n)))\n        (range)\n        chunks))))&quot;, :offset 300, :ns &quot;spamux.genlist&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 371, :ns &quot;spamux.handler&quot;} {:command &quot;(defn now []\n  (System/currentTimeMillis))&quot;, :offset 42, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (reset! batch-abort? true)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 536, :ns &quot;spamux.handler&quot;} {:command &quot;(defn batch-abort []\n  (reset! batch-abort? true))&quot;, :offset 50, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 523, :ns &quot;spamux.handler&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1522270016749">{:repl-history {:ide [], :local [{:command &quot;(let [chunk 100\n          total 2000000]\n      (let [chunks (partition-all chunk\n                     (email-records-test-gen total))]\n        (dorun\n          (map (fn [n c]\n                 (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n                   (into [] c) :append (pos? n)))\n            (range)\n            chunks))))&quot;, :offset 336, :ns &quot;spamux.batcher&quot;} {:command &quot;(let [chunk 100\n      total 5000000]\n  (let [chunks (partition-all chunk\n                 (email-records-test-gen total))]\n    (dorun\n      (map (fn [n c]\n             (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n               (into [] c) :append (pos? n)))\n        (range)\n        chunks))))&quot;, :offset 300, :ns &quot;spamux.genlist&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 371, :ns &quot;spamux.handler&quot;} {:command &quot;(defn now []\n  (System/currentTimeMillis))&quot;, :offset 42, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (reset! batch-abort? true)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 536, :ns &quot;spamux.handler&quot;} {:command &quot;(defn batch-abort []\n  (reset! batch-abort? true))&quot;, :offset 50, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 523, :ns &quot;spamux.handler&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -323,7 +366,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="93" y="67" width="1494" height="886" extended-state="0" />
+    <frame x="186" y="71" width="1494" height="886" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -332,7 +375,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2476573" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14658634" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -526,14 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/evaluate.cljc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -572,14 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/gen.cljc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -656,10 +683,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/gen.cljc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="10" lean-forward="false" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/html.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="161" column="12" lean-forward="false" selection-start-line="161" selection-start-column="12" selection-end-line="161" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="454">
+          <caret line="127" column="67" lean-forward="false" selection-start-line="127" selection-start-column="67" selection-end-line="127" selection-end-column="67" />
           <folding />
         </state>
       </provider>

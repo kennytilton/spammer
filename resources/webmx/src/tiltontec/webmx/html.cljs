@@ -86,7 +86,7 @@
      :default
      (do (when-let [dbg (or dbg *webmx-trace*)]
            (pln :tag-dom-create dbg (tagfo me)))
-         ;;(pln :domcre-attrs (:attr-keys @me) (webmx-attrs me))
+         (pln :domcre-attrs (<mget me :tag) (:attr-keys @me) )
          (let [dom (apply dom/createDom (<mget me :tag)
                           (tag-attrs me)
                           (concat                           ;; to-do: need this?
@@ -112,7 +112,7 @@
   (when (not= oldv unbound)
     ;; oldv unbound means initial build and this incremental add/remove
     ;; is needed only when kids change post initial creation
-    ;;(println :obstagkids!!!!! (tagfo me))
+    (println :obstagkids!!!!! (tagfo me))
     (do                                                     ;; p ::observe-kids
       (let [pdom (tag-dom me)
             lost (clojure.set/difference (set oldv) (set newv))
@@ -142,7 +142,7 @@
                        (dom/appendChild frag
                          (if (some #{newk} oldv)
                            (.removeChild pdom (tag-dom newk))
-                           (do (println :obs-tag-kids-building-new-dom (tagfo newk))
+                           (do ;;(println :obs-tag-kids-building-new-dom (tagfo newk))
                                (tag-dom-create newk)))))
 
                      (dom/removeChildren pdom)
@@ -159,7 +159,7 @@
 
       (cond
         (= slot :content)
-        (do ;;(pln :setting-html-content newv)
+        (do (pln :setting-html-content newv)
             (.requestAnimationFrame js/window #(set! (.-innerHTML dom) newv)))
 
         (some #{slot} (:attr-keys @me))
