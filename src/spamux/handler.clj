@@ -10,7 +10,9 @@
             [ring.middleware.content-type :refer [wrap-content-type]]
             [ring.util.response :as resp]
             [clojure.string :as str]
-            [spamux.batcher :refer [batch-abort run-batch]]))
+            [cheshire.core :refer :all]
+            [spamux.batcher :refer [batch-abort run-batch
+                                    latest-summary-stats]]))
 
 (declare pln)
 
@@ -26,6 +28,14 @@
       {:status  200
        :headers {"Content-Type" "text/html"}
        :body    "<h2>Stop!</h2>"}))
+
+  (GET "/batchstats" []
+    (let [stats (or @latest-summary-stats
+                  {:no-stats "Click 'Start' to gen some"})]
+      (pln :responding-w-stats!! stats)
+      {:status  200
+       :headers {"Content-Type" "application/json"}
+       :body    (generate-string stats)}))
 
   (GET "/stop" []
     (do

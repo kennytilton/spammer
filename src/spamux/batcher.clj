@@ -84,6 +84,8 @@
 (defn batch-abort []
   (reset! batch-abort? true))
 
+(def latest-summary-stats (atom nil))
+
 (defn email-file-to-sendfiles-mp
   "[em-file (coll)]
 
@@ -203,16 +205,19 @@
 
       (let [start (apply min (map #(:start-time @(:stats %))
                                workers))]
-        (pp/pprint (merge
-                     {:run-duration (format "%.2f seconds"
-                                      (/ (- (now) start) 1000.0))}
-                     (apply merge-with +
-                          (map #(select-keys @(:stats %)
-                                  [:sent-ct :rejected-score :rejected-dup-addr
-                                   :rejected-overall-mean
-                                   :rejected-span-mean])
-                            workers))))
 
+        (reset! latest-summary-stats
+          (merge
+            {:run-duration (format "%.2f seconds"
+                             (/ (- (now) start) 1000.0))}
+            (apply merge-with +
+              (map #(select-keys @(:stats %)
+                      [:sent-ct :rejected-score :rejected-dup-addr
+                       :rejected-overall-mean
+                       :rejected-span-mean])
+                workers))))
+
+        (pp/pprint @latest-summary-stats)
 
         (pln)
         (println :fini)))))

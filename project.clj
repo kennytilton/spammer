@@ -10,6 +10,7 @@
                  [com.taoensso/tufte "1.4.0"]
                  [com.taoensso/timbre "4.3.1"]
                  [org.clojure/tools.cli "0.3.5"]
+                 [cheshire "5.8.0"]
                  [ring/ring-defaults "0.2.1"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler spamux.handler/app}

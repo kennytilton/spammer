@@ -1,4 +1,5 @@
 resources/webmx/out/
+resources/webmx/checkouts/
 bulkmail/*.edn
 **/.DS_Store
 **/.idea/
