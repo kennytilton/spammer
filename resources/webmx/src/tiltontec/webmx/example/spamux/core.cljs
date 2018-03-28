@@ -16,21 +16,11 @@
                      xhr-selection xhr-to-map xhr-name-to-map xhr-response]]
 
             [tiltontec.webmx.gen :refer [evt-tag target-value]
-             :refer-macros [h1 h4 h5 input div span button p b]]
+             :refer-macros [h1 h3 h4 h5 input div span button p b]]
+            [tiltontec.webmx.widget :refer [tag-checkbox]]
             [cljs.pprint :as pp]))
 
-(declare start-button show-stats)
-
-(defn matrix-build! []
-  ;;;;(pline/pipe-go)
-  (md/make ::spamux
-    :mx-dom (cFonce (md/with-par me
-                      (let [mtx me]
-                        (assert mtx)
-                        [(div {:style "margin:36px"}
-                           (h1 "Hello, SpamUX!")
-                           (start-button)
-                           (show-stats))])))))
+(declare json-view)
 
 (defn start-button []
   (button
@@ -64,33 +54,79 @@
 (defn show-stats []
   (div
     (button
-      {:name "stats-button"
+      {:name    "stats-button"
        :onclick #(let [me (do (evt-tag %))]
                    (mset!> me :job-key :get-stats))
        :content "<b>See da Stats</b>"}
 
       {:job-key (cI nil :ephemeral? true)
 
-       :xhr (cF+ [:obs (fn-obs
-                         (println :xhr-obs new old))]
-              (when-let [job (<mget me :job-key)]
-                (println :sending!!!start job)
-                (send-xhr :get-stats "/batchstats" {:accept :json})))
+       :xhr     (cF+ [:obs (fn-obs
+                             (println :xhr-obs new old))]
+                  (when-let [job (<mget me :job-key)]
+                    (println :sending!!!start job)
+                    (send-xhr :get-stats "/batchstats" {:accept :json})))
 
-       :stats (cF (when-let [xhr (<mget me :xhr)]
-                    (when-let [r (xhr-response xhr)]
-                      (println
+       :stats   (cF (when-let [xhr (<mget me :xhr)]
+                      (when-let [r (xhr-response xhr)]
+                        (println
+                          (if (= 200 (:status r))
+                            (:body r)
+                            {:oops r}))
                         (if (= 200 (:status r))
-                        (:body r)
-                        {:oops r}))
+                          (:body r)
+                          {:oops (:status r)}))))})
+
+    #_ (div
+      (for [[k v] (<mget (md/mxu-find-name me "stats-button") :stats)]
+      (do (pln :stat k v)
+          (p (b (str k " = " v))))))
+    (div
+      (json-view "Latest batch statistics"
+        (<mget (md/mxu-find-name me "stats-button") :stats)))))
+
+(defn json-view [title json]
+  (div {:hidden (cF (nil? json))}
+    (h3 title)
+    (for [[k v] json]
+      (p (b (str k " = " v))))))
+
+(defn watch-stats-option [me]
+  (tag-checkbox me "watch-progress"
+    "Watch progress?" false
+    {:name  "watch-progress"
+     :style "font-size:1.2em;margin:24px"}))
+
+(defn watched-stats [me]
+  (div {}
+    {:name "watcher"
+     :xhr   (cF (when-let [on? (<mget (md/mxu-find-name me "watch-progress") :on?)]
+                  (pln :on-see on?)
+                  (send-xhr :get-runnin "/runningstats" {:accept :json})))
+     :stats (cF (when-let [xhr (<mget me :xhr)]
+                  (when-let [r (xhr-response xhr)]
+                    (println
                       (if (= 200 (:status r))
                         (:body r)
-                        {:oops (:status r)}))))})
-
-
+                        {:oops r}))
+                    (if (= 200 (:status r))
+                      (:body r)
+                      {:oops (:status r)}))))}
     (div
-      (for [[k v] (<mget (md/mxu-find-name me "stats-button") :stats)]
-        (p (b (str k " = " v)))))))
+      (when-let [ss (<mget (md/mxu-find-name me "watcher") :stats)]
+        (for [[k v] ss]
+          (json-view (name k) v))))))
 
 
-
+(defn matrix-build! []
+  ;;;;(pline/pipe-go)
+  (md/make ::spamux
+    :mx-dom (cFonce (md/with-par me
+                      (let [mtx me]
+                        (assert mtx)
+                        [(div {:style "margin:36px"}
+                           (h1 "Hello, SpamUX!")
+                           (start-button)
+                           (watch-stats-option me)
+                           (watched-stats me)
+                           (show-stats))])))))

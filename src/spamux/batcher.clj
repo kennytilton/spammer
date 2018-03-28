@@ -208,7 +208,8 @@
 
         (reset! latest-summary-stats
           (merge
-            {:run-duration (format "%.2f seconds"
+            {:run-duration (- (now) start)
+             #_ (format "%.2f seconds"
                              (/ (- (now) start) 1000.0))}
             (apply merge-with +
               (map #(select-keys @(:stats %)

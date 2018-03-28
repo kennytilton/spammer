@@ -11,10 +11,13 @@
             [ring.util.response :as resp]
             [clojure.string :as str]
             [cheshire.core :refer :all]
-            [spamux.batcher :refer [batch-abort run-batch
-                                    latest-summary-stats]]))
+            [spamux.batcher :refer [batch-abort run-batch batch-abort?
+                                    latest-summary-stats]]
+            [clojure.pprint :as pp]))
 
 (declare pln)
+
+(def cumulative-stats (atom nil))
 
 (defroutes app-routes
   (GET "/" []
@@ -24,7 +27,15 @@
 
   (GET "/start" []
     (do
-      (go (run-batch "em-300000-100.edn"))
+      (reset! cumulative-stats {})
+      (go-loop []
+        (run-batch "em-300000-100.edn")
+        (swap! cumulative-stats
+          #(merge-with + % @latest-summary-stats))
+        (when-not @batch-abort?
+          (pln :rebatching!!!!!!!!!!!!)
+          (pp/pprint @cumulative-stats)
+          (recur )))
       {:status  200
        :headers {"Content-Type" "text/html"}
        :body    "<h2>Stop!</h2>"}))
@@ -32,6 +43,14 @@
   (GET "/batchstats" []
     (let [stats (or @latest-summary-stats
                   {:no-stats "Click 'Start' to gen some"})]
+      (pln :responding-w-stats!! stats)
+      {:status  200
+       :headers {"Content-Type" "application/json"}
+       :body    (generate-string stats)}))
+
+  (GET "/runningstats" []
+    (let [stats {:latest @latest-summary-stats
+                 :cum @cumulative-stats}]
       (pln :responding-w-stats!! stats)
       {:status  200
        :headers {"Content-Type" "application/json"}
