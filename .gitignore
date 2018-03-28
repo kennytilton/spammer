@@ -1,11 +1,13 @@
 resources/webmx/out/
 bulkmail/*.edn
-.DS_Store
+**/.DS_Store
 **/.idea/
 /target
+resources/webmx/target/
 /lib
 /classes
 /checkouts
+checkos/
 pom.xml
 pom.xml.asc
 *.jar
