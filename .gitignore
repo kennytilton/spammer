@@ -1,3 +1,4 @@
+resources/webmx/out/
 bulkmail/*.edn
 .DS_Store
 **/.idea/

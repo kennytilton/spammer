@@ -32,7 +32,7 @@
       (batch-abort)
       {:status  200
        :headers {"Content-Type" "text/html"}
-       :body    "<h2>Stopped!!</h2>"}))
+       :body    "<h2>Start</h2>"}))
 
   (route/not-found "Not Found"))
 

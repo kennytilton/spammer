@@ -40,7 +40,7 @@
                                                    (if (= 200 (:status r))
                                                      (:body r)
                                                      "<b>Something happened.</b>")))
-                                             "Start"))}
+                                             "<h2>Start</h2>"))}
                              {:job-key  (cI nil)
                               :ae       (cF+ [:obs (fn-obs
                                                      (println :ae-obs new old))]
