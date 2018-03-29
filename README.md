@@ -24,7 +24,9 @@ Now open a browser and navigate to `localhost:3000` or whatever port was observe
 ### Caution!
 Clicking start causes it to run forever. And the button to turn to Stop! That is a hint.
 
-Anyway, click Start!. Now click "watch progress" to se running stats. Well, fake running stats. Stats are updated only after each loop processing all the emails.
+Anyway, click Start!. Now click "watch progress" to see running stats. They drop back down periodically because I have rigged the thing to keep processing the same small 300k batch repeatedly. Should look like this:
+
+![Spamgen UX screenshot](https://github.com/kennytilton/spamux/blob/master/resources/images/sshot-1.png)
 
 Now keep an eye on the terminal where you ran Ring and click "Start". You should see that button turn to `Stop!`.
 
