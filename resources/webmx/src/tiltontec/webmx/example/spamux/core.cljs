@@ -1,7 +1,7 @@
 (ns tiltontec.webmx.example.spamux.core
   (:require [clojure.string :as str]
             [tiltontec.util.core :refer [pln]]
-            [tiltontec.cell.base :refer [ia-type]]
+            [tiltontec.cell.base :refer [ia-type unbound]]
             [tiltontec.cell.core :refer-macros [cF+ cF cFonce] :refer [cI]]
             [tiltontec.cell.observer :refer-macros [fn-obs]]
             [tiltontec.cell.integrity
@@ -28,7 +28,8 @@
 
 (defn start-button []
   (button
-    {:onclick #(let [me (do (evt-tag %))]
+    {:class "pure-button"
+     :onclick #(let [me (do (evt-tag %))]
                  (mset!> me :job-key
                    (case (<mget me :job-key)
                      nil :start
@@ -36,55 +37,51 @@
                      :stop :start)))
 
      :style   (cF (case (<mget me :job-key)
-                    :stop "background:green"
-                    :start "background:red"
-                    "background:green"))
+                    :stop "background:#8f8"
+                    :start "background:#f88"
+                    "background:#8f8"))
 
      :content (cF (or (when-let [xhr (<mget me :ae)]
                         (when-let [r (xhr-response xhr)]
                           (if (= 200 (:status r))
                             (:body r)
                             "<b>Something happened.</b>")))
-                    "<h2>Start</h2>"))}
+                    "<b>Start</b>"))}
     {:job-key (cI nil)
      :ae      (cF+ [:obs (fn-obs
                            (println :ae-obs new old))]
                 (when-let [job (<mget me :job-key)]
-                  (println :sending!!!-start job)
                   (send-xhr (case job
                               :start "/start"
                               :stop "/stop"))))}))
 
 (defn show-stats []
-  (div
+  (div {:style "margin-top:36px"}
     (button
       {:name    "stats-button"
+       :class "pure-button"
        :onclick #(let [me (do (evt-tag %))]
                    (mset!> me :job-key :get-stats))
-       :content "<b>See da Stats</b>"}
+       :content "<b>Stats Snapshot</b>"}
 
       {:job-key (cI nil :ephemeral? true)
 
        :xhr     (cF+ [:obs (fn-obs
                              (println :xhr-obs new old))]
                   (when-let [job (<mget me :job-key)]
-                    (println :sending!!!start job)
+                    ;;(println :sending!!!start job)
                     (send-xhr :get-stats "/batchstats" {:accept :json})))
 
        :stats   (cF (when-let [xhr (<mget me :xhr)]
                       (when-let [r (xhr-response xhr)]
-                        (println
-                          (if (= 200 (:status r))
-                            (:body r)
-                            {:oops r}))
+                        #_(println
+                            (if (= 200 (:status r))
+                              (:body r)
+                              {:oops r}))
                         (if (= 200 (:status r))
                           (:body r)
                           {:oops (:status r)}))))})
 
-    #_(div
-        (for [[k v] (<mget (md/mxu-find-name me "stats-button") :stats)]
-          (do (pln :stat k v)
-              (p (b (str k " = " v))))))
     (div
       (json-view "Latest batch statistics"
         (<mget (md/mxu-find-name me "stats-button") :stats)))))
@@ -93,54 +90,82 @@
   (div {:hidden (cF (nil? json))}
     (h3 title)
     (for [[k v] json]
-      (p (b (str k " = " v))))))
+      (div {:style {:display        "flex",
+                    :flex-direction "row"}} {}
+        (span {:style {:min-width "144px"
+                       :margin "2px"}
+               :content (str (str/join " "
+                               (map str/capitalize
+                                 (str/split (name k) #"-"))) ": ")})
+        (span {:style {:min-width "72px"
+                       :margin "2px"
+                       :padding-right "2px"
+                       :text-align "right"
+                       :font-weight "bold"
+                       :background "white"}
+               :content (str v)})))))
 
 (defn watch-stats-option [me]
   (tag-checkbox me "watch-progress"
-    "Watch progress?" false
+    "Watch progress" false
     {:name  "watch-progress"
      :style "font-size:1.2em;margin:24px"}))
 
 (defn watched-stats [me]
-  (div {}
+  (div {:hidden (cF (not (<mget (md/mxu-find-name me "watch-progress") :on?)))}
     {:name   "watcher"
      :reload (cI 0)                                         ;;d/f hackkk
      :xhr    (cF (when (and (<mget (md/mxu-find-name me "watch-progress") :on?)
                          (<mget me :reload))
-                   (pln :requesting-running!!!)
+                   ;;(pln :requesting-running!!!)
                    (send-xhr :get-runnin "/runningstats" {:accept :json})))
      :stats  (cF+ [:obs (fn-obs
-                          (pln :obs-sees-new new)
                           (when new
-                            (pln :obs-new!!!!)
                             (js/setTimeout #(with-cc
-                                              (mswap!> me :reload inc)) 2000)))]
+                                              (pln :reload!)
+                                              (mswap!> me :reload inc)) 500)))]
                (or
                  (when-let [xhr (<mget me :xhr)]
-                   (pln :seeing-new-xhr)
+                   ;;(pln :seeing-new-xhr)
                    (when-let [r (xhr-response xhr)]
-                     (pln :seeing-response (:status r)(:body r))
-                     #_(println
-                         (if (= 200 (:status r))
-                           (:body r)
-                           {:oops r}))
                      (if (= 200 (:status r))
                        (assoc (:body r) :now (.getTime (js/Date.)))
                        {:oops (:status r)})))
-                 (do (pln :cache-out cache)
-                     cache)))}
+                 (when-not (= cache unbound)                ;;(pln :cache-out cache)
+                   cache)))}
     (div
       (h2 "Running stats")
-      (div
-        (h3 "Latest")
-        (div {}
-          {:name  "latest"
-           :stats (cF (:latest (<mget (mxu-find-name me "watcher") :stats)))}
-          (div
-            "Duration:"
-            (span {:content (cF (let [ss (<mget (mxu-find-name me "latest") :stats)]
-                                  (pln :new-ss! ss)
-                                  (str (:run-duration ss))))})))))))
+
+      (div {:style {:display        "flex",
+                    :flex-direction "row"}}
+        (for [[group vkey] [["Latest" :latest]
+                            ["Total" :cumulative]
+                            ]]
+          (div {:style "margin-left:36px"}
+            {:name  "stat-group"
+             :stats (cF (let [raw (<mget (mxu-find-name me "watcher") :stats)]
+                          (vkey raw)))}
+            (h3 group)
+            (for [[lbl vkey] [["Duration" :run-duration]
+                              ["Sent" :sent-ct]
+                              ["Dup Email" :rejected-dup-addr]
+                              ["High score" :rejected-score]
+                              ["High mean" :rejected-overall-mean]
+                              ["Span mean" :rejected-span-mean]]]
+              (div {:style {:display        "flex",
+                            :flex-direction "row"}} {}
+                (span {:style {:min-width "96px"
+                               :margin "2px"}
+                       :content (str lbl ": ")})
+                (span {:style {:min-width "72px"
+                               :margin "2px"
+                               :padding-right "2px"
+                               :text-align "right"
+                               :font-weight "bold"
+                               :background "white"}
+                       :content (cF (let [ss (mxu-find-name me "stat-group")]
+                                      (when-let [stats (<mget ss :stats)]
+                                        (str (vkey stats)))))})))))))))
 
 
 (defn matrix-build! []
@@ -154,4 +179,4 @@
                            (start-button)
                            (watch-stats-option me)
                            (watched-stats me)
-                           (show-stats))])))))
+                           #_ (show-stats))])))))

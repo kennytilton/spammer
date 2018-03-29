@@ -36,7 +36,7 @@
                  tag))))
 
 (defn make-tag [tag attrs aux cFkids]
-  (prn :make-webmx tag)
+  ;;(prn :make-webmx tag)
   (let [tag-id (str (or (:id attrs)
                         (str tag "-" (swap! +tag-sid+ inc))))
         mx-tag (apply make

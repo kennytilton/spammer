@@ -38,7 +38,7 @@
           (recur )))
       {:status  200
        :headers {"Content-Type" "text/html"}
-       :body    "<h2>Stop!</h2>"}))
+       :body    "<b>Stop!</b>"}))
 
   (GET "/batchstats" []
     (let [stats (or @latest-summary-stats
@@ -61,7 +61,7 @@
       (batch-abort)
       {:status  200
        :headers {"Content-Type" "text/html"}
-       :body    "<h2>Start</h2>"}))
+       :body    "<b>Start</b>"}))
 
   (route/not-found "Not Found"))
 

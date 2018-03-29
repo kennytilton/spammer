@@ -1,7 +1,9 @@
 (ns spamux.handler-test
   (:require [clojure.test :refer :all]
+            [clojure.string :as str]
             [ring.mock.request :as mock]
-            [spamux.handler :refer :all]))
+            [spamux.handler :refer :all]
+            ))
 
 (deftest test-app
   (testing "main route"
@@ -12,3 +14,4 @@
   (testing "not-found route"
     (let [response (app (mock/request :get "/invalid"))]
       (is (= (:status response) 404)))))
+

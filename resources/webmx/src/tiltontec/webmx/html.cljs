@@ -86,7 +86,7 @@
      :default
      (do (when-let [dbg (or dbg *webmx-trace*)]
            (pln :tag-dom-create dbg (tagfo me)))
-         (pln :domcre-attrs (<mget me :tag) (:attr-keys @me) )
+         ;;(pln :domcre-attrs (<mget me :tag) (:attr-keys @me) )
          (let [dom (apply dom/createDom (<mget me :tag)
                           (tag-attrs me)
                           (concat                           ;; to-do: need this?
@@ -159,7 +159,7 @@
 
       (cond
         (= slot :content)
-        (do (pln :setting-html-content newv)
+        (do ;;(pln :setting-html-content newv)
             (.requestAnimationFrame js/window #(set! (.-innerHTML dom) newv)))
 
         (some #{slot} (:attr-keys @me))
