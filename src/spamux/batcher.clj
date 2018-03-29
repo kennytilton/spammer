@@ -79,10 +79,13 @@
   span-mean-ok
   edn-dump pln)
 
-(def batch-abort? (atom nil))
+(def batch-is-running? (atom false))
+
+(def gWorkers (atom nil))
+(def gStart (atom (System/currentTimeMillis)))
 
 (defn batch-abort []
-  (reset! batch-abort? true))
+  (reset! batch-is-running? false))
 
 (def latest-summary-stats (atom nil))
 
@@ -96,35 +99,33 @@
   batches."
   [em-file verbose]
 
-  (reset! batch-abort? false)
-
   (let [em-addrs-hit (ref #{})
         shared-chan (chan)
         spit-chan (chan)
 
-        workers (map (fn [id smtp-ip]
-                       {:id        id
-                        :smtp-ip   smtp-ip
-                        :ch        shared-chan
-                        :spit-chan spit-chan
-                        :out-buff  (atom nil)
-                        :addrs-hit em-addrs-hit
-                        :spit-file (str
-                                     (:bulkmail-out-path env-hack) "/em-"
-                                     smtp-ip ".edn")
+        workers (reset! gWorkers
+                  (map (fn [id smtp-ip]
+                         {:id        id
+                          :smtp-ip   smtp-ip
+                          :ch        shared-chan
+                          :spit-chan spit-chan
+                          :out-buff  (atom nil)
+                          :addrs-hit em-addrs-hit
+                          :spit-file (str
+                                       (:bulkmail-out-path env-hack) "/em-"
+                                       smtp-ip ".edn")
 
-                        :stats     (atom {:start-time            (System/currentTimeMillis)
-                                          :sent-ct               0
-                                          :last-n-mean           0
-                                          :spam-score-sum        0
-                                          :rejected-score        0
-                                          :rejected-dup-addr     0
-                                          :rejected-overall-mean 0
-                                          :rejected-span-mean    0})})
-                  (range)
-                  (take (min (count (:smtp env-hack))
-                          (:worker-ct env-hack))
-                    (:smtp env-hack)))
+                          :stats     (atom {:sent-ct               0
+                                            :last-n-mean           0
+                                            :spam-score-sum        0
+                                            :rejected-score        0
+                                            :rejected-dup-addr     0
+                                            :rejected-overall-mean 0
+                                            :rejected-span-mean    0})})
+                    (range)
+                    (take (min (count (:smtp env-hack))
+                            (:worker-ct env-hack))
+                      (:smtp env-hack))))
 
         work-procs (doall
                      (map (fn [w]
@@ -166,8 +167,7 @@
             (let [edn-seq (repeatedly (partial edn/read {:eof :fini} in))]
               (doseq [em-chunk (take-while (partial not= :fini) edn-seq)]
                 ;; todo switch to loop so we can break out
-                (if @batch-abort?
-                  (xpln :aborted!!!!!!!!!!!!!!!!)
+                (when @batch-is-running?
                   (let [start (System/currentTimeMillis)]
                     (>!! shared-chan em-chunk)
                     (swap! wait + (- (System/currentTimeMillis) start))))))))
@@ -185,12 +185,13 @@
             ;;(pln :bam-worker-out work-proc)
             (recur rest))))
 
-      (pln :waitingonspitterc)
-      (doseq [spitter spitters]
-        (when-let [out (alt!!
-                         (timeout 1000) :timeout
-                         spitter ([r] r))]
-          (print :spitwait out)))
+      #_(do (pln :waitingonspitterc)
+
+            (doseq [spitter spitters]
+              (when-let [out (alt!!
+                               (timeout 1000) :timeout
+                               spitter ([r] r))]
+                (print :spitwait out))))
 
       ;; --- dump worker stats ---------------------------------------
 
@@ -203,14 +204,10 @@
 
       ;; ---- dump summary stats -------------------------------------
 
-      (let [start (apply min (map #(:start-time @(:stats %))
-                               workers))]
-
+      (let [start @gStart]
         (reset! latest-summary-stats
           (merge
-            {:run-duration (- (now) start)
-             #_ (format "%.2f seconds"
-                             (/ (- (now) start) 1000.0))}
+            {:run-duration (- (now) start)}
             (apply merge-with +
               (map #(select-keys @(:stats %)
                       [:sent-ct :rejected-score :rejected-dup-addr
@@ -222,6 +219,18 @@
 
         (pln)
         (println :fini)))))
+
+(defn running-stats []
+  (if (not @batch-is-running?)
+    {}
+    (assoc
+      (apply merge-with +
+        (map #(select-keys @(:stats %)
+                [:sent-ct :rejected-score :rejected-dup-addr
+                 :rejected-overall-mean
+                 :rejected-span-mean])
+          @gWorkers))
+      :run-duration (- (now) @gStart))))
 
 (defnp emw-email-consider
   "[w (writer) task (email info)]

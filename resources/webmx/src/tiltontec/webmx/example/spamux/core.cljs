@@ -48,9 +48,7 @@
                             "<b>Something happened.</b>")))
                     "<b>Start</b>"))}
     {:job-key (cI nil)
-     :ae      (cF+ [:obs (fn-obs
-                           (println :ae-obs new old))]
-                (when-let [job (<mget me :job-key)]
+     :ae      (cF (when-let [job (<mget me :job-key)]
                   (send-xhr (case job
                               :start "/start"
                               :stop "/stop"))))}))
@@ -107,7 +105,7 @@
 
 (defn watch-stats-option [me]
   (tag-checkbox me "watch-progress"
-    "Watch progress" false
+    "Watch progress" true
     {:name  "watch-progress"
      :style "font-size:1.2em;margin:24px"}))
 
@@ -117,16 +115,13 @@
      :reload (cI 0)                                         ;;d/f hackkk
      :xhr    (cF (when (and (<mget (md/mxu-find-name me "watch-progress") :on?)
                          (<mget me :reload))
-                   ;;(pln :requesting-running!!!)
                    (send-xhr :get-runnin "/runningstats" {:accept :json})))
      :stats  (cF+ [:obs (fn-obs
                           (when new
                             (js/setTimeout #(with-cc
-                                              (pln :reload!)
-                                              (mswap!> me :reload inc)) 500)))]
+                                              (mswap!> me :reload inc)) 50)))]
                (or
                  (when-let [xhr (<mget me :xhr)]
-                   ;;(pln :seeing-new-xhr)
                    (when-let [r (xhr-response xhr)]
                      (if (= 200 (:status r))
                        (assoc (:body r) :now (.getTime (js/Date.)))
@@ -135,37 +130,32 @@
                    cache)))}
     (div
       (h2 "Running stats")
+      (p "Stats drop off periodically because for now we achieve long shows by reprocessing a 300k batch.")
 
-      (div {:style {:display        "flex",
-                    :flex-direction "row"}}
-        (for [[group vkey] [["Latest" :latest]
-                            ["Total" :cumulative]
-                            ]]
-          (div {:style "margin-left:36px"}
-            {:name  "stat-group"
-             :stats (cF (let [raw (<mget (mxu-find-name me "watcher") :stats)]
-                          (vkey raw)))}
-            (h3 group)
-            (for [[lbl vkey] [["Duration" :run-duration]
-                              ["Sent" :sent-ct]
-                              ["Dup Email" :rejected-dup-addr]
-                              ["High score" :rejected-score]
-                              ["High mean" :rejected-overall-mean]
-                              ["Span mean" :rejected-span-mean]]]
-              (div {:style {:display        "flex",
-                            :flex-direction "row"}} {}
-                (span {:style {:min-width "96px"
-                               :margin "2px"}
-                       :content (str lbl ": ")})
-                (span {:style {:min-width "72px"
-                               :margin "2px"
-                               :padding-right "2px"
-                               :text-align "right"
-                               :font-weight "bold"
-                               :background "white"}
-                       :content (cF (let [ss (mxu-find-name me "stat-group")]
-                                      (when-let [stats (<mget ss :stats)]
-                                        (str (vkey stats)))))})))))))))
+      (div {:style "margin-left:36px"}
+        {:name  "stat-group"
+         :stats (cF (<mget (mxu-find-name me "watcher") :stats))}
+
+        (for [[lbl vkey] [["Duration" :run-duration]
+                          ["Sent" :sent-ct]
+                          ["Dup Email" :rejected-dup-addr]
+                          ["High score" :rejected-score]
+                          ["High mean" :rejected-overall-mean]
+                          ["Span mean" :rejected-span-mean]]]
+          (div {:style {:display        "flex",
+                        :flex-direction "row"}} {}
+            (span {:style {:min-width "96px"
+                           :margin "2px"}
+                   :content (str lbl ": ")})
+            (span {:style {:min-width "72px"
+                           :margin "2px"
+                           :padding-right "2px"
+                           :text-align "right"
+                           :font-weight "bold"
+                           :background "white"}
+                   :content (cF (let [ss (mxu-find-name me "stat-group")]
+                                  (when-let [stats (<mget ss :stats)]
+                                    (str (vkey stats)))))})))))))
 
 
 (defn matrix-build! []
