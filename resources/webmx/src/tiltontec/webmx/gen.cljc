@@ -36,7 +36,7 @@
                  tag))))
 
 (defn make-tag [tag attrs aux cFkids]
-  ;;(prn :make-webmx tag)
+  ;;(prn :make-webmx tag )
   (let [tag-id (str (or (:id attrs)
                         (str tag "-" (swap! +tag-sid+ inc))))
         mx-tag (apply make
@@ -49,6 +49,7 @@
                               (vec (apply concat (seq aux)))))]
     ;;(println :made-webmx!! webmx-id (keys @mx-webmx))
     (swap! tag-by-id assoc tag-id mx-tag)
+
     mx-tag))
 
 (defmethod not-to-be [:tiltontec.webmx.base/tag] [me]

@@ -16,11 +16,27 @@
 
 (def cumulative-stats (atom nil))
 
+(def directory (clojure.java.io/file "bulkinput"))
+(def files (file-seq directory))
+
+
 (defroutes app-routes
   (GET "/" []
     (do
       (pln "New server!!!")
       (resp/content-type (resp/resource-response "index.html" {:root "webmx"}) "text/html")))
+
+  (GET "/rawfiles" []
+    (let [files (into []
+                  (map :name
+                    (filter :file
+                      (remove :hidden
+                        (map bean
+                          (file-seq
+                            (clojure.java.io/file "bulkinput")))))))]
+      {:status  200
+       :headers {"Content-Type" "application/json"}
+       :body    (generate-string files)}))
 
   (GET "/start" []
     (do

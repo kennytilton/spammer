@@ -19,7 +19,8 @@
                      xhr-selection xhr-to-map xhr-name-to-map xhr-response]]
 
             [tiltontec.webmx.gen :refer [evt-tag target-value]
-             :refer-macros [h1 h2 h3 h4 h5 input div span button p b]]
+             :refer-macros [h1 h2 h3 h4 h5 input div span button p b a li ul
+                            select option label]]
             [tiltontec.webmx.html :refer [mxu-find-tag]]
             [tiltontec.webmx.widget :refer [tag-checkbox]]
             [cljs.pprint :as pp]))
@@ -28,7 +29,7 @@
 
 (defn start-button []
   (button
-    {:class "pure-button"
+    {:class   "pure-button"
      :onclick #(let [me (do (evt-tag %))]
                  (mset!> me :job-key
                    (case (<mget me :job-key)
@@ -49,15 +50,15 @@
                     "<b>Start</b>"))}
     {:job-key (cI nil)
      :ae      (cF (when-let [job (<mget me :job-key)]
-                  (send-xhr (case job
-                              :start "/start"
-                              :stop "/stop"))))}))
+                    (send-xhr (case job
+                                :start "/start"
+                                :stop "/stop"))))}))
 
 (defn show-stats []
   (div {:style "margin-top:36px"}
     (button
       {:name    "stats-button"
-       :class "pure-button"
+       :class   "pure-button"
        :onclick #(let [me (do (evt-tag %))]
                    (mset!> me :job-key :get-stats))
        :content "<b>Stats Snapshot</b>"}
@@ -90,17 +91,17 @@
     (for [[k v] json]
       (div {:style {:display        "flex",
                     :flex-direction "row"}} {}
-        (span {:style {:min-width "144px"
-                       :margin "2px"}
+        (span {:style   {:min-width "144px"
+                         :margin    "2px"}
                :content (str (str/join " "
                                (map str/capitalize
                                  (str/split (name k) #"-"))) ": ")})
-        (span {:style {:min-width "72px"
-                       :margin "2px"
-                       :padding-right "2px"
-                       :text-align "right"
-                       :font-weight "bold"
-                       :background "white"}
+        (span {:style   {:min-width     "72px"
+                         :margin        "2px"
+                         :padding-right "2px"
+                         :text-align    "right"
+                         :font-weight   "bold"
+                         :background    "white"}
                :content (str v)})))))
 
 (defn watch-stats-option [me]
@@ -144,29 +145,56 @@
                           ["Span mean" :rejected-span-mean]]]
           (div {:style {:display        "flex",
                         :flex-direction "row"}} {}
-            (span {:style {:min-width "96px"
-                           :margin "2px"}
+            (span {:style   {:min-width "96px"
+                             :margin    "2px"}
                    :content (str lbl ": ")})
-            (span {:style {:min-width "72px"
-                           :margin "2px"
-                           :padding-right "2px"
-                           :text-align "right"
-                           :font-weight "bold"
-                           :background "white"}
+            (span {:style   {:min-width     "72px"
+                             :margin        "2px"
+                             :padding-right "2px"
+                             :text-align    "right"
+                             :font-weight   "bold"
+                             :background    "white"}
                    :content (cF (let [ss (mxu-find-name me "stat-group")]
                                   (when-let [stats (<mget ss :stats)]
                                     (str (vkey stats)))))})))))))
 
+;<div class="pure-u-1 pure-u-md-1-3">
+;  <label for="state">State</label>
+;  <select id="state" class="pure-input-1-2">
+;    <option>AL</option>
+;    <option>CA</option>
+;    <option>IL</option>
+;  </select>
+;</div>
+
+(defn email-raw-files []
+  (div {:class "pure-u-1 pure-u-md-1-3"
+        :style "margin-bottom:18px"}
+    (label {:for   "email-file-raw"
+            :style "margin-right:6px"}
+      "File to clean")
+    (select {:id      "email-file-raw"
+             :class   "pure-input-1-2"
+             :xhr     (cF (send-xhr :get-raws "/rawfiles" {:accept :json}))
+             :options (cF (when-let [xhr (<mget me :xhr)]
+                            (when-let [r (xhr-response xhr)]
+                              (pln :status!!!!!! (:status r))
+                              (when (= 200 (:status r))
+                                (pln :body!!!! (:body r))
+                                (:body r)))))}
+        (map #(option %)
+          (<mget me :options)))))
 
 (defn matrix-build! []
-  ;;;;(pline/pipe-go)
   (md/make ::spamux
     :mx-dom (cFonce (md/with-par me
                       (let [mtx me]
                         (assert mtx)
                         [(div {:style "margin:36px"}
                            (h1 "Hello, SpamUX!")
+                           (p "First, pick a file to make spam-detector-proof.")
+                           (email-raw-files)
                            (start-button)
                            (watch-stats-option me)
                            (watched-stats me)
-                           #_ (show-stats))])))))
+                           #_(show-stats))])))))
