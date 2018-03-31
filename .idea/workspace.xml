@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80d5a462-ace9-4f4a-b6a0-8121dc305398" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/mx_builder.cljs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/spamux/batcher.clj" afterPath="$PROJECT_DIR$/src/spammer/batcher.clj" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/spamux/genlist.clj" afterPath="$PROJECT_DIR$/src/spammer/genlist.clj" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/spamux/handler.clj" afterPath="$PROJECT_DIR$/src/spammer/handler.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spamux.iml" afterPath="$PROJECT_DIR$/spamux.iml" />
-    </list>
+    <list default="true" id="80d5a462-ace9-4f4a-b6a0-8121dc305398" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +15,7 @@
         <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,16 +86,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
               <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="email_input_builder.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/email_input_builder.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -194,13 +174,6 @@
               <item name="spammer" type="b2602c69:ProjectViewProjectNode" />
               <item name="spammer" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="spamux" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spammer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spammer" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="spamux" type="462c0819:PsiDirectoryNode" />
               <item name="spamux" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -337,7 +310,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="193" y="59" width="1494" height="886" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -352,7 +324,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24966533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24966533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -540,7 +512,7 @@
     <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
