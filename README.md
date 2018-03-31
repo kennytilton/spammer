@@ -1,13 +1,13 @@
-# SpamUX
+# Spammer
 
-How can we use a Web app to get the word out on healthy, effective herbal remedies without being detected by Big Pharma? SpamUX!
+How can we use a Web app to get the word out on healthy, effective herbal remedies without being detected by Big Pharma? SpamUX, the front-end for Spammer (ne SpamGen)!
 
 ## Installation
 
 In one terminal, `cd` to wherever you would like to clone this, then:
 ````bash
-git clone https://github.com/kennytilton/spamux.git <wherever>
-cd <wherever>/spamux/resources/webmx
+git clone https://github.com/kennytilton/spammer.git <wherever>
+cd <wherever>/spamer/resources/spamux
 scripts/build
 ````
 ## Usage
@@ -24,20 +24,14 @@ Now open a browser and navigate to `localhost:3000` or whatever port was observe
 ### Caution!
 Clicking start causes it to run forever. And the button to turn to Stop! That is a hint.
 
-Anyway, click Start!. Now click "watch progress" to see running stats. They drop back down periodically because I have rigged the thing to keep processing the same small 300k batch repeatedly. Should look like this:
+Anyway, click Start!. Now click "watch progress" to see running stats. [But look fast -- they disappear when the batch completes. Re-doing all that now.] Should look like this (except I will be changing things all the time):
 
 ![Spamgen UX screenshot](https://github.com/kennytilton/spamux/blob/master/resources/images/sshot-1.png)
 
 Now keep an eye on the terminal where you ran Ring and click "Start". You should see that button turn to `Stop!`.
 
 ## Future work
-Actual updates during a batch.
-
 User control over sampling rate.
-
-User choice of a file to process
-
-User option to create a new file.
 
 ## License
 
