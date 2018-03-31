@@ -7,6 +7,8 @@
             [tiltontec.cell.integrity
              :refer-macros [with-cc with-integrity]
              :refer []]
+            [tiltontec.cell.synapse
+             :refer-macros [with-synapse]]
 
             [tiltontec.model.core
              :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
@@ -38,21 +40,16 @@
 
       {:job-key (cI nil :ephemeral? true)
 
-       :xhr     (cF+ [:obs (fn-obs
-                             (println :xhr-obs new old))]
-                  (when-let [job (<mget me :job-key)]
-                    ;;(println :sending!!!start job)
-                    (send-xhr :get-stats "/batchstats" {:accept :json})))
-
-       :stats   (cF (when-let [xhr (<mget me :xhr)]
-                      (when-let [r (xhr-response xhr)]
-                        #_(println
+       :stats   (cF (let [button me]
+                      ;; todo roll this up in a terser macro
+                      (when-let [xhr (with-synapse (:get-stats)
+                                       (when (<mget button :job-key)
+                                         (send-xhr :get-stats "/batchstats" {:accept :json})))]
+                        (when (xhr-resolved xhr)
+                          (let [r (xhr-response xhr)]
                             (if (= 200 (:status r))
                               (:body r)
-                              {:oops r}))
-                        (if (= 200 (:status r))
-                          (:body r)
-                          {:oops (:status r)}))))})
+                              {:oops (:status r)}))))))})
 
     (div
       (json-view "Latest batch statistics"
@@ -84,11 +81,12 @@
      :style "font-size:1.2em;margin:24px"}))
 
 (defn watched-stats [me]
-  (div {:hidden (cF (not (<mget (md/mxu-find-name me "watch-progress") :on?)))}
+  (div
+    {:hidden (cF (not (<mget (md/mxu-find-name me "watch-progress") :on?)))}
     {:name   "watcher"
      :reload (cI 0)                                         ;;d/f hackkk
      :xhr    (cF (when (and (<mget (md/mxu-find-name me "watch-progress") :on?)
-                         (<mget me :reload))
+                            (<mget me :reload))
                    (send-xhr :get-runnin "/runningstats" {:accept :json})))
      :stats  (cF+ [:obs (fn-obs
                           (when new

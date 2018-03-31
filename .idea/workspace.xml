@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b0c07f8-d87e-4651-a9bc-5c163e500384" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/email_input_builder.cljs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/progress_viewer.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/project.clj" afterPath="$PROJECT_DIR$/resources/webmx/project.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/html.cljs" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/html.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/target/stale/leiningen.core.classpath.extract-native-dependencies" afterPath="$PROJECT_DIR$/resources/webmx/target/stale/leiningen.core.classpath.extract-native-dependencies" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spamux.iml" afterPath="$PROJECT_DIR$/spamux.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spamux/batcher.clj" afterPath="$PROJECT_DIR$/src/spamux/batcher.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spamux/genlist.clj" afterPath="$PROJECT_DIR$/src/spamux/genlist.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/email_input_builder.cljs" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/email_input_builder.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/progress_viewer.cljs" afterPath="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/progress_viewer.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spamux/handler.clj" afterPath="$PROJECT_DIR$/src/spamux/handler.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spamux/handler_test.clj" afterPath="$PROJECT_DIR$/test/spamux/handler_test.clj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,61 +17,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="handler.clj" pinned="false" current-in-tab="true">
+      <file leaf-file-name="handler.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spamux/handler.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="47" column="69" lean-forward="true" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+            <state relative-caret-position="226">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="batcher.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/spamux/batcher.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="83" column="23" lean-forward="false" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="genlist.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/spamux/genlist.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="core.cljs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="core.cljs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="email_input_builder.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/email_input_builder.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="progress_viewer.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/progress_viewer.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="81" column="26" lean-forward="false" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
+            <state relative-caret-position="518">
+              <caret line="80" column="40" lean-forward="false" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -88,41 +40,96 @@
       <file leaf-file-name="xhr.cljc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.cljc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="114" column="4" lean-forward="false" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="4" />
-              <folding>
-                <marker date="1518109262000" expanded="true" signature="3178:3234" ph="(defn xhr-send ...)" />
-                <marker date="1518109262000" expanded="true" signature="8968:9038" ph="(defmethod observe ...)" />
-                <marker date="1518109262000" expanded="true" signature="9145:9361" ph="(defmethod xhr-name-to-map ...)" />
-                <marker date="1518109262000" expanded="true" signature="9363:9672" ph="(defn xhr-to-map ...)" />
-                <marker date="1518109262000" expanded="true" signature="9711:9914" ph="(defn xhr-status-key ...)" />
-                <marker date="1518109262000" expanded="true" signature="9916:10041" ph="(defn xhr-resolved ...)" />
-                <marker date="1518109262000" expanded="true" signature="10043:10096" ph="(defn xhr-error? ...)" />
-                <marker date="1518109262000" expanded="true" signature="10098:10162" ph="(defn xhrfo ...)" />
-                <marker date="1518109262000" expanded="true" signature="10164:11021" ph="(defn xhr-await ...)" />
-                <marker date="1518109262000" expanded="true" signature="11023:11195" ph="(defn synaptic-xhr ...)" />
-                <marker date="1518109262000" expanded="true" signature="11197:11388" ph="(defn send-unparsed-xhr ...)" />
-                <marker date="1518109262000" expanded="true" signature="11390:11687" ph="(defn synaptic-xhr-unparsed ...)" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="283">
+              <caret line="233" column="7" lean-forward="true" selection-start-line="233" selection-start-column="7" selection-end-line="233" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/webmx/project.clj">
+      <file leaf-file-name="core.cljc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.cljc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+            <state relative-caret-position="300">
+              <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+              <folding>
+                <marker date="1522445028000" expanded="true" signature="1862:2076" ph="(defn md-get ...)" />
+                <marker date="1522445028000" expanded="true" signature="2119:2296" ph="(defn md-getx ...)" />
+                <marker date="1522445028000" expanded="true" signature="2325:2445" ph="(defmacro with-par ...)" />
+                <marker date="1522445028000" expanded="true" signature="2471:3047" ph="(defn md-reset! ...)" />
+                <marker date="1522445028000" expanded="true" signature="3049:3114" ph="(defn mset!&gt; ...)" />
+                <marker date="1522445028000" expanded="true" signature="3116:3227" ph="(defn mswap!&gt; ...)" />
+                <marker date="1522445028000" expanded="true" signature="3269:3409" ph="(defn backdoor-reset!? ...)" />
+                <marker date="1522445028000" expanded="true" signature="3411:3487" ph="(defn backdoor-reset! ...)" />
+                <marker date="1522445028000" expanded="true" signature="3489:4779" ph="(defn make ...)" />
+                <marker date="1522445028000" expanded="true" signature="4919:5142" ph="(defmethod observe ...)" />
+                <marker date="1522445028000" expanded="true" signature="5144:5430" ph="(defmethod not-to-be ...)" />
+                <marker date="1522445028000" expanded="true" signature="5432:5463" ph="(defn mx-par ...)" />
+                <marker date="1522445028000" expanded="true" signature="5465:6170" ph="(defn fget= ...)" />
+                <marker date="1522445028000" expanded="true" signature="6172:6702" ph="(defn fasc ...)" />
+                <marker date="1522445028000" expanded="true" signature="6704:6893" ph="(defn nextsib ...)" />
+                <marker date="1522445028000" expanded="true" signature="6895:7139" ph="(defn prevsib ...)" />
+                <marker date="1522445028000" expanded="true" signature="7141:8830" ph="(defn fget ...)" />
+                <marker date="1522445028000" expanded="true" signature="8832:8922" ph="(defn fm! ...)" />
+                <marker date="1522445028000" expanded="true" signature="8924:9040" ph="(defmacro mdv! ...)" />
+                <marker date="1522445028000" expanded="true" signature="9042:9227" ph="(defn mxu-find-name ...)" />
+                <marker date="1522445028000" expanded="true" signature="9229:9400" ph="(defn mxu-find-id ...)" />
+                <marker date="1522445028000" expanded="true" signature="9402:9586" ph="(defn mxu-find-type ...)" />
+                <marker date="1522445028000" expanded="true" signature="9588:9733" ph="(defn fmi-w-class ...)" />
+                <marker date="1522445028000" expanded="true" signature="9735:9959" ph="(defn mxi-find ...)" />
+                <marker date="1522445028000" expanded="true" signature="9961:10134" ph="(defmacro the-kids ...)" />
+                <marker date="1522445028000" expanded="true" signature="10136:10274" ph="(defmacro cFkids ...)" />
+                <marker date="1522445028000" expanded="true" signature="10276:10763" ph="(defn kid-values-kids ...)" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="email_input_builder.cljs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/email_input_builder.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="progress_viewer.cljs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/progress_viewer.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="88" column="46" lean-forward="false" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="integrity.cljc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/integrity.cljc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="134" column="10" lean-forward="false" selection-start-line="134" selection-start-column="10" selection-end-line="134" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="synapse.cljc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/checkouts/matrix/src/tiltontec/cell/synapse.cljc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="51" column="41" lean-forward="false" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.cljc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/core.cljc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="98" column="10" lean-forward="false" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -140,10 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>unless</find>
-      <find>hypi</find>
-      <find>prime</find>
-      <find>flux</find>
       <find>min-width</find>
       <find>cumulative-stats</find>
       <find>:spit-file</find>
@@ -167,8 +170,12 @@
       <find>hidden</find>
       <find>:fake-delay</find>
       <find>:find</find>
-      <find>xhr-send</find>
       <find>localhost</find>
+      <find>email-file</find>
+      <find>&quot;email-file-raw&quot;</find>
+      <find>with-synapse</find>
+      <find>xhr-send</find>
+      <find>:fin</find>
       <find>:on</find>
     </findStrings>
     <replaceStrings>
@@ -179,6 +186,7 @@
       <dir>$PROJECT_DIR$/resources/webmx</dir>
       <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx</dir>
+      <dir>$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -204,25 +212,25 @@
         <option value="$PROJECT_DIR$/resources/webmx/index.html" />
         <option value="$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/gen.cljc" />
         <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/gen.cljc" />
-        <option value="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.cljc" />
         <option value="$PROJECT_DIR$/resources/webmx/checkouts/matrix/src/tiltontec/model/core.cljc" />
         <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/html.cljs" />
         <option value="$PROJECT_DIR$/resources/webmx/project.clj" />
         <option value="$PROJECT_DIR$/project.clj" />
         <option value="$PROJECT_DIR$/test/spamux/handler_test.clj" />
-        <option value="$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.cljc" />
-        <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/progress_viewer.cljs" />
-        <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs" />
-        <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/email_input_builder.cljs" />
         <option value="$PROJECT_DIR$/src/spamux/batcher.clj" />
         <option value="$PROJECT_DIR$/src/spamux/genlist.clj" />
+        <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/email_input_builder.cljs" />
+        <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/progress_viewer.cljs" />
+        <option value="$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.cljc" />
+        <option value="$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.cljc" />
         <option value="$PROJECT_DIR$/src/spamux/handler.clj" />
+        <option value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="125" />
-    <option name="y" value="84" />
+    <option name="x" value="124" />
+    <option name="y" value="83" />
     <option name="width" value="1494" />
     <option name="height" value="886" />
   </component>
@@ -308,9 +316,9 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="cursive.last.file.extension./Users/kennethtilton/spamux/resources" value="cljs" />
     <property name="cursive.last.file.extension./Users/kennethtilton/spamux/test" value="clj" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux" />
   </component>
-  <component name="ReplState" timestamp="1522497990037">{:repl-history {:ide [], :local [{:command &quot;(let [chunk 100\n          total 2000000]\n      (let [chunks (partition-all chunk\n                     (email-records-test-gen total))]\n        (dorun\n          (map (fn [n c]\n                 (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n                   (into [] c) :append (pos? n)))\n            (range)\n            chunks))))&quot;, :offset 336, :ns &quot;spamux.batcher&quot;} {:command &quot;(let [chunk 100\n      total 5000000]\n  (let [chunks (partition-all chunk\n                 (email-records-test-gen total))]\n    (dorun\n      (map (fn [n c]\n             (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n               (into [] c) :append (pos? n)))\n        (range)\n        chunks))))&quot;, :offset 300, :ns &quot;spamux.genlist&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 371, :ns &quot;spamux.handler&quot;} {:command &quot;(defn now []\n  (System/currentTimeMillis))&quot;, :offset 42, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (reset! batch-abort? true)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 536, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 523, :ns &quot;spamux.handler&quot;} {:command &quot;(deftest unscoring\n  (is (= 4 (unscorable 1 [1 2 3]))))&quot;, :offset 55, :ns &quot;dart.score&quot;} {:command &quot;(defn unscorable [darts scores]\n  (cond\n    (= 1 darts) (loop [[s sn :as ss] scores]\n                  (cond\n                    (nil? sn) nil\n                    (&gt; sn (inc s)) (inc s)\n                    :default (recur (rest ss))))))&quot;, :offset 236, :ns &quot;dart.score&quot;} {:command &quot;(defn unscorable [darts scores]\n  (cond\n    (= 1 darts) (loop [[s sn :as ss] scores]\n                  (println s sn ss)\n                  (cond\n                    (nil? sn) nil\n                    (&gt; sn (inc s)) (inc s)\n                    :default (recur (rest ss))))))&quot;, :offset 272, :ns &quot;dart.score&quot;} {:command &quot;(defn unscorable [darts scores]\n  (cond\n    (= 1 darts) (loop [[s sn :as ss] scores]\n                  (println s sn ss)\n                  (cond\n                    (nil? sn) (inc s)\n                    (&gt; sn (inc s)) (inc s)\n                    :default (recur (rest ss))))))&quot;, :offset 276, :ns &quot;dart.score&quot;} {:command &quot;(deftest unscoring\n  (is (= 4 (unscorable 1 [1 2 3])))\n  (is (= 4 (unscorable 1 [2 4 5]))))&quot;, :offset 91, :ns &quot;dart.score&quot;} {:command &quot;(deftest unscoring\n  (is (= 4 (unscorable 1 [1 2 3])))\n  (is (= 1 (unscorable 1 [2 4 5]))))&quot;, :offset 91, :ns &quot;dart.score&quot;} {:command &quot;(defn unscorable [darts scores]\n  (cond\n    (zero? darts) 1\n    (&gt; (first scores) 1) 1\n    (= 1 darts) (loop [[s sn :as ss] scores]\n                  (println s sn ss)\n                  (cond\n                    (nil? sn) (inc s)\n                    (&gt; sn (inc s)) (inc s)\n                    :default (recur (rest ss))))))&quot;, :offset 323, :ns &quot;dart.score&quot;} {:command &quot;(defn unscorable [darts scores]\n  (cond\n    (or (zero? darts)\n      (empty? scores)\n      (&gt; (first scores))) 1\n    (= 1 darts) (loop [[s sn :as ss] scores]\n                  (println s sn ss)\n                  (cond\n                    (nil? sn) (inc s)\n                    (&gt; sn (inc s)) (inc s)\n                    :default (recur (rest ss))))))&quot;, :offset 348, :ns &quot;dart.score&quot;} {:command &quot;(deftest unscoring\n  (is (= 1 (unscorable 0 [])))\n  (is (= 1 (unscorable 0 [1 2 3])))\n  (is (= 1 (unscorable 1 [])))\n  (is (= 4 (unscorable 1 [1 2 3])))\n  (is (= 1 (unscorable 1 [2 4 5]))))&quot;, :offset 189, :ns &quot;dart.score&quot;} {:command &quot;(defn scorable? [goal darts scores]\n  (cond\n    (or (zero? darts)\n      (empty? scores)) false\n    (some #{goal} scores) goal\n    :default (some (fn [s]\n                     (when (&lt;= s goal)\n                       (scorable? (- goal s) (dec darts scores))))\n               scores)))&quot;, :offset 283, :ns &quot;dart.score&quot;} {:command &quot;(defn scorable? [goal darts scores]\n  (cond\n    (or (zero? darts)\n      (empty? scores)) false\n    (some #{goal} scores) goal\n    :default (some (fn [s]\n                     (when (&lt;= s goal)\n                       (scorable? (- goal s) (dec darts) scores)))\n               scores)))&quot;, :offset 283, :ns &quot;dart.score&quot;} {:command &quot;(deftest unscoring\n  (is (scorable? 0 0 []))\n  (is (scorable? 1 2 [1 2 4]))\n  \n  (is (scorable? 1 1 [1 2 3]))\n  (is (scorable? 2 1 [1 2 3]))\n  (is (scorable? 1 2 [1 5 7]))\n  (is (scorable? 7 2 [1 5 7]))\n  (is (scorable? 7 1 [1 5 7]))\n  )&quot;, :offset 237, :ns &quot;dart.score&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (go-loop\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (when-not @batch-abort\n          (recur)))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 864, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (go-loop\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (when-not @batch-abort\n          (pln :rebatching!!!!!!!!!!!!)\n          (recur)))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 904, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (when-not @batch-abort\n          (pln :rebatching!!!!!!!!!!!!)\n          (recur)))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 907, :ns &quot;spamux.handler&quot;} {:command &quot;(defn email-file-to-sendfiles-mp\n  \&quot;[em-file (coll)]\n\n  Produce one or more output files targeted\n  for different SMTP servers constraining the sequence of emails\n  in each to honor spam score constraints specified in config.edn\n  and never to include two emails to the same address across all\n  batches.\&quot;\n  [em-file verbose]\n\n  (reset! batch-abort? false)\n\n  (let [em-addrs-hit (ref #{})\n        shared-chan (chan)\n        spit-chan (chan)\n\n        workers (map (fn [id smtp-ip]\n                       {:id        id\n                        :smtp-ip   smtp-ip\n                        :ch        shared-chan\n                        :spit-chan spit-chan\n                        :out-buff  (atom nil)\n                        :addrs-hit em-addrs-hit\n                        :spit-file (str\n                                     (:bulkmail-out-path env-hack) \&quot;/em-\&quot;\n                                     smtp-ip \&quot;.edn\&quot;)\n\n                        :stats     (atom {:start-time            (System/currentTimeMillis)\n                                          :sent-ct               0\n                                          :last-n-mean           0\n                                          :spam-score-sum        0\n                                          :rejected-score        0\n                                          :rejected-dup-addr     0\n                                          :rejected-overall-mean 0\n                                          :rejected-span-mean    0})})\n                  (range)\n                  (take (min (count (:smtp env-hack))\n                          (:worker-ct env-hack))\n                    (:smtp env-hack)))\n\n        work-procs (doall\n                     (map (fn [w]\n                            (go-loop []\n                              (when-let [em-chunk (&lt;! (:ch w))]\n                                ;;(pln :got-chunk (count em-chunk))\n                                (doseq [em em-chunk]\n                                  (emw-email-consider w em))\n                                (recur))))\n                       workers))]\n\n    ;; --- initialize spit files with a header ----------------------\n\n    (doseq [w workers]\n      (spit (:spit-file w)\n        {:run-date (.toString (java.util.Date.))\n         :smtp-ip  (:smtp-ip w)}))\n\n    ;; --- start the spitter ---------------------------------------\n\n    (let [spitters\n          nil #_(doall (for [_ (range 5)]\n                         (p :spitting\n                           (go-loop []\n                             (if-let [x (&lt;! spit-chan)]\n                               (let [[spit-file em] x]\n                                 (xpln :sptting spit-file em)\n                                 (spit spit-file em :append true)\n                                 (recur))\n                               (pln :spitter-out!!!!))))))]\n\n      ;; --- feed the workers ----------------------------------------\n\n      (pln :feeding!!!!)\n\n      (let [wait (atom 0)]\n        (p :feed-workers\n          (with-open [in (java.io.PushbackReader. (clojure.java.io/reader em-file))]\n            (let [edn-seq (repeatedly (partial edn/read {:eof :fini} in))]\n              (doseq [em-chunk (take-while (partial not= :fini) edn-seq)]\n                ;; todo switch to loop so we can break out\n                (if @batch-abort?\n                  (xpln :aborted!!!!!!!!!!!!!!!!)\n                  (let [start (System/currentTimeMillis)]\n                    (&gt;!! shared-chan em-chunk)\n                    (swap! wait + (- (System/currentTimeMillis) start))))))))\n        (pln :feeder-waited @wait :miilis))\n\n      ;; --- let the workers finish ----------------------------------\n\n      (pln :waiting-on-workers)\n\n      (loop [[work-proc &amp; rest :as ps] work-procs]\n        (when work-proc\n          (when-let [out (alt!!\n                           (timeout 100) :timeout\n                           work-proc ([r] r))]\n            ;;(pln :bam-worker-out work-proc)\n            (recur rest))))\n\n      (pln :waitingonspitterc)\n      (doseq [spitter spitters]\n        (when-let [out (alt!!\n                         (timeout 1000) :timeout\n                         spitter ([r] r))]\n          (print :spitwait out)))\n\n      ;; --- dump worker stats ---------------------------------------\n\n      (when verbose\n        (doseq [w workers]\n          (pln)\n          (pln (format \&quot;worker %d:\&quot; (:id w)))\n          (pp/pprint @(:stats w))\n          (pln)))\n\n      ;; ---- dump summary stats -------------------------------------\n\n      (let [start (apply min (map #(:start-time @(:stats %))\n                               workers))]\n\n        (reset! latest-summary-stats\n          (merge\n            {:run-duration (- (now) start)\n             #_ (format \&quot;%.2f seconds\&quot;\n                             (/ (- (now) start) 1000.0))}\n            (apply merge-with +\n              (map #(select-keys @(:stats %)\n                      [:sent-ct :rejected-score :rejected-dup-addr\n                       :rejected-overall-mean\n                       :rejected-span-mean])\n                workers))))\n\n        (pp/pprint @latest-summary-stats)\n\n        (pln)\n        (println :fini)))))&quot;, :offset 5140, :ns &quot;spamux.batcher&quot;} {:command &quot;(defn batch-abort []\n  (reset! batch-abort? true))&quot;, :offset 50, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (reset! cumulative-stats {})\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (swap! cumulative-stats\n          merge-with + @latest-summary-stats)\n        (when-not @batch-abort?\n          (pln :rebatching!!!!!!!!!!!!)\n          (pp/pprint @cumulative-stats)\n          (recur )))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 1062, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (reset! cumulative-stats {})\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (swap! cumulative-stats\n          #(merge-with % + @latest-summary-stats))\n        (when-not @batch-abort?\n          (pln :rebatching!!!!!!!!!!!!)\n          (pp/pprint @cumulative-stats)\n          (recur )))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 1067, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (reset! cumulative-stats {})\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (swap! cumulative-stats\n          #(merge-with + % @latest-summary-stats))\n        (when-not @batch-abort?\n          (pln :rebatching!!!!!!!!!!!!)\n          (pp/pprint @cumulative-stats)\n          (recur )))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 1067, :ns &quot;spamux.handler&quot;} {:command &quot;(ns spamux.handler-test\n  (:require [clojure.test :refer :all]\n            [clojure.string :as str]\n            [ring.mock.request :as mock]\n            [spamux.handler :refer :all]))&quot;, :offset 183, :ns &quot;user&quot;} {:command &quot;(let [input \&quot;1\\n10001\&quot;\n      ranks (rest (map read-string (str/split-lines input)))\n      primes (map nth-prime ranks)]\n  (println [:ranks ranks])\n  (time (print-primes  primes)))&quot;, :offset 179, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [input \&quot;1\\n10001\&quot;\n      ranks (rest (map read-string (str/split-lines input)))\n      primes (map nth-prime ranks)]\n  (println [:ranks ranks (count primes)])\n  (time (print-primes  primes)))&quot;, :offset 194, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 1000000))&quot;, :offset 26, :ns &quot;spamux.handler-test&quot;} {:command &quot;(conj 1 (2))&quot;, :offset 12, :ns &quot;spamux.handler-test&quot;} {:command &quot;(conj 1 (list 2))&quot;, :offset 17, :ns &quot;spamux.handler-test&quot;} {:command &quot;(conj (list 2) 1)&quot;, :offset 17, :ns &quot;spamux.handler-test&quot;} {:command &quot;(conj [2] 1)&quot;, :offset 12, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 100000))&quot;, :offset 25, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defn primes [n]\n  (let [root (-&gt; n (Math/sqrt) inc int)\n        sieve (boolean-array n true)]\n    (pln :seiving)\n    (loop [i 2]\n      (when (&lt; i (Math/sqrt n))\n        (when (aget sieve i)\n          (loop [j (* i 2)]\n            (when (&lt; j n)\n              (aset sieve j false)\n              (recur (+ j i)))))\n        (recur (inc i))))\n    (filter #(aget sieve %) (range 2 n))))&quot;, :offset 381, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 10))&quot;, :offset 21, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 100))&quot;, :offset 22, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 1000))&quot;, :offset 23, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 10000))&quot;, :offset 24, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defproject com.tiltontec/webmx \&quot;0.1.0-SNAPSHOT\&quot;\n  :description \&quot;A Web un-framework for the Matrix (dataflow library)\&quot;\n  :url \&quot;https://github.com/kennytilton\&quot;\n  :dependencies [[org.clojure/clojure \&quot;1.8.0\&quot;]\n                 [org.clojure/clojurescript \&quot;1.9.671\&quot;]\n                 [com.cognitect/transit-cljs \&quot;0.8.243\&quot;]\n                 [com.andrewmcveigh/cljs-time \&quot;0.5.2\&quot;]\n                 [funcool/bide \&quot;1.5.0\&quot;]\n                 [clj-http \&quot;3.7.0\&quot;]\n                 [cljs-http \&quot;0.1.44\&quot;]\n                 [cheshire \&quot;5.8.0\&quot;]\n                 [com.taoensso/tufte \&quot;1.1.2\&quot;]\n                 [com.tiltontec/matrix \&quot;0.1.3-SNAPSHOT\&quot;]\n                 [com.tiltontec/xhr \&quot;0.1.1-SNAPSHOT\&quot;]\n                 [com.hypirion/primes \&quot;0.2.2\&quot;]]\n  :jvm-opts ^:replace [\&quot;-Xmx1g\&quot; \&quot;-server\&quot;]\n  :plugins [[lein-npm \&quot;0.6.2\&quot;]]\n  :npm {:dependencies [[source-map-support \&quot;0.4.0\&quot;]]}\n  :source-paths [\&quot;src\&quot; \&quot;target/classes\&quot;]\n  :clean-targets [\&quot;out\&quot; \&quot;release\&quot; :target-path]\n  :target-path \&quot;target\&quot;)&quot;, :offset 969, :ns &quot;user&quot;} {:command &quot;(let [n 10000]\n  (time (nth-prime n))\n  (time (p/get n)))&quot;, :offset 57, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defproject spamux \&quot;0.1.0-SNAPSHOT\&quot;\n  :description \&quot;FIXME: write description\&quot;\n  :url \&quot;http://example.com/FIXME\&quot;\n  :min-lein-version \&quot;2.0.0\&quot;\n  :dependencies [[org.clojure/clojure \&quot;1.9.0\&quot;]\n                 [org.clojure/core.async \&quot;0.4.474\&quot;]\n                 [org.clojure/test.check \&quot;0.9.0\&quot;]\n                 [yogthos/config \&quot;0.8\&quot;]\n                 [compojure \&quot;1.5.1\&quot;]\n                 [com.taoensso/tufte \&quot;1.4.0\&quot;]\n                 [com.taoensso/timbre \&quot;4.3.1\&quot;]\n                 [org.clojure/tools.cli \&quot;0.3.5\&quot;]\n                 [cheshire \&quot;5.8.0\&quot;]\n                 [ring/ring-defaults \&quot;0.2.1\&quot;]\n                 [com.hypirion/primes \&quot;0.2.2\&quot;]]\n  :plugins [[lein-ring \&quot;0.9.7\&quot;]]\n  :ring {:handler spamux.handler/app}\n  :profiles\n  {:dev {:dependencies [[javax.servlet/servlet-api \&quot;2.5\&quot;]\n                        [ring/ring-mock \&quot;0.3.0\&quot;]]}})&quot;, :offset 831, :ns &quot;user&quot;} {:command &quot;(let [n 100000]\n  (time (nth-prime n))\n  (time (p/get n)))&quot;, :offset 58, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 1000000]\n  (time (nth-prime n))\n  (time (p/get n)))&quot;, :offset 59, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 1000]\n  [(time (nth-prime n))\n  (time (p/get n))])&quot;, :offset 58, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 1000]\n  [(time (nth-prime n))\n  (time (p/get (dec n)))])&quot;, :offset 64, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defn nth-prime [n]\n  (cond\n    (= n 1) 2\n    (= n 2) 3\n    :else (last (take n (primes (calc-limit n))))))&quot;, :offset 107, :ns &quot;spamux.handler-test&quot;} {:command &quot;(primes 10)&quot;, :offset 11, :ns &quot;spamux.handler-test&quot;} {:command &quot;(nth-prime 10)&quot;, :offset 14, :ns &quot;spamux.handler-test&quot;} {:command &quot;(primes (calc-limit 10))&quot;, :offset 24, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defn first-n-primes [n]\n  (take n (primes (calc-limit n))))&quot;, :offset 60, :ns &quot;spamux.handler-test&quot;} {:command &quot;(first-n-primes 10)&quot;, :offset 19, :ns &quot;spamux.handler-test&quot;} {:command &quot;(first-n-primes 0)&quot;, :offset 18, :ns &quot;spamux.handler-test&quot;} {:command &quot;(first-n-primes -1)&quot;, :offset 19, :ns &quot;spamux.handler-test&quot;} {:command &quot;(first-n-primes -1.3)&quot;, :offset 21, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (first-n-primes -1.3))&quot;, :offset 28, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (first-n-primes 3))&quot;, :offset 25, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (first-n-primes 103))&quot;, :offset 27, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 10000000]\n  [(time (nth-prime n))\n  (time (p/get (dec n)))])&quot;, :offset 68, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 10000]\n  [(time (nth-prime n))\n  (time (p/get (dec n)))])&quot;, :offset 65, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 100000]\n  [(time (nth-prime n))\n  (time (p/get (dec n)))])&quot;, :offset 66, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 1000000]\n  [(time (nth-prime n))\n  (time (p/get (dec n)))])&quot;, :offset 67, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/rawfiles\&quot; []\n    (let [files [{:name \&quot;one\&quot;}\n                 {:name \&quot;two\&quot;}\n                 {:name \&quot;three\&quot;}]]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    (generate-string {:files files})}))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (reset! cumulative-stats {})\n      (reset! gStart (System/currentTimeMillis))\n      (reset! batch-is-running? true)\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (swap! cumulative-stats\n          #(merge-with + % @latest-summary-stats))\n        (when @batch-is-running?\n          (pln :rebatching!!!!!!!!!!!!)\n          (pp/pprint @cumulative-stats)\n          (recur )))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;b&gt;Stop!&lt;/b&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/runningstats\&quot; []\n    (let [stats (running-stats)]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;b&gt;Start&lt;/b&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 1523, :ns &quot;spamux.handler&quot;} {:command &quot;(defn make-tag [tag attrs aux cFkids]\n  (prn :make-webmx tag attrs)\n  (let [tag-id (str (or (:id attrs)\n                        (str tag \&quot;-\&quot; (swap! +tag-sid+ inc))))\n        mx-tag (apply make\n                      :type :tiltontec.webmx.base/tag\n                      :tag tag\n                      :id tag-id\n                      :attr-keys (distinct (conj (keys attrs) :id))\n                      :kids cFkids\n                      (concat (vec (apply concat (seq (dissoc attrs :id))))\n                              (vec (apply concat (seq aux)))))]\n    ;;(println :made-webmx!! webmx-id (keys @mx-webmx))\n    (swap! tag-by-id assoc tag-id mx-tag)\n    mx-tag))&quot;, :offset 664, :ns &quot;tiltontec.webmx.gen&quot;} {:command &quot;(spit \&quot;hi.mom\&quot; 42)&quot;, :offset 18, :ns &quot;spamux.handler&quot;} {:command &quot;(file-seq directory)&quot;, :offset 20, :ns &quot;spamux.handler&quot;} {:command &quot;(take 10 files)&quot;, :offset 15, :ns &quot;spamux.handler&quot;} {:command &quot;(map bean (take 10 files))&quot;, :offset 26, :ns &quot;spamux.handler&quot;} {:command &quot;(map bean files)&quot;, :offset 16, :ns &quot;spamux.handler&quot;} {:command &quot;(count (map bean files))&quot;, :offset 24, :ns &quot;spamux.handler&quot;} {:command &quot;(count (remove :hidden (map bean files)))&quot;, :offset 41, :ns &quot;spamux.handler&quot;} {:command &quot;(def directory (clojure.java.io/file \&quot;bulkinput/*.edn\&quot;))&quot;, :offset 56, :ns &quot;spamux.handler&quot;} {:command &quot;(def directory (clojure.java.io/file \&quot;bulkinput\&quot;))&quot;, :offset 50, :ns &quot;spamux.handler&quot;} {:command &quot;(def files (file-seq directory))&quot;, :offset 32, :ns &quot;spamux.handler&quot;} {:command &quot;(count (filter :file\n         (remove :hidden (map bean files))))&quot;, :offset 65, :ns &quot;spamux.handler&quot;} {:command &quot;(do (filter :file\n         (remove :hidden (map bean files))))&quot;, :offset 62, :ns &quot;spamux.handler&quot;} {:command &quot;(map :name\n  (filter :file\n         (remove :hidden (map bean files))))&quot;, :offset 71, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/rawfiles\&quot; []\n    (let [files (into []\n                  (map :name\n                    (filter :file\n                      (remove :hidden\n                        (map bean\n                          (file-seq\n                            (clojure.java.io/file \&quot;bulkinput\&quot;)))))))]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string files)}))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (reset! cumulative-stats {})\n      (reset! gStart (System/currentTimeMillis))\n      (reset! batch-is-running? true)\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (swap! cumulative-stats\n          #(merge-with + % @latest-summary-stats))\n        (when @batch-is-running?\n          (pln :rebatching!!!!!!!!!!!!)\n          (pp/pprint @cumulative-stats)\n          (recur )))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;b&gt;Stop!&lt;/b&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/runningstats\&quot; []\n    (let [stats (running-stats)]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;b&gt;Start&lt;/b&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 1690, :ns &quot;spamux.handler&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1522531606216">{:repl-history {:ide [], :local [{:command &quot;(let [chunk 100\n          total 2000000]\n      (let [chunks (partition-all chunk\n                     (email-records-test-gen total))]\n        (dorun\n          (map (fn [n c]\n                 (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n                   (into [] c) :append (pos? n)))\n            (range)\n            chunks))))&quot;, :offset 336, :ns &quot;spamux.batcher&quot;} {:command &quot;(let [chunk 100\n      total 5000000]\n  (let [chunks (partition-all chunk\n                 (email-records-test-gen total))]\n    (dorun\n      (map (fn [n c]\n             (spit (format \&quot;bulkinput/em-%d-%d.edn\&quot; total chunk)\n               (into [] c) :append (pos? n)))\n        (range)\n        chunks))))&quot;, :offset 300, :ns &quot;spamux.genlist&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 371, :ns &quot;spamux.handler&quot;} {:command &quot;(defn now []\n  (System/currentTimeMillis))&quot;, :offset 42, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (reset! batch-abort? true)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 536, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (println \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (run-batch \&quot;em-5000000-100.edn\&quot;)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stopped!!&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 523, :ns &quot;spamux.handler&quot;} {:command &quot;(deftest unscoring\n  (is (= 4 (unscorable 1 [1 2 3]))))&quot;, :offset 55, :ns &quot;dart.score&quot;} {:command &quot;(defn unscorable [darts scores]\n  (cond\n    (= 1 darts) (loop [[s sn :as ss] scores]\n                  (cond\n                    (nil? sn) nil\n                    (&gt; sn (inc s)) (inc s)\n                    :default (recur (rest ss))))))&quot;, :offset 236, :ns &quot;dart.score&quot;} {:command &quot;(defn unscorable [darts scores]\n  (cond\n    (= 1 darts) (loop [[s sn :as ss] scores]\n                  (println s sn ss)\n                  (cond\n                    (nil? sn) nil\n                    (&gt; sn (inc s)) (inc s)\n                    :default (recur (rest ss))))))&quot;, :offset 272, :ns &quot;dart.score&quot;} {:command &quot;(defn unscorable [darts scores]\n  (cond\n    (= 1 darts) (loop [[s sn :as ss] scores]\n                  (println s sn ss)\n                  (cond\n                    (nil? sn) (inc s)\n                    (&gt; sn (inc s)) (inc s)\n                    :default (recur (rest ss))))))&quot;, :offset 276, :ns &quot;dart.score&quot;} {:command &quot;(deftest unscoring\n  (is (= 4 (unscorable 1 [1 2 3])))\n  (is (= 4 (unscorable 1 [2 4 5]))))&quot;, :offset 91, :ns &quot;dart.score&quot;} {:command &quot;(deftest unscoring\n  (is (= 4 (unscorable 1 [1 2 3])))\n  (is (= 1 (unscorable 1 [2 4 5]))))&quot;, :offset 91, :ns &quot;dart.score&quot;} {:command &quot;(defn unscorable [darts scores]\n  (cond\n    (zero? darts) 1\n    (&gt; (first scores) 1) 1\n    (= 1 darts) (loop [[s sn :as ss] scores]\n                  (println s sn ss)\n                  (cond\n                    (nil? sn) (inc s)\n                    (&gt; sn (inc s)) (inc s)\n                    :default (recur (rest ss))))))&quot;, :offset 323, :ns &quot;dart.score&quot;} {:command &quot;(defn unscorable [darts scores]\n  (cond\n    (or (zero? darts)\n      (empty? scores)\n      (&gt; (first scores))) 1\n    (= 1 darts) (loop [[s sn :as ss] scores]\n                  (println s sn ss)\n                  (cond\n                    (nil? sn) (inc s)\n                    (&gt; sn (inc s)) (inc s)\n                    :default (recur (rest ss))))))&quot;, :offset 348, :ns &quot;dart.score&quot;} {:command &quot;(deftest unscoring\n  (is (= 1 (unscorable 0 [])))\n  (is (= 1 (unscorable 0 [1 2 3])))\n  (is (= 1 (unscorable 1 [])))\n  (is (= 4 (unscorable 1 [1 2 3])))\n  (is (= 1 (unscorable 1 [2 4 5]))))&quot;, :offset 189, :ns &quot;dart.score&quot;} {:command &quot;(defn scorable? [goal darts scores]\n  (cond\n    (or (zero? darts)\n      (empty? scores)) false\n    (some #{goal} scores) goal\n    :default (some (fn [s]\n                     (when (&lt;= s goal)\n                       (scorable? (- goal s) (dec darts scores))))\n               scores)))&quot;, :offset 283, :ns &quot;dart.score&quot;} {:command &quot;(defn scorable? [goal darts scores]\n  (cond\n    (or (zero? darts)\n      (empty? scores)) false\n    (some #{goal} scores) goal\n    :default (some (fn [s]\n                     (when (&lt;= s goal)\n                       (scorable? (- goal s) (dec darts) scores)))\n               scores)))&quot;, :offset 283, :ns &quot;dart.score&quot;} {:command &quot;(deftest unscoring\n  (is (scorable? 0 0 []))\n  (is (scorable? 1 2 [1 2 4]))\n  \n  (is (scorable? 1 1 [1 2 3]))\n  (is (scorable? 2 1 [1 2 3]))\n  (is (scorable? 1 2 [1 5 7]))\n  (is (scorable? 7 2 [1 5 7]))\n  (is (scorable? 7 1 [1 5 7]))\n  )&quot;, :offset 237, :ns &quot;dart.score&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (go-loop\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (when-not @batch-abort\n          (recur)))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 864, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (go-loop\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (when-not @batch-abort\n          (pln :rebatching!!!!!!!!!!!!)\n          (recur)))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 904, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (when-not @batch-abort\n          (pln :rebatching!!!!!!!!!!!!)\n          (recur)))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 907, :ns &quot;spamux.handler&quot;} {:command &quot;(defn email-file-to-sendfiles-mp\n  \&quot;[em-file (coll)]\n\n  Produce one or more output files targeted\n  for different SMTP servers constraining the sequence of emails\n  in each to honor spam score constraints specified in config.edn\n  and never to include two emails to the same address across all\n  batches.\&quot;\n  [em-file verbose]\n\n  (reset! batch-abort? false)\n\n  (let [em-addrs-hit (ref #{})\n        shared-chan (chan)\n        spit-chan (chan)\n\n        workers (map (fn [id smtp-ip]\n                       {:id        id\n                        :smtp-ip   smtp-ip\n                        :ch        shared-chan\n                        :spit-chan spit-chan\n                        :out-buff  (atom nil)\n                        :addrs-hit em-addrs-hit\n                        :spit-file (str\n                                     (:bulkmail-out-path env-hack) \&quot;/em-\&quot;\n                                     smtp-ip \&quot;.edn\&quot;)\n\n                        :stats     (atom {:start-time            (System/currentTimeMillis)\n                                          :sent-ct               0\n                                          :last-n-mean           0\n                                          :spam-score-sum        0\n                                          :rejected-score        0\n                                          :rejected-dup-addr     0\n                                          :rejected-overall-mean 0\n                                          :rejected-span-mean    0})})\n                  (range)\n                  (take (min (count (:smtp env-hack))\n                          (:worker-ct env-hack))\n                    (:smtp env-hack)))\n\n        work-procs (doall\n                     (map (fn [w]\n                            (go-loop []\n                              (when-let [em-chunk (&lt;! (:ch w))]\n                                ;;(pln :got-chunk (count em-chunk))\n                                (doseq [em em-chunk]\n                                  (emw-email-consider w em))\n                                (recur))))\n                       workers))]\n\n    ;; --- initialize spit files with a header ----------------------\n\n    (doseq [w workers]\n      (spit (:spit-file w)\n        {:run-date (.toString (java.util.Date.))\n         :smtp-ip  (:smtp-ip w)}))\n\n    ;; --- start the spitter ---------------------------------------\n\n    (let [spitters\n          nil #_(doall (for [_ (range 5)]\n                         (p :spitting\n                           (go-loop []\n                             (if-let [x (&lt;! spit-chan)]\n                               (let [[spit-file em] x]\n                                 (xpln :sptting spit-file em)\n                                 (spit spit-file em :append true)\n                                 (recur))\n                               (pln :spitter-out!!!!))))))]\n\n      ;; --- feed the workers ----------------------------------------\n\n      (pln :feeding!!!!)\n\n      (let [wait (atom 0)]\n        (p :feed-workers\n          (with-open [in (java.io.PushbackReader. (clojure.java.io/reader em-file))]\n            (let [edn-seq (repeatedly (partial edn/read {:eof :fini} in))]\n              (doseq [em-chunk (take-while (partial not= :fini) edn-seq)]\n                ;; todo switch to loop so we can break out\n                (if @batch-abort?\n                  (xpln :aborted!!!!!!!!!!!!!!!!)\n                  (let [start (System/currentTimeMillis)]\n                    (&gt;!! shared-chan em-chunk)\n                    (swap! wait + (- (System/currentTimeMillis) start))))))))\n        (pln :feeder-waited @wait :miilis))\n\n      ;; --- let the workers finish ----------------------------------\n\n      (pln :waiting-on-workers)\n\n      (loop [[work-proc &amp; rest :as ps] work-procs]\n        (when work-proc\n          (when-let [out (alt!!\n                           (timeout 100) :timeout\n                           work-proc ([r] r))]\n            ;;(pln :bam-worker-out work-proc)\n            (recur rest))))\n\n      (pln :waitingonspitterc)\n      (doseq [spitter spitters]\n        (when-let [out (alt!!\n                         (timeout 1000) :timeout\n                         spitter ([r] r))]\n          (print :spitwait out)))\n\n      ;; --- dump worker stats ---------------------------------------\n\n      (when verbose\n        (doseq [w workers]\n          (pln)\n          (pln (format \&quot;worker %d:\&quot; (:id w)))\n          (pp/pprint @(:stats w))\n          (pln)))\n\n      ;; ---- dump summary stats -------------------------------------\n\n      (let [start (apply min (map #(:start-time @(:stats %))\n                               workers))]\n\n        (reset! latest-summary-stats\n          (merge\n            {:run-duration (- (now) start)\n             #_ (format \&quot;%.2f seconds\&quot;\n                             (/ (- (now) start) 1000.0))}\n            (apply merge-with +\n              (map #(select-keys @(:stats %)\n                      [:sent-ct :rejected-score :rejected-dup-addr\n                       :rejected-overall-mean\n                       :rejected-span-mean])\n                workers))))\n\n        (pp/pprint @latest-summary-stats)\n\n        (pln)\n        (println :fini)))))&quot;, :offset 5140, :ns &quot;spamux.batcher&quot;} {:command &quot;(defn batch-abort []\n  (reset! batch-abort? true))&quot;, :offset 50, :ns &quot;spamux.batcher&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (reset! cumulative-stats {})\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (swap! cumulative-stats\n          merge-with + @latest-summary-stats)\n        (when-not @batch-abort?\n          (pln :rebatching!!!!!!!!!!!!)\n          (pp/pprint @cumulative-stats)\n          (recur )))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 1062, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (reset! cumulative-stats {})\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (swap! cumulative-stats\n          #(merge-with % + @latest-summary-stats))\n        (when-not @batch-abort?\n          (pln :rebatching!!!!!!!!!!!!)\n          (pp/pprint @cumulative-stats)\n          (recur )))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 1067, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (reset! cumulative-stats {})\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (swap! cumulative-stats\n          #(merge-with + % @latest-summary-stats))\n        (when-not @batch-abort?\n          (pln :rebatching!!!!!!!!!!!!)\n          (pp/pprint @cumulative-stats)\n          (recur )))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Stop!&lt;/h2&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      (pln :responding-w-stats!! stats)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;h2&gt;Start&lt;/h2&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 1067, :ns &quot;spamux.handler&quot;} {:command &quot;(ns spamux.handler-test\n  (:require [clojure.test :refer :all]\n            [clojure.string :as str]\n            [ring.mock.request :as mock]\n            [spamux.handler :refer :all]))&quot;, :offset 183, :ns &quot;user&quot;} {:command &quot;(let [input \&quot;1\\n10001\&quot;\n      ranks (rest (map read-string (str/split-lines input)))\n      primes (map nth-prime ranks)]\n  (println [:ranks ranks])\n  (time (print-primes  primes)))&quot;, :offset 179, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [input \&quot;1\\n10001\&quot;\n      ranks (rest (map read-string (str/split-lines input)))\n      primes (map nth-prime ranks)]\n  (println [:ranks ranks (count primes)])\n  (time (print-primes  primes)))&quot;, :offset 194, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 1000000))&quot;, :offset 26, :ns &quot;spamux.handler-test&quot;} {:command &quot;(conj 1 (2))&quot;, :offset 12, :ns &quot;spamux.handler-test&quot;} {:command &quot;(conj 1 (list 2))&quot;, :offset 17, :ns &quot;spamux.handler-test&quot;} {:command &quot;(conj (list 2) 1)&quot;, :offset 17, :ns &quot;spamux.handler-test&quot;} {:command &quot;(conj [2] 1)&quot;, :offset 12, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 100000))&quot;, :offset 25, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defn primes [n]\n  (let [root (-&gt; n (Math/sqrt) inc int)\n        sieve (boolean-array n true)]\n    (pln :seiving)\n    (loop [i 2]\n      (when (&lt; i (Math/sqrt n))\n        (when (aget sieve i)\n          (loop [j (* i 2)]\n            (when (&lt; j n)\n              (aset sieve j false)\n              (recur (+ j i)))))\n        (recur (inc i))))\n    (filter #(aget sieve %) (range 2 n))))&quot;, :offset 381, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 10))&quot;, :offset 21, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 100))&quot;, :offset 22, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 1000))&quot;, :offset 23, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (nth-prime 10000))&quot;, :offset 24, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defproject com.tiltontec/webmx \&quot;0.1.0-SNAPSHOT\&quot;\n  :description \&quot;A Web un-framework for the Matrix (dataflow library)\&quot;\n  :url \&quot;https://github.com/kennytilton\&quot;\n  :dependencies [[org.clojure/clojure \&quot;1.8.0\&quot;]\n                 [org.clojure/clojurescript \&quot;1.9.671\&quot;]\n                 [com.cognitect/transit-cljs \&quot;0.8.243\&quot;]\n                 [com.andrewmcveigh/cljs-time \&quot;0.5.2\&quot;]\n                 [funcool/bide \&quot;1.5.0\&quot;]\n                 [clj-http \&quot;3.7.0\&quot;]\n                 [cljs-http \&quot;0.1.44\&quot;]\n                 [cheshire \&quot;5.8.0\&quot;]\n                 [com.taoensso/tufte \&quot;1.1.2\&quot;]\n                 [com.tiltontec/matrix \&quot;0.1.3-SNAPSHOT\&quot;]\n                 [com.tiltontec/xhr \&quot;0.1.1-SNAPSHOT\&quot;]\n                 [com.hypirion/primes \&quot;0.2.2\&quot;]]\n  :jvm-opts ^:replace [\&quot;-Xmx1g\&quot; \&quot;-server\&quot;]\n  :plugins [[lein-npm \&quot;0.6.2\&quot;]]\n  :npm {:dependencies [[source-map-support \&quot;0.4.0\&quot;]]}\n  :source-paths [\&quot;src\&quot; \&quot;target/classes\&quot;]\n  :clean-targets [\&quot;out\&quot; \&quot;release\&quot; :target-path]\n  :target-path \&quot;target\&quot;)&quot;, :offset 969, :ns &quot;user&quot;} {:command &quot;(let [n 10000]\n  (time (nth-prime n))\n  (time (p/get n)))&quot;, :offset 57, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defproject spamux \&quot;0.1.0-SNAPSHOT\&quot;\n  :description \&quot;FIXME: write description\&quot;\n  :url \&quot;http://example.com/FIXME\&quot;\n  :min-lein-version \&quot;2.0.0\&quot;\n  :dependencies [[org.clojure/clojure \&quot;1.9.0\&quot;]\n                 [org.clojure/core.async \&quot;0.4.474\&quot;]\n                 [org.clojure/test.check \&quot;0.9.0\&quot;]\n                 [yogthos/config \&quot;0.8\&quot;]\n                 [compojure \&quot;1.5.1\&quot;]\n                 [com.taoensso/tufte \&quot;1.4.0\&quot;]\n                 [com.taoensso/timbre \&quot;4.3.1\&quot;]\n                 [org.clojure/tools.cli \&quot;0.3.5\&quot;]\n                 [cheshire \&quot;5.8.0\&quot;]\n                 [ring/ring-defaults \&quot;0.2.1\&quot;]\n                 [com.hypirion/primes \&quot;0.2.2\&quot;]]\n  :plugins [[lein-ring \&quot;0.9.7\&quot;]]\n  :ring {:handler spamux.handler/app}\n  :profiles\n  {:dev {:dependencies [[javax.servlet/servlet-api \&quot;2.5\&quot;]\n                        [ring/ring-mock \&quot;0.3.0\&quot;]]}})&quot;, :offset 831, :ns &quot;user&quot;} {:command &quot;(let [n 100000]\n  (time (nth-prime n))\n  (time (p/get n)))&quot;, :offset 58, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 1000000]\n  (time (nth-prime n))\n  (time (p/get n)))&quot;, :offset 59, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 1000]\n  [(time (nth-prime n))\n  (time (p/get n))])&quot;, :offset 58, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 1000]\n  [(time (nth-prime n))\n  (time (p/get (dec n)))])&quot;, :offset 64, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defn nth-prime [n]\n  (cond\n    (= n 1) 2\n    (= n 2) 3\n    :else (last (take n (primes (calc-limit n))))))&quot;, :offset 107, :ns &quot;spamux.handler-test&quot;} {:command &quot;(primes 10)&quot;, :offset 11, :ns &quot;spamux.handler-test&quot;} {:command &quot;(nth-prime 10)&quot;, :offset 14, :ns &quot;spamux.handler-test&quot;} {:command &quot;(primes (calc-limit 10))&quot;, :offset 24, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defn first-n-primes [n]\n  (take n (primes (calc-limit n))))&quot;, :offset 60, :ns &quot;spamux.handler-test&quot;} {:command &quot;(first-n-primes 10)&quot;, :offset 19, :ns &quot;spamux.handler-test&quot;} {:command &quot;(first-n-primes 0)&quot;, :offset 18, :ns &quot;spamux.handler-test&quot;} {:command &quot;(first-n-primes -1)&quot;, :offset 19, :ns &quot;spamux.handler-test&quot;} {:command &quot;(first-n-primes -1.3)&quot;, :offset 21, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (first-n-primes -1.3))&quot;, :offset 28, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (first-n-primes 3))&quot;, :offset 25, :ns &quot;spamux.handler-test&quot;} {:command &quot;(time (first-n-primes 103))&quot;, :offset 27, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 10000000]\n  [(time (nth-prime n))\n  (time (p/get (dec n)))])&quot;, :offset 68, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 10000]\n  [(time (nth-prime n))\n  (time (p/get (dec n)))])&quot;, :offset 65, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 100000]\n  [(time (nth-prime n))\n  (time (p/get (dec n)))])&quot;, :offset 66, :ns &quot;spamux.handler-test&quot;} {:command &quot;(let [n 1000000]\n  [(time (nth-prime n))\n  (time (p/get (dec n)))])&quot;, :offset 67, :ns &quot;spamux.handler-test&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/rawfiles\&quot; []\n    (let [files [{:name \&quot;one\&quot;}\n                 {:name \&quot;two\&quot;}\n                 {:name \&quot;three\&quot;}]]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    (generate-string {:files files})}))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (reset! cumulative-stats {})\n      (reset! gStart (System/currentTimeMillis))\n      (reset! batch-is-running? true)\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (swap! cumulative-stats\n          #(merge-with + % @latest-summary-stats))\n        (when @batch-is-running?\n          (pln :rebatching!!!!!!!!!!!!)\n          (pp/pprint @cumulative-stats)\n          (recur )))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;b&gt;Stop!&lt;/b&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/runningstats\&quot; []\n    (let [stats (running-stats)]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;b&gt;Start&lt;/b&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 1523, :ns &quot;spamux.handler&quot;} {:command &quot;(defn make-tag [tag attrs aux cFkids]\n  (prn :make-webmx tag attrs)\n  (let [tag-id (str (or (:id attrs)\n                        (str tag \&quot;-\&quot; (swap! +tag-sid+ inc))))\n        mx-tag (apply make\n                      :type :tiltontec.webmx.base/tag\n                      :tag tag\n                      :id tag-id\n                      :attr-keys (distinct (conj (keys attrs) :id))\n                      :kids cFkids\n                      (concat (vec (apply concat (seq (dissoc attrs :id))))\n                              (vec (apply concat (seq aux)))))]\n    ;;(println :made-webmx!! webmx-id (keys @mx-webmx))\n    (swap! tag-by-id assoc tag-id mx-tag)\n    mx-tag))&quot;, :offset 664, :ns &quot;tiltontec.webmx.gen&quot;} {:command &quot;(spit \&quot;hi.mom\&quot; 42)&quot;, :offset 18, :ns &quot;spamux.handler&quot;} {:command &quot;(file-seq directory)&quot;, :offset 20, :ns &quot;spamux.handler&quot;} {:command &quot;(take 10 files)&quot;, :offset 15, :ns &quot;spamux.handler&quot;} {:command &quot;(map bean (take 10 files))&quot;, :offset 26, :ns &quot;spamux.handler&quot;} {:command &quot;(map bean files)&quot;, :offset 16, :ns &quot;spamux.handler&quot;} {:command &quot;(count (map bean files))&quot;, :offset 24, :ns &quot;spamux.handler&quot;} {:command &quot;(count (remove :hidden (map bean files)))&quot;, :offset 41, :ns &quot;spamux.handler&quot;} {:command &quot;(def directory (clojure.java.io/file \&quot;bulkinput/*.edn\&quot;))&quot;, :offset 56, :ns &quot;spamux.handler&quot;} {:command &quot;(def directory (clojure.java.io/file \&quot;bulkinput\&quot;))&quot;, :offset 50, :ns &quot;spamux.handler&quot;} {:command &quot;(def files (file-seq directory))&quot;, :offset 32, :ns &quot;spamux.handler&quot;} {:command &quot;(count (filter :file\n         (remove :hidden (map bean files))))&quot;, :offset 65, :ns &quot;spamux.handler&quot;} {:command &quot;(do (filter :file\n         (remove :hidden (map bean files))))&quot;, :offset 62, :ns &quot;spamux.handler&quot;} {:command &quot;(map :name\n  (filter :file\n         (remove :hidden (map bean files))))&quot;, :offset 71, :ns &quot;spamux.handler&quot;} {:command &quot;(defroutes app-routes\n  (GET \&quot;/\&quot; []\n    (do\n      (pln \&quot;New server!!!\&quot;)\n      (resp/content-type (resp/resource-response \&quot;index.html\&quot; {:root \&quot;webmx\&quot;}) \&quot;text/html\&quot;)))\n\n  (GET \&quot;/rawfiles\&quot; []\n    (let [files (into []\n                  (map :name\n                    (filter :file\n                      (remove :hidden\n                        (map bean\n                          (file-seq\n                            (clojure.java.io/file \&quot;bulkinput\&quot;)))))))]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string files)}))\n\n  (GET \&quot;/start\&quot; []\n    (do\n      (reset! cumulative-stats {})\n      (reset! gStart (System/currentTimeMillis))\n      (reset! batch-is-running? true)\n      (go-loop []\n        (run-batch \&quot;em-300000-100.edn\&quot;)\n        (swap! cumulative-stats\n          #(merge-with + % @latest-summary-stats))\n        (when @batch-is-running?\n          (pln :rebatching!!!!!!!!!!!!)\n          (pp/pprint @cumulative-stats)\n          (recur )))\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;b&gt;Stop!&lt;/b&gt;\&quot;}))\n\n  (GET \&quot;/batchstats\&quot; []\n    (let [stats (or @latest-summary-stats\n                  {:no-stats \&quot;Click 'Start' to gen some\&quot;})]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/runningstats\&quot; []\n    (let [stats (running-stats)]\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n       :body    (generate-string stats)}))\n\n  (GET \&quot;/stop\&quot; []\n    (do\n      (batch-abort)\n      {:status  200\n       :headers {\&quot;Content-Type\&quot; \&quot;text/html\&quot;}\n       :body    \&quot;&lt;b&gt;Start&lt;/b&gt;\&quot;}))\n\n  (route/not-found \&quot;Not Found\&quot;))&quot;, :offset 1690, :ns &quot;spamux.handler&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -428,7 +436,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="125" y="84" width="1494" height="886" extended-state="0" />
+    <frame x="124" y="83" width="1494" height="886" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -437,14 +445,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19009371" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3239625" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24966533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2523427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -468,22 +476,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/spamux/handler_test.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/html.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
@@ -612,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/core.cljc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="111" column="10" lean-forward="false" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/webmx/html.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -688,22 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.cljc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="286" column="25" lean-forward="false" selection-start-line="286" selection-start-column="25" selection-end-line="286" selection-end-column="25" />
-          <folding>
-            <marker date="1522445028000" expanded="true" signature="9229:9400" ph="(defn mxu-find-id ...)" />
-            <marker date="1522445028000" expanded="true" signature="9402:9586" ph="(defn mxu-find-type ...)" />
-            <marker date="1522445028000" expanded="true" signature="9588:9733" ph="(defn fmi-w-class ...)" />
-            <marker date="1522445028000" expanded="true" signature="9735:9959" ph="(defn mxi-find ...)" />
-            <marker date="1522445028000" expanded="true" signature="9961:10134" ph="(defmacro the-kids ...)" />
-            <marker date="1522445028000" expanded="true" signature="10136:10274" ph="(defmacro cFkids ...)" />
-            <marker date="1522445028000" expanded="true" signature="10276:10763" ph="(defn kid-values-kids ...)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/webmx/checkouts/matrix/src/tiltontec/model/core.cljc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -744,55 +713,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.cljc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="114" column="4" lean-forward="false" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="4" />
-          <folding>
-            <marker date="1518109262000" expanded="true" signature="3178:3234" ph="(defn xhr-send ...)" />
-            <marker date="1518109262000" expanded="true" signature="8968:9038" ph="(defmethod observe ...)" />
-            <marker date="1518109262000" expanded="true" signature="9145:9361" ph="(defmethod xhr-name-to-map ...)" />
-            <marker date="1518109262000" expanded="true" signature="9363:9672" ph="(defn xhr-to-map ...)" />
-            <marker date="1518109262000" expanded="true" signature="9711:9914" ph="(defn xhr-status-key ...)" />
-            <marker date="1518109262000" expanded="true" signature="9916:10041" ph="(defn xhr-resolved ...)" />
-            <marker date="1518109262000" expanded="true" signature="10043:10096" ph="(defn xhr-error? ...)" />
-            <marker date="1518109262000" expanded="true" signature="10098:10162" ph="(defn xhrfo ...)" />
-            <marker date="1518109262000" expanded="true" signature="10164:11021" ph="(defn xhr-await ...)" />
-            <marker date="1518109262000" expanded="true" signature="11023:11195" ph="(defn synaptic-xhr ...)" />
-            <marker date="1518109262000" expanded="true" signature="11197:11388" ph="(defn send-unparsed-xhr ...)" />
-            <marker date="1518109262000" expanded="true" signature="11390:11687" ph="(defn synaptic-xhr-unparsed ...)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/spamux/handler_test.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/progress_viewer.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="81" column="26" lean-forward="false" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/email_input_builder.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -813,10 +737,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/integrity.cljc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="134" column="10" lean-forward="false" selection-start-line="134" selection-start-column="10" selection-end-line="134" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/checkouts/matrix/src/tiltontec/cell/synapse.cljc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="51" column="41" lean-forward="false" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/cell/core.cljc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="98" column="10" lean-forward="false" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/email_input_builder.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/progress_viewer.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="88" column="46" lean-forward="false" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/xhr.cljc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="233" column="7" lean-forward="true" selection-start-line="233" selection-start-column="7" selection-end-line="233" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/out/tiltontec/model/core.cljc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+          <folding>
+            <marker date="1522445028000" expanded="true" signature="1862:2076" ph="(defn md-get ...)" />
+            <marker date="1522445028000" expanded="true" signature="2119:2296" ph="(defn md-getx ...)" />
+            <marker date="1522445028000" expanded="true" signature="2325:2445" ph="(defmacro with-par ...)" />
+            <marker date="1522445028000" expanded="true" signature="2471:3047" ph="(defn md-reset! ...)" />
+            <marker date="1522445028000" expanded="true" signature="3049:3114" ph="(defn mset!&gt; ...)" />
+            <marker date="1522445028000" expanded="true" signature="3116:3227" ph="(defn mswap!&gt; ...)" />
+            <marker date="1522445028000" expanded="true" signature="3269:3409" ph="(defn backdoor-reset!? ...)" />
+            <marker date="1522445028000" expanded="true" signature="3411:3487" ph="(defn backdoor-reset! ...)" />
+            <marker date="1522445028000" expanded="true" signature="3489:4779" ph="(defn make ...)" />
+            <marker date="1522445028000" expanded="true" signature="4919:5142" ph="(defmethod observe ...)" />
+            <marker date="1522445028000" expanded="true" signature="5144:5430" ph="(defmethod not-to-be ...)" />
+            <marker date="1522445028000" expanded="true" signature="5432:5463" ph="(defn mx-par ...)" />
+            <marker date="1522445028000" expanded="true" signature="5465:6170" ph="(defn fget= ...)" />
+            <marker date="1522445028000" expanded="true" signature="6172:6702" ph="(defn fasc ...)" />
+            <marker date="1522445028000" expanded="true" signature="6704:6893" ph="(defn nextsib ...)" />
+            <marker date="1522445028000" expanded="true" signature="6895:7139" ph="(defn prevsib ...)" />
+            <marker date="1522445028000" expanded="true" signature="7141:8830" ph="(defn fget ...)" />
+            <marker date="1522445028000" expanded="true" signature="8832:8922" ph="(defn fm! ...)" />
+            <marker date="1522445028000" expanded="true" signature="8924:9040" ph="(defmacro mdv! ...)" />
+            <marker date="1522445028000" expanded="true" signature="9042:9227" ph="(defn mxu-find-name ...)" />
+            <marker date="1522445028000" expanded="true" signature="9229:9400" ph="(defn mxu-find-id ...)" />
+            <marker date="1522445028000" expanded="true" signature="9402:9586" ph="(defn mxu-find-type ...)" />
+            <marker date="1522445028000" expanded="true" signature="9588:9733" ph="(defn fmi-w-class ...)" />
+            <marker date="1522445028000" expanded="true" signature="9735:9959" ph="(defn mxi-find ...)" />
+            <marker date="1522445028000" expanded="true" signature="9961:10134" ph="(defmacro the-kids ...)" />
+            <marker date="1522445028000" expanded="true" signature="10136:10274" ph="(defmacro cFkids ...)" />
+            <marker date="1522445028000" expanded="true" signature="10276:10763" ph="(defn kid-values-kids ...)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/spamux/handler.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="47" column="69" lean-forward="true" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+        <state relative-caret-position="226">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/webmx/src/tiltontec/webmx/example/spamux/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="80" column="40" lean-forward="false" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
           <folding />
         </state>
       </provider>

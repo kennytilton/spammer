@@ -20,7 +20,6 @@
 (def directory (clojure.java.io/file "bulkinput"))
 (def files (file-seq directory))
 
-
 (defroutes app-routes
   (GET "/" []
     (do
@@ -79,6 +78,16 @@
       {:status  200
        :headers {"Content-Type" "application/json"}
        :body    (generate-string stats)}))
+
+  (GET "/checkjob" []
+    (do
+      (pln :checking!!!job!!! @batch-is-running?)
+      {:status  200
+       :headers {"Content-Type" "application/json"}
+       :body    (generate-string
+                  {:status
+                   (if @batch-is-running?
+                    :running :complete)})}))
 
   (GET "/stop" []
     (do

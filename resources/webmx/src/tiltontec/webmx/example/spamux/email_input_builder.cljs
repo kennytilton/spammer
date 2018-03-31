@@ -35,7 +35,8 @@
     (p "Build a new file, if you like.")
     (input
       {:name "email-volume"
-       :placeholder "Number of thousand emails"
+       :type "number"
+       :placeholder "Number of K emails"
        :onchange #(do
                     ;; todo validate
                     (println :emk (target-value %))

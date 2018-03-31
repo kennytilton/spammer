@@ -38,53 +38,73 @@
 
 (defn start-button []
   (button
-    {:class   "pure-button"
-     :disabled (cF (println :find)
-                (let [raw-select (mxu-find-id me "email-file-raw")]
-                  (assert raw-select)
-                  (let [val (<mget raw-select :value)]
-                    (or (nil? val)
-                      (= val "<none>")))))
+    {:class    "pure-button"
+     :disabled (cF (let [raw-select (mxu-find-id me "email-file-raw")]
+                     (assert raw-select)
+                     (let [val (<mget raw-select :value)]
+                       (or (nil? val)
+                         (= val "<none>")))))
 
-     :onclick #(let [me (do (evt-tag %))]
-                 (assert me)
-                 (mset!> me :job-key
-                   (case (<mget me :job-key)
-                     nil :start
-                     :start :stop
-                     :stop :start)))
+     :onclick  #(let [me (do (evt-tag %))]
+                  (assert me)
+                  (mset!> me :job-key
+                    (case (<mget me :job-key)
+                      nil :start
+                      :start :stop
+                      :stop :start)))
 
-     :style   (cF (case (<mget me :job-key)
-                    :stop "background:#8f8"
-                    :start "background:#f88"
-                    "background:#8f8"))
+     :style    (cF (case (<mget me :job-key)
+                     :stop "background:#8f8"
+                     :start "background:#f88"
+                     "background:#8f8"))
 
-     :content (cF (or (when-let [xhr (<mget me :ae)]
-                        (when-let [r (xhr-response xhr)]
-                          (if (= 200 (:status r))
-                            (:body r)
-                            "<b>Something happened.</b>")))
-                    "<b>Start</b>"))}
-    {:job-key (cI nil)
-     :ae      (cF (when-let [job (<mget me :job-key)]
-                    (send-xhr
-                      (case job
-                        :start (str "start?filename="
-                                 (let [fw (mxu-find-id me "email-file-raw")]
-                                   (assert fw)
-                                   (<mget fw :value)))
-                        :stop "stop")
-                      #_ ;; figure out how to talk to localhost
-                      (str (merge
-                             (url (str "http://"
-                                 (case job
-                                   :start "start"
-                                   :stop "stop")))
-                             #_
-                             {:filename
-                              (let [fw (mxu-find-id me "email-file-raw")]
-                                (assert fw)
-                                (<mget fw :value))})))))}))
+     :content  (cF (or
+                     (when-let [js (<mget me :jobstatus)]
+                       (str "<b>" (:status (:body js)) "</b>"))
+                     "<b>Start</b>"))
+     }
+    {:job-key   (cI nil)
+     :recheck   (cI 0)
+     :chk       (cF (when (and (= :start (<mget me :job-key))
+                               (<mget me :recheck))
+                      (pln :chking-job!!!!)
+                      (send-xhr :get-runnin "checkjob" {:accept :json})))
+
+     :jobstatus (cF+ [:obs (fn-obs
+                             (when new
+                               (js/setTimeout #(with-cc
+                                                 (pln :rechecking!)
+                                                 (mswap!> me :recheck inc)) 3000)))]
+                  (or
+                    (when-let [xhr (<mget me :chk)]
+                      (pln :chkstatus-xhr!! xhr)
+                      (when-let [r (xhr-response :chk)]
+                        (pln :chkstatus (:status r) r)
+                        (if (= 200 (:status r))
+                          (assoc (:body r) :now (.getTime (js/Date.)))
+                          {:oops (:status r)})))
+                    (when-not (= cache unbound)
+                      (pln :keep-cache cache)
+                      cache)))
+
+     :ae        (cF (when-let [job (<mget me :job-key)]
+                      (send-xhr
+                        (case job
+                          :start (str "start?filename="
+                                   (let [fw (mxu-find-id me "email-file-raw")]
+                                     (assert fw)
+                                     (<mget fw :value)))
+                          :stop "stop")
+                        #_;; todo figure out how to talk to localhost
+                            (str (merge
+                                   (url (str "http://"
+                                          (case job
+                                            :start "start"
+                                            :stop "stop")))
+                                   #_{:filename
+                                      (let [fw (mxu-find-id me "email-file-raw")]
+                                        (assert fw)
+                                        (<mget fw :value))})))))}))
 
 (defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"
@@ -97,18 +117,17 @@
              :onchange #(do
                           (println :emraw (target-value %))
                           (mset!> (evt-tag %) :value (target-value %)))
-             :xhr      (cF (send-xhr :get-raws "/rawfiles" {:accept :json}))
+             :xhr      (cF (send-xhr :get-raws "rawfiles" {:accept :json}))
              :options  (cF (when-let [xhr (<mget me :xhr)]
                              (when-let [r (xhr-response xhr)]
                                (when (= 200 (:status r))
                                  (:body r)))))}
-      {:value (cI "em-100000-100.edn")} ;; todo cleanup
-      #_(option {:enabled "false" :selected true :value "<none>"}
-        "Pick a file, any file.")
-      (map (fn [n s]
-             (option {:selected (= n 0)} s))
-        (range)
-        (<mget me :options)))))
+      {:value (cI "em-1000k.edn")}                          ;; todo cleanup
+      [(option {:enabled "false" :value "<none>"} "Pick a file, any file.")
+        (map (fn [n s]
+               (option {:selected (= s "em-70k.edn")} s))
+          (range)
+          (<mget me :options))])))
 
 
 (defn matrix-build! []
@@ -124,4 +143,4 @@
                            (start-button)
                            (watch-stats-option me)
                            (watched-stats me)
-                           #_(show-stats))])))))
+                           (show-stats))])))))
