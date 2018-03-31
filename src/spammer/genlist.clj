@@ -1,4 +1,4 @@
-(ns spamux.genlist
+(ns spammer.genlist
   (:require
     [clojure.spec.alpha :as s]
     [clojure.spec.gen.alpha :as gen]

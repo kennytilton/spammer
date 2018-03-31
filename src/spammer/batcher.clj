@@ -1,4 +1,4 @@
-(ns spamux.batcher
+(ns spammer.batcher
   (:require
     [config.core :refer [env]]
     [clojure.string :as str]
@@ -9,7 +9,7 @@
     [clojure.tools.cli :refer [parse-opts] :as cli]
     [taoensso.tufte :as tufte :refer (defnp p profiled profile)]
     [taoensso.timbre :as log]
-    [spamux.genlist :refer :all]))
+    [spammer.genlist :refer :all]))
 
 (def spamgen-cli
   [["-t" "--test TESTFILE" "Just filename and extension of a file under bulkinput/"

@@ -1,4 +1,4 @@
-(ns spamux.handler
+(ns spammer.handler
   (:require [clojure.core.async
              :refer [go chan go-loop <! <!! >!! >! timeout alt!!]]
             [compojure.core :refer :all]
@@ -11,8 +11,8 @@
             [ring.util.response :as resp]
             [clojure.string :as str]
             [cheshire.core :refer :all]
-            [spamux.batcher :refer :all]
-            [spamux.genlist :refer :all]
+            [spammer.batcher :refer :all]
+            [spammer.genlist :refer :all]
             [clojure.pprint :as pp]))
 
 (def cumulative-stats (atom nil))
@@ -24,7 +24,7 @@
   (GET "/" []
     (do
       (pln "New server!!!")
-      (resp/content-type (resp/resource-response "index.html" {:root "webmx"}) "text/html")))
+      (resp/content-type (resp/resource-response "index.html" {:root "spamux"}) "text/html")))
 
   (GET "/rawfiles" []
     (let [files (into []
@@ -101,8 +101,8 @@
 (def app
   (-> app-routes
     ;; (wrap-file "/")
-    (wrap-resource "webmx/out")
-    (wrap-resource "webmx")
+    (wrap-resource "spamux/out")
+    (wrap-resource "spamux")
     (wrap-content-type)
     (wrap-defaults site-defaults)))
 
