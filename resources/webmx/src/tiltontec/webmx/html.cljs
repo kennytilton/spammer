@@ -168,7 +168,10 @@
           (case slot
             :style (set! (.-style dom) (style-string newv))
 
-            :hidden (set! (.-hidden dom) newv)              ;; setAttribute seems not to work
+            :hidden (set! (.-hidden dom) newv)
+            :disabled (if newv
+                        (.setAttribute dom "disabled" true)
+                        (.removeAttribute dom "disabled"))
             :class (classlist/set dom (if (sequential? newv)
                                         (str/join " " newv)
                                         newv))

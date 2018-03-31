@@ -81,6 +81,8 @@
 
 (def batch-is-running? (atom false))
 
+(def batch-is-building? (atom false))
+
 (def gWorkers (atom nil))
 (def gStart (atom (System/currentTimeMillis)))
 

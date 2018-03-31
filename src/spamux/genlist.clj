@@ -45,17 +45,16 @@
      (email-records-test-gen)
      (take n (email-records-test-gen)))))
 
-#_
-(let [chunk 100
-      total 5000000]
-  (let [chunks (partition-all chunk
-                 (email-records-test-gen total))]
-    (dorun
-      (map (fn [n c]
-             (spit (format "bulkinput/em-%d-%d.edn" total chunk)
-               (into [] c) :append (pos? n)))
-        (range)
-        chunks))))
+(defn email-raw-file-build [volume-k]
+  (let [chunk 100]
+    (let [chunks (partition-all chunk
+                   (email-records-test-gen (* volume-k 1000)))]
+      (dorun
+        (map (fn [n c]
+               (spit (format "bulkinput/em-%dk.edn" volume-k chunk)
+                 (into [] c) :append (pos? n)))
+          (range)
+          chunks)))))
 
 ;;; --- specs where dups are likely ---------------------
 

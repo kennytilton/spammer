@@ -11,6 +11,7 @@
                  [com.taoensso/timbre "4.3.1"]
                  [org.clojure/tools.cli "0.3.5"]
                  [cheshire "5.8.0"]
+                 [com.cemerick/url "0.1.1"]
                  [ring/ring-defaults "0.2.1"]
                  [com.hypirion/primes "0.2.2"]]
   :plugins [[lein-ring "0.9.7"]]

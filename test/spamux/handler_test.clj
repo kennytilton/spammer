@@ -3,7 +3,7 @@
             [clojure.string :as str]
             [ring.mock.request :as mock]
             [spamux.handler :refer :all]
-            ))
+            [cemerick.url :refer (url url-encode)]))
 
 (deftest test-app
   (testing "main route"

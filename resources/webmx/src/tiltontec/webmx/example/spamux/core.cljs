@@ -10,7 +10,7 @@
 
             [tiltontec.model.core
              :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
-                     mxi-find mxu-find-name mxu-find-type]
+                     mxi-find mxu-find-name mxu-find-type mxu-find-id]
              :as md]
 
             [tiltontec.xhr
@@ -23,14 +23,31 @@
                             select option label]]
             [tiltontec.webmx.html :refer [mxu-find-tag]]
             [tiltontec.webmx.widget :refer [tag-checkbox]]
+            [webmx.src.tiltontec.webmx.example.spamux.progress-viewer
+             :refer [show-stats watch-stats-option watched-stats]]
+            [webmx.src.tiltontec.webmx.example.spamux.email-input-builder
+             :refer [raw-email-file-builder]]
+            [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]))
 
 (declare json-view)
 
+(defn eko [key value]
+  (pln :eko!!! key value)
+  value)
+
 (defn start-button []
   (button
     {:class   "pure-button"
+     :disabled (cF (println :find)
+                (let [raw-select (mxu-find-id me "email-file-raw")]
+                  (assert raw-select)
+                  (let [val (<mget raw-select :value)]
+                    (or (nil? val)
+                      (= val "<none>")))))
+
      :onclick #(let [me (do (evt-tag %))]
+                 (assert me)
                  (mset!> me :job-key
                    (case (<mget me :job-key)
                      nil :start
@@ -50,122 +67,24 @@
                     "<b>Start</b>"))}
     {:job-key (cI nil)
      :ae      (cF (when-let [job (<mget me :job-key)]
-                    (send-xhr (case job
-                                :start "/start"
-                                :stop "/stop"))))}))
-
-(defn show-stats []
-  (div {:style "margin-top:36px"}
-    (button
-      {:name    "stats-button"
-       :class   "pure-button"
-       :onclick #(let [me (do (evt-tag %))]
-                   (mset!> me :job-key :get-stats))
-       :content "<b>Stats Snapshot</b>"}
-
-      {:job-key (cI nil :ephemeral? true)
-
-       :xhr     (cF+ [:obs (fn-obs
-                             (println :xhr-obs new old))]
-                  (when-let [job (<mget me :job-key)]
-                    ;;(println :sending!!!start job)
-                    (send-xhr :get-stats "/batchstats" {:accept :json})))
-
-       :stats   (cF (when-let [xhr (<mget me :xhr)]
-                      (when-let [r (xhr-response xhr)]
-                        #_(println
-                            (if (= 200 (:status r))
-                              (:body r)
-                              {:oops r}))
-                        (if (= 200 (:status r))
-                          (:body r)
-                          {:oops (:status r)}))))})
-
-    (div
-      (json-view "Latest batch statistics"
-        (<mget (md/mxu-find-name me "stats-button") :stats)))))
-
-(defn json-view [title json]
-  (div {:hidden (cF (nil? json))}
-    (h3 title)
-    (for [[k v] json]
-      (div {:style {:display        "flex",
-                    :flex-direction "row"}} {}
-        (span {:style   {:min-width "144px"
-                         :margin    "2px"}
-               :content (str (str/join " "
-                               (map str/capitalize
-                                 (str/split (name k) #"-"))) ": ")})
-        (span {:style   {:min-width     "72px"
-                         :margin        "2px"
-                         :padding-right "2px"
-                         :text-align    "right"
-                         :font-weight   "bold"
-                         :background    "white"}
-               :content (str v)})))))
-
-(defn watch-stats-option [me]
-  (tag-checkbox me "watch-progress"
-    "Watch progress" true
-    {:name  "watch-progress"
-     :style "font-size:1.2em;margin:24px"}))
-
-(defn watched-stats [me]
-  (div {:hidden (cF (not (<mget (md/mxu-find-name me "watch-progress") :on?)))}
-    {:name   "watcher"
-     :reload (cI 0)                                         ;;d/f hackkk
-     :xhr    (cF (when (and (<mget (md/mxu-find-name me "watch-progress") :on?)
-                         (<mget me :reload))
-                   (send-xhr :get-runnin "/runningstats" {:accept :json})))
-     :stats  (cF+ [:obs (fn-obs
-                          (when new
-                            (js/setTimeout #(with-cc
-                                              (mswap!> me :reload inc)) 50)))]
-               (or
-                 (when-let [xhr (<mget me :xhr)]
-                   (when-let [r (xhr-response xhr)]
-                     (if (= 200 (:status r))
-                       (assoc (:body r) :now (.getTime (js/Date.)))
-                       {:oops (:status r)})))
-                 (when-not (= cache unbound)                ;;(pln :cache-out cache)
-                   cache)))}
-    (div
-      (h2 "Running stats")
-      (p "Stats drop off periodically because for now we achieve long shows by reprocessing a 300k batch.")
-
-      (div {:style "margin-left:36px"}
-        {:name  "stat-group"
-         :stats (cF (<mget (mxu-find-name me "watcher") :stats))}
-
-        (for [[lbl vkey] [["Duration" :run-duration]
-                          ["Sent" :sent-ct]
-                          ["Dup Email" :rejected-dup-addr]
-                          ["High score" :rejected-score]
-                          ["High mean" :rejected-overall-mean]
-                          ["Span mean" :rejected-span-mean]]]
-          (div {:style {:display        "flex",
-                        :flex-direction "row"}} {}
-            (span {:style   {:min-width "96px"
-                             :margin    "2px"}
-                   :content (str lbl ": ")})
-            (span {:style   {:min-width     "72px"
-                             :margin        "2px"
-                             :padding-right "2px"
-                             :text-align    "right"
-                             :font-weight   "bold"
-                             :background    "white"}
-                   :content (cF (let [ss (mxu-find-name me "stat-group")]
-                                  (when-let [stats (<mget ss :stats)]
-                                    (str (vkey stats)))))})))))))
-
-;<div class="pure-u-1 pure-u-md-1-3">
-;  <label for="state">State</label>
-;  <select id="state" class="pure-input-1-2">
-;    <option>AL</option>
-;    <option>CA</option>
-;    <option>IL</option>
-;  </select>
-;</div>
+                    (send-xhr
+                      (case job
+                        :start (str "start?filename="
+                                 (let [fw (mxu-find-id me "email-file-raw")]
+                                   (assert fw)
+                                   (<mget fw :value)))
+                        :stop "stop")
+                      #_ ;; figure out how to talk to localhost
+                      (str (merge
+                             (url (str "http://"
+                                 (case job
+                                   :start "start"
+                                   :stop "stop")))
+                             #_
+                             {:filename
+                              (let [fw (mxu-find-id me "email-file-raw")]
+                                (assert fw)
+                                (<mget fw :value))})))))}))
 
 (defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"
@@ -173,17 +92,24 @@
     (label {:for   "email-file-raw"
             :style "margin-right:6px"}
       "File to clean")
-    (select {:id      "email-file-raw"
-             :class   "pure-input-1-2"
-             :xhr     (cF (send-xhr :get-raws "/rawfiles" {:accept :json}))
-             :options (cF (when-let [xhr (<mget me :xhr)]
-                            (when-let [r (xhr-response xhr)]
-                              (pln :status!!!!!! (:status r))
-                              (when (= 200 (:status r))
-                                (pln :body!!!! (:body r))
-                                (:body r)))))}
-        (map #(option %)
-          (<mget me :options)))))
+    (select {:id       "email-file-raw"
+             :class    "pure-input-1-2"
+             :onchange #(do
+                          (println :emraw (target-value %))
+                          (mset!> (evt-tag %) :value (target-value %)))
+             :xhr      (cF (send-xhr :get-raws "/rawfiles" {:accept :json}))
+             :options  (cF (when-let [xhr (<mget me :xhr)]
+                             (when-let [r (xhr-response xhr)]
+                               (when (= 200 (:status r))
+                                 (:body r)))))}
+      {:value (cI "em-100000-100.edn")} ;; todo cleanup
+      #_(option {:enabled "false" :selected true :value "<none>"}
+        "Pick a file, any file.")
+      (map (fn [n s]
+             (option {:selected (= n 0)} s))
+        (range)
+        (<mget me :options)))))
+
 
 (defn matrix-build! []
   (md/make ::spamux
@@ -192,6 +118,7 @@
                         (assert mtx)
                         [(div {:style "margin:36px"}
                            (h1 "Hello, SpamUX!")
+                           (raw-email-file-builder)
                            (p "First, pick a file to make spam-detector-proof.")
                            (email-raw-files)
                            (start-button)

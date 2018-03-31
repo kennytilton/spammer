@@ -12,6 +12,7 @@
             [clojure.string :as str]
             [cheshire.core :refer :all]
             [spamux.batcher :refer :all]
+            [spamux.genlist :refer :all]
             [clojure.pprint :as pp]))
 
 (def cumulative-stats (atom nil))
@@ -38,22 +39,33 @@
        :headers {"Content-Type" "application/json"}
        :body    (generate-string files)}))
 
-  (GET "/start" []
-    (do
-      (reset! cumulative-stats {})
-      (reset! gStart (System/currentTimeMillis))
-      (reset! batch-is-running? true)
-      (go-loop []
-        (run-batch "em-300000-100.edn")
-        (swap! cumulative-stats
-          #(merge-with + % @latest-summary-stats))
-        (when @batch-is-running?
-          (pln :rebatching!!!!!!!!!!!!)
-          (pp/pprint @cumulative-stats)
-          (recur )))
-      {:status  200
-       :headers {"Content-Type" "text/html"}
-       :body    "<b>Stop!</b>"}))
+  (GET "/build" req
+    (let [{:keys [cookies params]} req]
+      (prn :build-params params)
+      (do
+        (go
+          (reset! batch-is-building? false)
+          (email-raw-file-build (Integer/parseInt (:volumek params)))
+          (reset! batch-is-building? false))
+        {:status  200
+         :headers {"Content-Type" "text/html"}
+         :body    "<b>Building...</b>"})))
+
+  (GET "/start" req
+    (let [{:keys [cookies params]} req]
+      (prn :start-params params)
+      (do
+        (reset! cumulative-stats {})
+        (reset! gStart (System/currentTimeMillis))
+        (reset! batch-is-running? true)
+        (go
+          (run-batch (:filename params))
+          (swap! cumulative-stats
+            #(merge-with + % @latest-summary-stats))
+          (reset! batch-is-running? false))
+        {:status  200
+         :headers {"Content-Type" "text/html"}
+         :body    "<b>Stop!</b>"})))
 
   (GET "/batchstats" []
     (let [stats (or @latest-summary-stats
