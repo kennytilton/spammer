@@ -102,7 +102,6 @@
                    cache)))}
     (div
       (h2 "Running stats")
-      (p "Stats drop off periodically because for now we achieve long shows by reprocessing a 300k batch.")
 
       (div {:style "margin-left:36px"}
         {:name  "stat-group"

@@ -1,4 +1,4 @@
-(ns spamux.mx-builder
+(ns spamux.job-control
   (:require [clojure.string :as str]
             [tiltontec.util.core :refer [pln]]
             [tiltontec.cell.base :refer [ia-type unbound]]
@@ -24,10 +24,6 @@
             [tiltontec.webmx.html :refer [mxu-find-tag]]
             [tiltontec.webmx.widget :refer [tag-checkbox]]
 
-            [spamux.progress-viewer
-             :refer [show-stats watch-stats-option watched-stats]]
-            [spamux.email-input-builder
-             :refer [raw-email-file-builder]]
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]))
 
@@ -37,7 +33,7 @@
   (pln :eko!!! key value)
   value)
 
-(defn- start-button []
+(defn start-button []
   (button
     {:class    "pure-button"
      :disabled (cF (let [raw-select (mxu-find-id me "email-file-raw")]
@@ -91,7 +87,7 @@
      :ae        (cF (when-let [job (<mget me :job-key)]
                       (send-xhr
                         (case job
-                          :start (str "start?filename="
+                          :start (str "start?outputp=false&logfail=true&filename="
                                    (let [fw (mxu-find-id me "email-file-raw")]
                                      (assert fw)
                                      (<mget fw :value)))
@@ -107,7 +103,7 @@
                                         (assert fw)
                                         (<mget fw :value))})))))}))
 
-(defn- email-raw-files []
+(defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"
         :style "margin-bottom:18px"}
     (label {:for   "email-file-raw"
@@ -123,26 +119,13 @@
                              (when-let [r (xhr-response xhr)]
                                (when (= 200 (:status r))
                                  (:body r)))))}
-      {:value (cI "em-1000k.edn")}                          ;; todo cleanup
+      {:value (cI "em-100k.edn")}                          ;; todo cleanup
       [(option {:enabled "false" :value "<none>"} "Pick a file, any file.")
        (map (fn [n s]
-              (option {:selected (= s "em-70k.edn")} s))
+              (option {:selected (= s "em-100k.edn")} s))
          (range)
          (<mget me :options))])))
 
 
-(defn matrix-build! []
-  (md/make ::spamux
-    :mx-dom (cFonce (md/with-par me
-                      (let [mtx me]
-                        (assert mtx)
-                        [(div {:style "margin:36px"}
-                           (h1 "Hello, SpamUX!")
-                           (raw-email-file-builder)
-                           (p "First, pick a file to make spam-detector-proof.")
-                           (email-raw-files)
-                           (start-button)
-                           (watch-stats-option me)
-                           (watched-stats me)
-                           (show-stats))])))))
+
 

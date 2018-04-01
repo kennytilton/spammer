@@ -17,8 +17,7 @@
 
 (def cumulative-stats (atom nil))
 
-(def directory (clojure.java.io/file "bulkinput"))
-(def files (file-seq directory))
+(declare job-start email-input-build email-input-list)
 
 (defroutes app-routes
   (GET "/" []
@@ -26,45 +25,14 @@
       (pln "New server!!!")
       (resp/content-type (resp/resource-response "index.html" {:root "spamux"}) "text/html")))
 
-  (GET "/rawfiles" []
-    (let [files (into []
-                  (map :name
-                    (filter :file
-                      (remove :hidden
-                        (map bean
-                          (file-seq
-                            (clojure.java.io/file "bulkinput")))))))]
-      {:status  200
-       :headers {"Content-Type" "application/json"}
-       :body    (generate-string files)}))
+  (GET "/rawfiles" req
+    (email-input-list req))
 
   (GET "/build" req
-    (let [{:keys [cookies params]} req]
-      (prn :build-params params)
-      (do
-        (go
-          (reset! batch-is-building? false)
-          (email-raw-file-build (Integer/parseInt (:volumek params)))
-          (reset! batch-is-building? false))
-        {:status  200
-         :headers {"Content-Type" "text/html"}
-         :body    "<b>Building...</b>"})))
+    (email-input-build req))
 
   (GET "/start" req
-    (let [{:keys [cookies params]} req]
-      (prn :start-params params)
-      (do
-        (reset! cumulative-stats {})
-        (reset! gStart (System/currentTimeMillis))
-        (reset! batch-is-running? true)
-        (go
-          (run-batch (:filename params))
-          (swap! cumulative-stats
-            #(merge-with + % @latest-summary-stats))
-          (reset! batch-is-running? false))
-        {:status  200
-         :headers {"Content-Type" "text/html"}
-         :body    "<b>Stop!</b>"})))
+    (job-start req))
 
   (GET "/batchstats" []
     (let [stats (or @latest-summary-stats
@@ -100,9 +68,48 @@
 
 (def app
   (-> app-routes
-    ;; (wrap-file "/")
     (wrap-resource "spamux/out")
     (wrap-resource "spamux")
     (wrap-content-type)
     (wrap-defaults site-defaults)))
 
+(defn job-start [req]
+  (let [{:keys [cookies params]} req]
+    (prn :start-params params)
+    (do
+      (reset! cumulative-stats {})
+      (reset! gStart (System/currentTimeMillis))
+      (reset! batch-is-running? true)
+      (go
+        (email-file-to-sendfiles-mp params)
+
+        (swap! cumulative-stats
+          #(merge-with + % @latest-summary-stats))
+        (reset! batch-is-running? false))
+      {:status  200
+       :headers {"Content-Type" "text/html"}
+       :body    "<b>Stop!</b>"})))
+
+(defn email-input-build [req]
+  (let [{:keys [cookies params]} req]
+    (prn :build-params params)
+    (do
+      (go
+        (reset! batch-is-building? false)
+        (email-raw-file-build (Integer/parseInt (:volumek params)))
+        (reset! batch-is-building? false))
+      {:status  200
+       :headers {"Content-Type" "text/html"}
+       :body    "<b>Building...</b>"})))
+
+(defn email-input-list [req]
+  (let [files (into []
+                (map :name
+                  (filter :file
+                    (remove :hidden
+                      (map bean
+                        (file-seq
+                          (clojure.java.io/file "bulkinput")))))))]
+    {:status  200
+     :headers {"Content-Type" "application/json"}
+     :body    (generate-string files)}))
