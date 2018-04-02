@@ -31,8 +31,8 @@
 
 (declare fmo)
 
-(defn job-status [md-name title job-starter]
-  (div
+(defn job-status-view [md-name title job-starter]
+  (div {:style "min-width:144px"}
     (b title)
     (p
       {:content (cF (or (when-let [s (<mget me :jobstatus)]

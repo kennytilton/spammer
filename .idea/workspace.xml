@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80d5a462-ace9-4f4a-b6a0-8121dc305398" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/genlist.clj" afterPath="$PROJECT_DIR$/src/spammer/genlist.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/handler.clj" afterPath="$PROJECT_DIR$/src/spammer/handler.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/job.clj" afterPath="$PROJECT_DIR$/src/spammer/job.clj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,31 +17,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="job_control.cljs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="job_control.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="131" column="55" lean-forward="false" selection-start-line="131" selection-start-column="55" selection-end-line="131" selection-end-column="55" />
+            <state relative-caret-position="400">
+              <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xhr.cljc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/spamux/out/tiltontec/xhr.cljc">
+      <file leaf-file-name="email_input_builder.cljs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="232" column="6" lean-forward="false" selection-start-line="232" selection-start-column="6" selection-end-line="232" selection-end-column="6" />
+            <state relative-caret-position="341">
+              <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handler.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/spammer/handler.clj">
+      <file leaf-file-name="batcher.clj" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/spammer/batcher.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="129" column="6" lean-forward="false" selection-start-line="129" selection-start-column="6" selection-end-line="129" selection-end-column="6" />
+            <state relative-caret-position="312">
+              <caret line="236" column="7" lean-forward="false" selection-start-line="236" selection-start-column="7" selection-end-line="236" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -61,61 +57,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="genlist.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/spammer/genlist.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="job.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/spammer/job.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="component.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="58" column="51" lean-forward="false" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
+            <state relative-caret-position="190">
+              <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="batcher.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/spammer/batcher.clj">
+      <file leaf-file-name="core.cljs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="236" column="7" lean-forward="false" selection-start-line="236" selection-start-column="7" selection-end-line="236" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="email_input_builder.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="76" column="24" lean-forward="false" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="component.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/spamux/out/spamux/component.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+            <state relative-caret-position="604">
+              <caret line="57" column="50" lean-forward="false" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -133,12 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>jnot</find>
-      <find>jobid</find>
-      <find>job-made</find>
-      <find>thr</find>
-      <find>err</find>
-      <find>batch</find>
       <find>:starter</find>
       <find>job-id</find>
       <find>:start</find>
@@ -161,8 +111,14 @@
       <find>pln</find>
       <find>ut/</find>
       <find>file to</find>
-      <find>name</find>
+      <find>to clean</find>
+      <find>200</find>
+      <find>min-widt</find>
       <find>fw</find>
+      <find>cyan</find>
+      <find>job-status</find>
+      <find>name</find>
+      <find>job-status</find>
     </findStrings>
     <replaceStrings>
       <replace>logfail</replace>
@@ -198,14 +154,15 @@
         <option value="$PROJECT_DIR$/resources/spamux/src/spamux/mx_builder.cljs" />
         <option value="$PROJECT_DIR$/resources/spamux/out/spamux/job_control.cljs" />
         <option value="$PROJECT_DIR$/src/spammer/batcher.clj" />
-        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs" />
-        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
         <option value="$PROJECT_DIR$/src/spammer/job.clj" />
         <option value="$PROJECT_DIR$/src/spammer/genlist.clj" />
-        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs" />
         <option value="$PROJECT_DIR$/src/spammer/handler.clj" />
-        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" />
+        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
+        <option value="$PROJECT_DIR$/resources/spamux/out/spamux/component.cljs" />
+        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs" />
+        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs" />
         <option value="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" />
+        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" />
       </list>
     </option>
   </component>
@@ -293,7 +250,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/spammer" />
     <property name="cursive.last.file.extension./Users/kennethtilton/spammer/src" value="clj" />
   </component>
-  <component name="ReplState" timestamp="1522699161065">{:repl-history {:ide [], :local [{:command &quot;(def xxx (atom {}))&quot;, :offset 19, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx assoc 1 {:aaa 42 :bbb []})&quot;, :offset 37, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] inc)&quot;, :offset 28, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa 43] inc)&quot;, :offset 31, :ns &quot;spammer.handler&quot;} {:command &quot;xxx&quot;, :offset 3, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa 43}] )&quot;, :offset 30, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa}] 43 )&quot;, :offset 30, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa}] assoc 43 )&quot;, :offset 36, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] inc )&quot;, :offset 29, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] 43 )&quot;, :offset 28, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx update-in xxx [1 :aaa] 43 )&quot;, :offset 38, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in @xxx [1 :aaa] inc)&quot;, :offset 29, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx update-in [1 :aaa] inc)&quot;, :offset 34, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx assoc-in [1 :aaa] 0)&quot;, :offset 31, :ns &quot;spammer.handler&quot;} {:command &quot;(defn job-not-found-response [job-id]\n  {:status  404\n   :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n   :body    (generate-string {:job-id job-id})})&quot;, :offset 150, :ns &quot;spammer.handler&quot;} {:command &quot;(defn req-job-id [req]\n  (assoc-in req [:params :job-id] req))&quot;, :offset 62, :ns &quot;spammer.handler&quot;} {:command &quot;(defn get-job [job-id]\n  (get @gJobs job-id))&quot;, :offset 45, :ns &quot;spammer.job&quot;} {:command &quot;(def gJobs {})&quot;, :offset 14, :ns &quot;spammer.job&quot;} {:command &quot;(println @gJobs)&quot;, :offset 16, :ns &quot;spammer.job&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1522704193348">{:repl-history {:ide [], :local [{:command &quot;(def xxx (atom {}))&quot;, :offset 19, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx assoc 1 {:aaa 42 :bbb []})&quot;, :offset 37, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] inc)&quot;, :offset 28, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa 43] inc)&quot;, :offset 31, :ns &quot;spammer.handler&quot;} {:command &quot;xxx&quot;, :offset 3, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa 43}] )&quot;, :offset 30, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa}] 43 )&quot;, :offset 30, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa}] assoc 43 )&quot;, :offset 36, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] inc )&quot;, :offset 29, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] 43 )&quot;, :offset 28, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx update-in xxx [1 :aaa] 43 )&quot;, :offset 38, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in @xxx [1 :aaa] inc)&quot;, :offset 29, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx update-in [1 :aaa] inc)&quot;, :offset 34, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx assoc-in [1 :aaa] 0)&quot;, :offset 31, :ns &quot;spammer.handler&quot;} {:command &quot;(defn job-not-found-response [job-id]\n  {:status  404\n   :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n   :body    (generate-string {:job-id job-id})})&quot;, :offset 150, :ns &quot;spammer.handler&quot;} {:command &quot;(defn req-job-id [req]\n  (assoc-in req [:params :job-id] req))&quot;, :offset 62, :ns &quot;spammer.handler&quot;} {:command &quot;(defn get-job [job-id]\n  (get @gJobs job-id))&quot;, :offset 45, :ns &quot;spammer.job&quot;} {:command &quot;(def gJobs {})&quot;, :offset 14, :ns &quot;spammer.job&quot;} {:command &quot;(println @gJobs)&quot;, :offset 16, :ns &quot;spammer.job&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -415,58 +372,31 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20147255" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20147255" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24966533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24966533" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -579,50 +509,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/spammer/batcher.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="236" column="7" lean-forward="false" selection-start-line="236" selection-start-column="7" selection-end-line="236" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/spammer/job.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/spammer/genlist.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -635,14 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/spamux/out/spamux/component.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/spammer/handler.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -651,26 +533,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs">
+    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="58" column="51" lean-forward="false" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
+        <state relative-caret-position="38">
+          <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs">
+    <entry file="file://$PROJECT_DIR$/resources/spamux/out/spamux/component.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="76" column="24" lean-forward="false" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+        <state relative-caret-position="271">
+          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spammer/job.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="31" column="6" lean-forward="false" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="57" column="50" lean-forward="false" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="131" column="55" lean-forward="false" selection-start-line="131" selection-start-column="55" selection-end-line="131" selection-end-column="55" />
+        <state relative-caret-position="400">
+          <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spammer/batcher.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="236" column="7" lean-forward="false" selection-start-line="236" selection-start-column="7" selection-end-line="236" selection-end-column="7" />
           <folding />
         </state>
       </provider>

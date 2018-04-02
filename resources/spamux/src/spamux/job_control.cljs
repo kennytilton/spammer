@@ -26,7 +26,7 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.component :refer [job-status fmo fmov current-job-id]]))
+            [spamux.component :refer [ fmo fmov current-job-id]]))
 
 (def jobs (atom {}))
 
@@ -37,6 +37,7 @@
 
 (declare start-button)
 
+;; todo keep option choices in a cookie
 (defn jcl-panel []
   (div {:style {:padding      "9px"
                 :border       "solid"
@@ -51,10 +52,24 @@
       (tag-checkbox me "log-fail-p"
         "Log fails?" false
         {:name  "log-fails"
-         :style "background:white;padding:6px"}))
+         :style "background:white;padding:6px"})
 
-    (start-button)
-    (job-status "job-status" "Job status" :starter)))
+      (tag-checkbox me "sample-fail-p"
+        "Sample fails?" true
+        {:name  "sample-fails"
+         :style "background:white;padding:6px"})
+
+      (tag-checkbox me "watch-progress"
+        "Watch progress" true
+        {:name  "watch-progress"
+         :style "background:white;padding:6px"})
+
+      (start-button))
+
+    #_ (div {:style {:display        "flex"
+                  :flex-direction "row"}}
+
+      )))
 
 (defn start-button []
   (button
@@ -78,8 +93,8 @@
                       :default (do (pln :start-defaulting jobstat)
                                    :start))))
 
-     :style    (cF (let [ltgreen "background:#8f8"
-                         ltred "background:#f88"]
+     :style    (cF (let [ltgreen "margin-left:24px;background:#8f8"
+                         ltred "margin-left:24px;background:#f88"]
                      (or
                        (when-let [js (<mget me :jobstatus)]
                          (case (:status js)
@@ -121,12 +136,13 @@
 
 (defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"
-        :style "margin-bottom:18px;background:white"}
+        :style "margin-bottom:18px"}
     (label {:for   "email-file-raw"
             :style "margin-right:6px"}
       "File to clean")
     (select {:id       "email-file-raw"
              :class    "pure-input-1-2"
+             :style    "background:white"
              :onchange #(mset!> (evt-tag %) :value (target-value %))
              :xhr      (cF (let [bstat (<mget (mxu-find-name me :builder) :jobstatus)]
                              (pln :rawfiles-sees bstat)

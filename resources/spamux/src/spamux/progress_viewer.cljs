@@ -31,17 +31,11 @@
 
 (declare json-view stats-displayer)
 
-(defn watch-stats-option [me]
-  (tag-checkbox me "watch-progress"
-    "Watch progress" true
-    {:name  "watch-progress"
-     :style "font-size:1em;margin:12px"}))
-
 (defn watched-stats [me]
   (div
-    {:hidden (cF
-               (not #_ (<mget (fmo me :starter) :job-id)
-                 (<mget (md/mxu-find-name me "watch-progress") :on?)))}
+    {:hidden (cF (or
+                   (not (<mget (md/mxu-find-name me "watch-progress") :on?))
+                   (not (<mget (fmo me :starter) :job-id))))}
     {:name   "watcher"
      :reload (cI 0)
      :xhr    (cF (when (and (<mget (fmo me "watch-progress") :on?)

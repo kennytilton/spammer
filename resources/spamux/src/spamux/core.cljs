@@ -29,13 +29,15 @@
 
     ;; --- the beef --------------------------------
     [spamux.progress-viewer
-     :refer [watch-stats-option watched-stats]]
+     :refer [ watched-stats]]
 
     [spamux.email-input-builder
      :refer [raw-email-file-builder]]
 
     [spamux.job-control
-     :refer [jcl-panel email-raw-files]]))
+     :refer [jcl-panel  email-raw-files]]
+
+    [spamux.component :refer [job-status-view]]))
 
 (enable-console-print!)
 
@@ -48,16 +50,15 @@
                         (assert mtx)
                         [(div {:style "margin:36px"}
                            (h1 "SpamUX")
-                           (p "<i>Detect yourself before they do.")
+                           (p "<i>Detect yourself. Before they do.")
                            (raw-email-file-builder)
                            (p "First, pick a file to make spam-detector-proof.")
                            (email-raw-files)
                            (jcl-panel)
-                           (div {:style {:display        "flex"
+                           (div {:style {:display "flex"
                                          :flex-direction "row"}}
-                             (div {:style "min-width:288px"}
-                               (watch-stats-option me)
-                               (watched-stats me))))])))))
+                             (job-status-view "job-status" "Job status" :starter)
+                             (watched-stats me)))])))))
 
 (let [root (dom/getElement "tagroot")
 

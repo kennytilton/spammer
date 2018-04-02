@@ -27,7 +27,7 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.component :refer [job-status fmo fmov current-job-id]]
+            [spamux.component :refer [job-status-view fmo fmov current-job-id]]
             [tiltontec.util.core :as ut]))
 
 (declare build-email-file-button build-status)
@@ -44,9 +44,9 @@
        :placeholder "Number of K emails"
        :oninput     #(mset!> (evt-tag %) :value (target-value %))
        }
-      {:value (cI 10)})
+      {:value (cI nil)})
     (build-email-file-button)
-    (job-status "build-status" "Build status" :builder)))
+    (job-status-view "build-status" "Build status" :builder)))
 
 (defn build-email-file-button []
   (button
