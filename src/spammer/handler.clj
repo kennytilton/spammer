@@ -104,7 +104,7 @@
 (defn job-not-found [req]
   (when-not (req-job-id req)
     (pln :no-job)
-    (throw (str "no job-id in request" )))
+    (throw (str "no job-id in request")))
   (when-not (get-job (req-job-id req))
     (job-not-found-response (req-job-id req))))
 
@@ -117,14 +117,23 @@
 
 (defn running-stats [job-id]
   (if (= :running (job-property job-id :status))
-    (assoc
-      (apply merge-with +
-        (map #(select-keys @(:stats %)
-                [:sent-ct :rejected-score :rejected-dup-addr
-                 :rejected-overall-mean
-                 :rejected-span-mean])
-          (job-property job-id :workers)))
-      :run-duration (- (now) (job-property job-id :start)))
+    (let [fails (into []
+                  (apply concat
+                    (map #(:fails @(:stats %))
+                      (job-property job-id :workers))))
+          final
+          (assoc
+            (apply merge-with +
+              (map #(select-keys @(:stats %)
+                      [:sent-ct :rejected-score :rejected-dup-addr
+                       :rejected-overall-mean
+                       :rejected-span-mean])
+                (job-property job-id :workers)))
+            :fails (into [] (take 3 fails))
+            :run-duration (- (now) (job-property job-id :start)))]
+      (pln :raw-fails fails)
+      (pln :final final)
+      final)
     (latest-summary-stats job-id)))
 
 (defn job-check [req]

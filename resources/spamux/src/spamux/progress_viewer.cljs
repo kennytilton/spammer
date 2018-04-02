@@ -49,6 +49,7 @@
 
      :stats  (cF+ [:obs (fn-obs
                           (when new
+                            (pln :watcher-stats!!! new)
                             (js/setTimeout #(with-cc
                                               (mswap!> me :reload inc)) 1000)))]
                (or
@@ -94,3 +95,19 @@
                            (cF (let [ss (mxu-find-name me "stat-group")]
                                  (when-let [stats (<mget ss :stats)]
                                    (f (vkey stats))))))}))))))
+
+
+(defn fails-displayer
+  ([source-name]
+   (fails-displayer source-name :stats))
+  ([source-name source-property]
+   (div {:style "margin-left:36px"}
+     {:name  "fails-group"
+      :fails (cF (let [src (mxu-find-name me source-name)]
+                   (pln :source!!!!! src source-property)
+                   (let [fails (:fails (<mget src source-property))]
+                     (pln :fails-1!!! fails)
+                     (or fails (when (not= cache unbound)
+                                 cache)))))}
+     (b "Fails")
+     (span {:content (cF (str (<mget (fmo me "fails-group") :fails)))}))))

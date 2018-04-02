@@ -148,14 +148,14 @@
                              (pln :rawfiles-sees bstat)
                              (send-xhr :get-raws "rawfiles")))
              }
-      {:value   (cI "em-100k.edn")                          ;; todo fix that this has to align with selected below
+      {:value   (cI "em-7k.edn")                          ;; todo fix that this has to align with selected below
        :options (cF (when-let [xhr (<mget me :xhr)]
                       (when-let [r (xhr-response xhr)]
                         (when (= 200 (:status r))
                           (:body r)))))}
       [(option {:enabled "false" :value "<none>"} "Pick a file, any file.")
        (map (fn [n s]
-              (option {:selected (= s "em-100k.edn")} s))
+              (option {:selected (= s "em-7k.edn")} s))
          (range)
          (<mget me :options))])))
 
