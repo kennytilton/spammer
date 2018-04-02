@@ -27,7 +27,8 @@
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]))
 
-(declare json-view)
+(def jobs (atom {}))
+(def current-job-id (atom nil))
 
 (defn- eko [key value]
   (pln :eko!!! key value)
@@ -67,8 +68,6 @@
      (if (contains? @mx slot-name)
        (<mget mx slot-name)
        (throw (str "fmov> " id-name " lacks " slot-name " property"))))))
-
-(defonce job-id (atom (* 100 (rand-int 10000))))
 
 (defn start-button []
   (button
@@ -110,18 +109,29 @@
 
      :jobstatus (cF (fmov me "job-status"))
 
-     :xhr       (cF (when-let [job (<mget me :job-key)]
+     :start       (cF (when-let [job (<mget me :job-key)]
                       (send-xhr
                         (case job
-                          :start (let [uri (pp/cl-format nil "start?jobid=~d&outputp=~a&logfail=~a&filename=~a"
-                                             (swap! job-id inc)
+                          :start (let [uri (pp/cl-format nil "start?job-type=clean&outputp=~a&logfail=~a&filename=~a"
                                              (fmov me "outputp" :on?)
                                              (fmov me "log-fail-p" :on?)
                                              (fmov me "email-file-raw"))]
                                    (pln :starting! uri)
                                    uri)
 
-                          :stop "stop"))))}))
+                          :stop "stop"))))
+
+     :job-id (cF+ [:obs (fn-obs (when new
+                                  (pln :storing-job!!! new)
+                                  (reset! current-job-id new)))]
+               (when-let [xhr (<mget me :start)]
+                 (if-let [r (xhr-response xhr)]
+                   (do
+                     (pln :start!!!! (:status r) (:body r))
+                     (if (= 200 (:status r))
+                       (:job-id (:body r))
+                       (throw (str "job start failed:" r))))
+                   nil)))}))
 
 (defn job-status []
   (p
@@ -132,11 +142,11 @@
     {:name      "job-status"
      :value     (cF (<mget me :jobstatus))
      :recheck   (cI 0)
-     :chk       (cF (when (and (= :start (<mget (fmo me :starter) :job-key))
-                               (<mget me :recheck))
-                      ;; (pln :chking-job!!!!)
+     :chk       (cF (when-let [job-id (<mget (fmo me :starter) :job-id)]
+                      (pln :chking-job!!!! job-id)
+
                       (send-xhr :get-runnin
-                        (pp/cl-format nil "checkjob?jobid=~d" @job-id)
+                        (pp/cl-format nil "checkjob?job-id=~a" job-id)
                         {:accept :json})))
 
      :jobstatus (cF+ [:obs (fn-obs
@@ -148,12 +158,16 @@
                   (when-let [xhr (<mget me :chk)]
                     (if-let [r (xhr-response xhr)]
                       (do
-                        ;;(pln :chk! (:status r) (:body r))
+                        (pln :chk! (:status r) (:body r))
                         (if (= 200 (:status r))
-                          {:when   (now)
-                           :status (:status (:body r))}
-                          {:status :error}))
-                      cache)))}))
+                          (merge {:when   (now)}
+                            (:body r))
+                          (throw "job-start failed")))
+                      cache)))
+
+     :job-id (cF (when-let [js (<mget me :jobstatus)]
+                   (pln :hello-js!! js)
+                   (:job-id js)))}))
 
 (defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"

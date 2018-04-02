@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80d5a462-ace9-4f4a-b6a0-8121dc305398" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/spammer/job.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/batcher.clj" afterPath="$PROJECT_DIR$/src/spammer/batcher.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/handler.clj" afterPath="$PROJECT_DIR$/src/spammer/handler.clj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,28 +21,8 @@
       <file leaf-file-name="job_control.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2635">
-              <caret line="155" column="32" lean-forward="false" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="email_input_builder.cljs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-362">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="core.cljc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/spamux/checkouts/xhr/checkouts/matrix/src/tiltontec/util/core.cljc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="130" column="6" lean-forward="false" selection-start-line="130" selection-start-column="6" selection-end-line="130" selection-end-column="6" />
+            <state relative-caret-position="155">
+              <caret line="55" column="18" lean-forward="true" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -60,18 +41,8 @@
       <file leaf-file-name="handler.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spammer/handler.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="129" column="58" lean-forward="false" selection-start-line="129" selection-start-column="58" selection-end-line="129" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="batcher.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/spammer/batcher.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="325" column="20" lean-forward="false" selection-start-line="325" selection-start-column="20" selection-end-line="325" selection-end-column="20" />
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,18 +51,38 @@
       <file leaf-file-name="genlist.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spammer/genlist.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="-665">
               <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="progress_viewer.cljs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="job.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/spammer/job.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="28" column="6" lean-forward="false" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="batcher.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/spammer/batcher.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="236" column="7" lean-forward="false" selection-start-line="236" selection-start-column="7" selection-end-line="236" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="progress_viewer.cljs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+            <state relative-caret-position="269">
+              <caret line="46" column="76" lean-forward="false" selection-start-line="46" selection-start-column="76" selection-end-line="46" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -102,47 +93,52 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Clojure Namespace" />
         <option value="ClojureScript Namespace" />
+        <option value="Clojure Namespace" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>spamux</find>
-      <find>em1000</find>
-      <find>email-raw-files</find>
-      <find>matrix-build!</find>
-      <find>:spit-chan</find>
-      <find>periodi</find>
-      <find>email-file-to-sendfiles-mp</find>
-      <find>bulkinput</find>
-      <find>output-fails-p</find>
-      <find>checkb</find>
-      <find>flex</find>
-      <find>ae</find>
-      <find>spamgen</find>
-      <find>Duration:</find>
-      <find>watch prog</find>
-      <find>now</find>
+      <find>batch-is-building?</find>
+      <find>latest-summary-stats</find>
+      <find>running-stats</find>
+      <find>gWorkers</find>
+      <find>batch-abort</find>
+      <find>gStart</find>
       <find>batch-is-running?</find>
-      <find>100k</find>
-      <find>fmo</find>
-      <find>1000k</find>
-      <find>start!</find>
-      <find>val!!!</find>
-      <find>:job-key</find>
-      <find>latest</find>
-      <find>running</find>
-      <find>fmov</find>
+      <find>-is-running</find>
+      <find>&quot;stop&quot;</find>
+      <find>comeback</find>
+      <find>gWo</find>
+      <find>batch-is</find>
+      <find>throw</find>
+      <find>:bulkmail-out-path</find>
+      <find>filename</find>
+      <find>:job-prop</find>
+      <find>pln :stat</find>
+      <find>@gJ</find>
+      <find>we-in</find>
+      <find>em-raw-file</find>
+      <find>:conside</find>
+      <find>jnot</find>
+      <find>jobid</find>
+      <find>job-made</find>
+      <find>thr</find>
+      <find>err</find>
+      <find>batch</find>
       <find>pln</find>
-      <find>job</find>
+      <find>job-id</find>
+      <find>:starter</find>
     </findStrings>
     <replaceStrings>
       <replace>logfail</replace>
       <replace>build</replace>
       <replace>build-key</replace>
       <replace>xhr</replace>
+      <replace>current-job-id</replace>
+      <replace>em-raw-file</replace>
+      <replace>filename</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/spammer</dir>
@@ -168,12 +164,13 @@
         <option value="$PROJECT_DIR$/src/spammer/genlist.clj" />
         <option value="$PROJECT_DIR$/resources/spamux/src/spamux/mx_builder.cljs" />
         <option value="$PROJECT_DIR$/resources/spamux/out/spamux/job_control.cljs" />
-        <option value="$PROJECT_DIR$/src/spammer/batcher.clj" />
-        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
         <option value="$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs" />
-        <option value="$PROJECT_DIR$/src/spammer/handler.clj" />
-        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" />
         <option value="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" />
+        <option value="$PROJECT_DIR$/src/spammer/job.clj" />
+        <option value="$PROJECT_DIR$/src/spammer/batcher.clj" />
+        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" />
+        <option value="$PROJECT_DIR$/src/spammer/handler.clj" />
+        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
       </list>
     </option>
   </component>
@@ -259,7 +256,9 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="cursive.last.file.extension./Users/kennethtilton/spammer/resources" value="cljs" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/spammer" />
+    <property name="cursive.last.file.extension./Users/kennethtilton/spammer/src" value="clj" />
   </component>
+  <component name="ReplState" timestamp="1522681861024">{:repl-history {:ide [], :local [], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -272,7 +271,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Clojure REPL.Unnamed">
+    <configuration name="Unnamed" type="ClojureREPL" factoryName="Local">
+      <setting name="replType" value="1" />
+      <module name="spammer" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -376,9 +383,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17804551" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -386,7 +393,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24966533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -536,22 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/spammer/genlist.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -560,34 +551,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/spammer/batcher.clj">
+    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="325" column="20" lean-forward="false" selection-start-line="325" selection-start-column="20" selection-end-line="325" selection-end-column="20" />
+        <state relative-caret-position="-362">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/spammer/handler.clj">
+    <entry file="file://$PROJECT_DIR$/src/spammer/genlist.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="129" column="58" lean-forward="false" selection-start-line="129" selection-start-column="58" selection-end-line="129" selection-end-column="58" />
+        <state relative-caret-position="-665">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spammer/job.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="28" column="6" lean-forward="false" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spammer/batcher.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="236" column="7" lean-forward="false" selection-start-line="236" selection-start-column="7" selection-end-line="236" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2635">
-          <caret line="155" column="32" lean-forward="false" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
+        <state relative-caret-position="155">
+          <caret line="55" column="18" lean-forward="true" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.9.0/clojure-1.9.0.jar!/clojure/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-362">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="249">
+          <caret line="2195" column="6" lean-forward="false" selection-start-line="2195" selection-start-column="6" selection-end-line="2195" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spammer/handler.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="46" column="76" lean-forward="false" selection-start-line="46" selection-start-column="76" selection-end-line="46" selection-end-column="76" />
           <folding />
         </state>
       </provider>

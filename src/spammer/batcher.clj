@@ -7,8 +7,10 @@
     [clojure.core.async :refer [go chan go-loop <! <!! >!! >!
                                 timeout alt!!]]
     [clojure.tools.cli :refer [parse-opts] :as cli]
+    [clojure.java.io :refer [make-parents]]
     [taoensso.tufte :as tufte :refer (defnp p profiled profile)]
     [taoensso.timbre :as log]
+    [spammer.job :refer :all]
     [spammer.genlist :refer :all]))
 
 (def spamgen-cli
@@ -35,7 +37,7 @@
    :bulkmail-out-path "bulkmail"
    })
 
-(declare pln now xpln email-file-to-sendfiles-mp)
+(declare email-file-to-sendfiles-mp)
 
 #_(-main "-v")
 
@@ -69,26 +71,10 @@
   ;;(shutdown-agents)
   )
 
-
-
 (declare
   emw-email-consider
   span-mean-ok
-  edn-dump pln)
-
-(def batch-id (atom nil))
-
-(def batch-is-running? (atom false))
-
-(def batch-is-building? (atom false))
-
-(def gWorkers (atom nil))
-(def gStart (atom (System/currentTimeMillis)))
-
-(defn batch-abort []
-  (reset! batch-is-running? false))
-
-(def latest-summary-stats (atom nil))
+  edn-dump)
 
 (defn email-file-to-sendfiles-mp
   "[options]
@@ -98,23 +84,35 @@
   in each to honor spam score constraints specified in config.edn
   and never to include two emails to the same address across all
   batches."
-  [{:keys [filename job-id verbose outputp logfail]}]
+  [job-id]
 
-  (pln :email!!!!! filename job-id verbose outputp logfail)
-  (let [em-addrs-hit (ref #{})
-        shared-chan (chan)
-        fail-file (when logfail
-                    (str (:bulkmail-out-path env-hack) "/em-" (or job-id (now)) "fail.edn"))
+  (let [{:keys [filename verbose outputp logfail]}
+        (get-job job-id)
+        fail-file (str
+                    (:bulkmail-out-path env-hack)
+                    "/job-" job-id
+                    "/em-" job-id "-fail.edn")] ;; yes, redundant
 
-        workers (reset! gWorkers
-                  (map (fn [id smtp-ip]
+    (when (or outputp logfail)
+      ;; covers per worker files as well
+      (make-parents fail-file))
+
+    (pln :email!!!!! filename job-id verbose outputp logfail)
+
+
+
+    (let [em-addrs-hit (ref #{})
+          shared-chan (chan)
+
+          workers (map (fn [id smtp-ip]
                          {:id        id
                           :smtp-ip   smtp-ip
                           :ch        shared-chan
-                          :spit-file (when outputp
-                                       (str
-                                         (:bulkmail-out-path env-hack) "/em-"
-                                         smtp-ip ".edn"))
+                          :spit-file (str
+                                       (:bulkmail-out-path env-hack)
+                                       "/job-" job-id
+                                       "/em-" smtp-ip ".edn")
+
                           :fail-file fail-file
                           :out-buff  (atom nil)
                           :addrs-hit em-addrs-hit
@@ -130,97 +128,89 @@
                     (range)
                     (take (min (count (:smtp env-hack))
                             (:worker-ct env-hack))
-                      (:smtp env-hack))))
+                      (:smtp env-hack)))
 
-        work-procs (doall
-                     (map (fn [w]
-                            (go-loop []
-                              (when-let [em-chunk (<! (:ch w))]
-                                (doseq [em em-chunk]
-                                  (emw-email-consider w em))
-                                (recur))))
-                       workers))]
+          work-procs (doall
+                       (map (fn [w]
+                              (go-loop []
+                                (when-let [em-chunk (<! (:ch w))]
+                                  (doseq [em em-chunk]
+                                    (emw-email-consider w em))
+                                  (recur))))
+                         workers))]
 
-    ;; --- initialize spit files with a header ----------------------
-    ;; todo job-id also
-    (doseq [w workers]
-      (when (:spit-file w)
-        (spit (:spit-file w)
+      (swap! gJobs assoc-in [job-id :workers] workers)
+
+      ;; --- initialize spit files with a header ----------------------
+      ;; todo job-id also
+      (doseq [w workers]
+        (when (:spit-file w)
+          (spit (:spit-file w)
+            {:run-date (.toString (java.util.Date.))
+             :smtp-ip  (:smtp-ip w)})))
+
+      (when fail-file
+        (spit fail-file
           {:run-date (.toString (java.util.Date.))
-           :smtp-ip  (:smtp-ip w)})))
+           :job-id   job-id}))
 
-    (when fail-file
-      (spit fail-file
-        {:run-date (.toString (java.util.Date.))
-         :job-id   job-id}))
+      ;; --- feed the workers ----------------------------------------
 
-    ;; --- feed the workers ----------------------------------------
+      (pln :feeding-off!!!! filename)
 
-    (pln :feeding!!!!)
-
-    (let [wait (atom 0)]
       (p :feed-workers
         (with-open [in (java.io.PushbackReader. (clojure.java.io/reader
                                                   (str "bulkinput/" filename)))]
+          (pln :we-in! in)
           (let [edn-seq (repeatedly (partial edn/read {:eof :fini} in))]
             (doseq [em-chunk (take-while (partial not= :fini) edn-seq)]
               ;; todo switch to loop so we can break out
-              (when @batch-is-running?
+              (when (= :running (job-status job-id))
+
                 (let [start (System/currentTimeMillis)]
-                  (>!! shared-chan em-chunk)
-                  (swap! wait + (- (System/currentTimeMillis) start))))))))
-      (pln :feeder-waited @wait :miilis))
+                  (>!! shared-chan em-chunk)))))))
 
-    ;; --- let the workers finish ----------------------------------
+      ;; --- let the workers finish ----------------------------------
 
-    (pln :waiting-on-workers)
+      (pln :waiting-on-workers)
 
-    (loop [[work-proc & rest :as ps] work-procs]
-      (when work-proc
-        (when-let [out (alt!!
-                         (timeout 100) :timeout
-                         work-proc ([r] r))]
-          ;;(pln :bam-worker-out work-proc)
-          (recur rest))))
+      (loop [[work-proc & rest :as ps] work-procs]
+        (when work-proc
+          (when-let [out (alt!!
+                           (timeout 100) :timeout
+                           work-proc ([r] r))]
+            ;;(pln :bam-worker-out work-proc)
+            (recur rest))))
 
-    ;; --- dump worker stats ---------------------------------------
+      ;; --- dump worker stats ---------------------------------------
 
-    (when verbose
-      (doseq [w workers]
+      (when verbose
+        (doseq [w workers]
+          (pln)
+          (pln (format "worker %d:" (:id w)))
+          (pp/pprint @(:stats w))
+          (pln)))
+
+      ;; ---- dump summary stats -------------------------------------
+
+      ;; comeback flush buffer here
+
+      (let [start (job-property job-id :start)]
+        (pln :reco-stats job-id)
+        (swap! gJobs assoc-in [job-id :latest-summary-stats]
+          (merge
+            {:run-duration (- (now) start)}
+            (apply merge-with +
+              (map #(select-keys @(:stats %)
+                      [:sent-ct :rejected-score :rejected-dup-addr
+                       :rejected-overall-mean
+                       :rejected-span-mean])
+                workers))))
+
+        (pp/pprint (latest-summary-stats job-id))
+
         (pln)
-        (pln (format "worker %d:" (:id w)))
-        (pp/pprint @(:stats w))
-        (pln)))
-
-    ;; ---- dump summary stats -------------------------------------
-
-    (let [start @gStart]
-      (reset! latest-summary-stats
-        (merge
-          {:run-duration (- (now) start)}
-          (apply merge-with +
-            (map #(select-keys @(:stats %)
-                    [:sent-ct :rejected-score :rejected-dup-addr
-                     :rejected-overall-mean
-                     :rejected-span-mean])
-              workers))))
-
-      (pp/pprint @latest-summary-stats)
-
-      (pln)
-      (println :fini))))
-
-(defn running-stats []
-  (if @batch-is-running?
-    (assoc
-      (apply merge-with +
-        (map #(select-keys @(:stats %)
-                [:sent-ct :rejected-score :rejected-dup-addr
-                 :rejected-overall-mean
-                 :rejected-span-mean])
-          @gWorkers))
-      :run-duration (- (now) @gStart))
-    @latest-summary-stats))
+        (println :fini)))))
 
 (defn fail-task [w task reason]
   (when (:fail-file w)
@@ -242,7 +232,7 @@
 
   [w task]
 
-  (xpln :consider (:spam-score task) (:email-address task))
+  ;;(pln :consider (:spam-score task) (:email-address task))
 
   (cond
     (> (:spam-score task) (:individual-max env-hack))
@@ -301,10 +291,10 @@
     (if (<= new-mean (:last-n-mean-max env-hack))
       (do
         (swap! (:stats w) assoc :last-n-mean new-mean)
-        #_(pln :okspan new-ct new-mean new-score (:last-n-mean-max env-hack))
+        (xpln :okspan new-ct new-mean new-score (:last-n-mean-max env-hack))
         true)
       (do
-        #_(pln :failspan new-ct new-mean (:last-n-mean-max env-hack))
+        (xpln :failspan new-ct new-mean (:last-n-mean-max env-hack))
         false))))
 
 ;;; --- utilities -------------------------------------------------
@@ -319,11 +309,3 @@
      (let [edn-seq (repeatedly (partial edn/read {:eof :fini} in))]
        (dorun (map println (take-while (partial not= :fini) edn-seq)))))))
 
-(defn pln [& args]
-  (locking *out*
-    (println (str/join " " args))))
-
-(defn xpln [& args])
-
-(defn now []
-  (System/currentTimeMillis))

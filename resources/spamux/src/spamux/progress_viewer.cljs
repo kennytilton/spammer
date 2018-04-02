@@ -25,7 +25,7 @@
                             select option label]]
             [tiltontec.webmx.html :refer [mxu-find-tag]]
             [tiltontec.webmx.widget :refer [tag-checkbox]]
-            [spamux.job-control :refer [job-id fmo fmov]]
+            [spamux.job-control :refer [current-job-id fmo fmov]]
             [cljs.pprint :as pp]))
 
 (declare json-view stats-displayer)
@@ -44,7 +44,11 @@
                       ;; todo roll this up in a terser macro
                       (when-let [xhr (with-synapse (:get-stats)
                                        (when (<mget button :job-key)
-                                         (send-xhr :get-stats "/batchstats" {:accept :json})))]
+                                       (when-let [job-id (<mget (fmo button :starter) :job-id)]
+                                         (send-xhr :get-stats
+                                           (pp/cl-format nil
+                                             "/batchstats?job-id=~a" job-id)
+                                           {:accept :json}))))]
                         (when (xhr-resolved xhr)
                           (let [r (xhr-response xhr)]
                             (if (= 200 (:status r))
@@ -72,7 +76,7 @@
                      ;;;(pln :jobstat-val!!!!!!!! job-status)
                      (when (some #{(:status job-status)} ["pending" "running"])
                        (send-xhr :get-runnin
-                         (pp/cl-format nil "runningstats?jobid=~d" @job-id)
+                         (pp/cl-format nil "runningstats?job-id=~a" @current-job-id)
                          {:accept :json})))))
 
      :stats  (cF+ [:obs (fn-obs
