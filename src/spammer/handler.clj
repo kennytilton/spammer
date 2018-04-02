@@ -17,7 +17,9 @@
 
 (def cumulative-stats (atom nil))
 
-(declare job-start email-input-build email-input-list)
+(declare job-start job-check job-running-stats
+  email-input-build email-input-list)
+
 
 (defroutes app-routes
   (GET "/" []
@@ -41,21 +43,11 @@
        :headers {"Content-Type" "application/json"}
        :body    (generate-string stats)}))
 
-  (GET "/runningstats" []
-    (let [stats (running-stats)]
-      {:status  200
-       :headers {"Content-Type" "application/json"}
-       :body    (generate-string stats)}))
+  (GET "/runningstats" req
+    (job-running-stats req))
 
-  (GET "/checkjob" []
-    (do
-      (pln :checking!!!job!!! @batch-is-running?)
-      {:status  200
-       :headers {"Content-Type" "application/json"}
-       :body    (generate-string
-                  {:status
-                   (if @batch-is-running?
-                    :running :complete)})}))
+  (GET "/checkjob" req
+    (job-check req))
 
   (GET "/stop" []
     (do
@@ -75,13 +67,17 @@
 
 (defn job-start [req]
   (let [{:keys [cookies params]} req]
-    (prn :start-params params)
+    (pln :start-params params)
     (do
+      (reset! batch-id (:jobid params))
       (reset! cumulative-stats {})
       (reset! gStart (System/currentTimeMillis))
       (reset! batch-is-running? true)
       (go
-        (email-file-to-sendfiles-mp params)
+        (email-file-to-sendfiles-mp
+          (merge params
+            {:outputp (= "true" (:outputp params))
+             :logfail (= "true" (:logfail params))}))
 
         (swap! cumulative-stats
           #(merge-with + % @latest-summary-stats))
@@ -89,6 +85,39 @@
       {:status  200
        :headers {"Content-Type" "text/html"}
        :body    "<b>Stop!</b>"})))
+
+(defn job-running-stats [req]
+  (let [{:keys [cookies params]} req]
+    (pln :job-check-params params)
+    (pln :checking!!!job!!!
+      (:jobid params) @batch-id @batch-is-running?)
+    {:status  200
+     :headers {"Content-Type" "application/json"}
+     :body    (generate-string
+                (cond
+                  (not= (:jobid params) @batch-id)
+                  {}
+
+                  :default (running-stats)))}))
+
+(defn job-check [req]
+  (let [{:keys [cookies params]} req]
+    (pln :job-check-params params)
+    (pln :checking!!!job!!!
+      (:jobid params) @batch-id @batch-is-running?)
+
+    {:status  200
+     :headers {"Content-Type" "application/json"}
+     :body    (generate-string
+                {:status
+                 (cond
+                   (not= (:jobid params) @batch-id)
+                   :pending
+
+                   @batch-is-running?
+                   :running
+
+                   :default :complete)})}))
 
 (defn email-input-build [req]
   (let [{:keys [cookies params]} req]

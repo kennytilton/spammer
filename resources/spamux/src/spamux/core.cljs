@@ -35,7 +35,7 @@
      :refer [raw-email-file-builder]]
 
     [spamux.job-control
-     :refer [start-button email-raw-files]]))
+     :refer [jcl-panel email-raw-files]]))
 
 (enable-console-print!)
 
@@ -51,7 +51,7 @@
                            (raw-email-file-builder)
                            (p "First, pick a file to make spam-detector-proof.")
                            (email-raw-files)
-                           (start-button)
+                           (jcl-panel)
                            (watch-stats-option me)
                            (watched-stats me)
                            (show-stats))])))))

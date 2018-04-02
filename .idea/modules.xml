@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/spamux.iml" filepath="$PROJECT_DIR$/spamux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spammer.iml" filepath="$PROJECT_DIR$/spammer.iml" />
     </modules>
   </component>
 </project>

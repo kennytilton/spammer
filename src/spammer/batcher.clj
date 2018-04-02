@@ -61,7 +61,7 @@
 
       :default (email-file-to-sendfiles-mp
                  {:filename test-input-file
-                  :verbose verbose})))
+                  :verbose  verbose})))
 
   ;; WARNING: comment this out for use with REPL. Necessary, to
   ;; get standalone version to exit reliably.
@@ -76,6 +76,8 @@
   span-mean-ok
   edn-dump pln)
 
+(def batch-id (atom nil))
+
 (def batch-is-running? (atom false))
 
 (def batch-is-building? (atom false))
@@ -89,7 +91,7 @@
 (def latest-summary-stats (atom nil))
 
 (defn email-file-to-sendfiles-mp
-  "[em-file (coll)]
+  "[options]
 
   Produce one or more output files targeted
   for different SMTP servers constraining the sequence of emails
@@ -98,6 +100,7 @@
   batches."
   [{:keys [filename job-id verbose outputp logfail]}]
 
+  (pln :email!!!!! filename job-id verbose outputp logfail)
   (let [em-addrs-hit (ref #{})
         shared-chan (chan)
         fail-file (when logfail
@@ -108,9 +111,10 @@
                          {:id        id
                           :smtp-ip   smtp-ip
                           :ch        shared-chan
-                          :spit-file (str
-                                       (:bulkmail-out-path env-hack) "/em-"
-                                       smtp-ip ".edn")
+                          :spit-file (when outputp
+                                       (str
+                                         (:bulkmail-out-path env-hack) "/em-"
+                                         smtp-ip ".edn"))
                           :fail-file fail-file
                           :out-buff  (atom nil)
                           :addrs-hit em-addrs-hit
@@ -132,16 +136,15 @@
                      (map (fn [w]
                             (go-loop []
                               (when-let [em-chunk (<! (:ch w))]
-                                ;;(pln :got-chunk (count em-chunk))
                                 (doseq [em em-chunk]
                                   (emw-email-consider w em))
                                 (recur))))
                        workers))]
 
     ;; --- initialize spit files with a header ----------------------
-
-    (when outputp
-      (doseq [w workers]
+    ;; todo job-id also
+    (doseq [w workers]
+      (when (:spit-file w)
         (spit (:spit-file w)
           {:run-date (.toString (java.util.Date.))
            :smtp-ip  (:smtp-ip w)})))
@@ -208,8 +211,7 @@
       (println :fini))))
 
 (defn running-stats []
-  (if (not @batch-is-running?)
-    {}
+  (if @batch-is-running?
     (assoc
       (apply merge-with +
         (map #(select-keys @(:stats %)
@@ -217,7 +219,8 @@
                  :rejected-overall-mean
                  :rejected-span-mean])
           @gWorkers))
-      :run-duration (- (now) @gStart))))
+      :run-duration (- (now) @gStart))
+    @latest-summary-stats))
 
 (defn fail-task [w task reason]
   (when (:fail-file w)
