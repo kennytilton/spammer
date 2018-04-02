@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80d5a462-ace9-4f4a-b6a0-8121dc305398" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bulkinput/em-100000-100.edn" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bulkinput/em-300000-100.edn" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spamux.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/core.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/batcher.clj" afterPath="$PROJECT_DIR$/src/spammer/batcher.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/handler.clj" afterPath="$PROJECT_DIR$/src/spammer/handler.clj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="job_control.cljs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="job_control.cljs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="86" column="31" lean-forward="false" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+            <state relative-caret-position="310">
+              <caret line="110" column="43" lean-forward="false" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -82,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="progress_viewer.cljs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="progress_viewer.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="935">
@@ -127,10 +118,10 @@
       <find>pln</find>
       <find>start!</find>
       <find>val!!!</find>
-      <find>fmov</find>
       <find>:job-key</find>
       <find>latest</find>
       <find>running</find>
+      <find>fmov</find>
     </findStrings>
     <replaceStrings>
       <replace>logfail</replace>
@@ -164,8 +155,8 @@
         <option value="$PROJECT_DIR$/resources/spamux/out/spamux/job_control.cljs" />
         <option value="$PROJECT_DIR$/src/spammer/batcher.clj" />
         <option value="$PROJECT_DIR$/src/spammer/handler.clj" />
-        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" />
         <option value="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
+        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" />
       </list>
     </option>
   </component>
@@ -568,18 +559,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="86" column="31" lean-forward="false" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="110" column="43" lean-forward="false" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
           <folding />
         </state>
       </provider>

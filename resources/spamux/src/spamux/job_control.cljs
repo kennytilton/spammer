@@ -110,7 +110,6 @@
 
      :jobstatus (cF (fmov me "job-status"))
 
-
      :xhr       (cF (when-let [job (<mget me :job-key)]
                       (send-xhr
                         (case job
