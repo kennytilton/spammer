@@ -16,8 +16,7 @@
     [spammer.job :refer :all]
     [spammer.batcher :refer :all]
     [spammer.genlist :refer :all]
-    [clojure.pprint :as pp]
-    [tiltontec.util.core :as ut]))
+    [clojure.pprint :as pp]))
 
 (declare job-start batch-abort job-not-found
   job-check running-stats req-job-id
@@ -105,7 +104,7 @@
 (defn job-not-found [req]
   (when-not (req-job-id req)
     (pln :no-job)
-    (ut/err "no job"))
+    (throw (str "no job-id in request" )))
   (when-not (get-job (req-job-id req))
     (job-not-found-response (req-job-id req))))
 
@@ -146,17 +145,20 @@
        :headers {"Content-Type" "text/html"}
        :body    "<b>Start</b>"})))
 
+;; todo combine with start
 (defn email-input-build [req]
-  (let [{:keys [cookies params]} req]
-    (prn :build-params params)
-    (do
-      (go
-        (job-status-set (req-job-id req) :running)
-        (email-raw-file-build (Integer/parseInt (:volumek params)))
-        (job-status-set (req-job-id req) :complete)))
+  (let [{:keys [cookies params]} req
+
+        job-id (str (swap! latest-job-id inc))]
+    (prn :build-params job-id params)
+    (go
+      (job-status-set job-id :running)
+      (email-raw-file-build (Integer/parseInt (:volumek params)))
+      (job-status-set job-id :complete))
+
     {:status  200
-     :headers {"Content-Type" "text/html"}
-     :body    "building"}))
+     :headers {"Content-Type" "application/json"}
+     :body    (generate-string {:job-id job-id})}))
 
 (defn email-input-list [req]
   (let [files (into []

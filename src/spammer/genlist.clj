@@ -2,7 +2,7 @@
   (:require
     [clojure.spec.alpha :as s]
     [clojure.spec.gen.alpha :as gen]
-    ))
+    [spammer.job :refer [pln]]))
 
 (def email-domains
   #{"indeediot.com"
@@ -48,11 +48,14 @@
 (defn email-raw-file-build [volume-k]
   (let [chunk 100]
     (let [chunks (partition-all chunk
-                   (email-records-test-gen (* volume-k 1000)))]
+                   (email-records-test-gen (* volume-k 1000)))
+          spit-to (format "bulkinput/em-%dk.edn" volume-k chunk)]
+      (pln :bulkbuild spit-to)
       (dorun
         (map (fn [n c]
-               (spit (format "bulkinput/em-%dk.edn" volume-k chunk)
-                 (into [] c) :append (pos? n)))
+               (spit spit-to
+                 (into [] c)
+                 :append (pos? n)))
           (range)
           chunks)))))
 

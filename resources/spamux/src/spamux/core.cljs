@@ -29,7 +29,7 @@
 
     ;; --- the beef --------------------------------
     [spamux.progress-viewer
-     :refer [show-stats watch-stats-option watched-stats]]
+     :refer [watch-stats-option watched-stats]]
 
     [spamux.email-input-builder
      :refer [raw-email-file-builder]]
@@ -57,8 +57,7 @@
                                          :flex-direction "row"}}
                              (div {:style "min-width:288px"}
                                (watch-stats-option me)
-                               (watched-stats me))
-                             (show-stats)))])))))
+                               (watched-stats me))))])))))
 
 (let [root (dom/getElement "tagroot")
 

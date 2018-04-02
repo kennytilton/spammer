@@ -25,39 +25,11 @@
                             select option label]]
             [tiltontec.webmx.html :refer [mxu-find-tag]]
             [tiltontec.webmx.widget :refer [tag-checkbox]]
-            [spamux.job-control :refer [current-job-id fmo fmov]]
+
+            [spamux.component :refer [fmo fmov current-job-id]]
             [cljs.pprint :as pp]))
 
 (declare json-view stats-displayer)
-
-(defn show-stats []
-  (div {:style "margin-top:36px"}
-    (button
-      {:name    "stats-button"
-       :class   "pure-button"
-       :onclick #(mset!> (evt-tag %) :job-key :get-stats)
-       :content "<b>Stats Snapshot</b>"}
-
-      {:job-key (cI nil :ephemeral? true)
-
-       :stats   (cF (let [button me]
-                      ;; todo roll this up in a terser macro
-                      (when-let [xhr (with-synapse (:get-stats)
-                                       (when (<mget button :job-key)
-                                       (when-let [job-id (<mget (fmo button :starter) :job-id)]
-                                         (send-xhr :get-stats
-                                           (pp/cl-format nil
-                                             "/batchstats?job-id=~a" job-id)
-                                           {:accept :json}))))]
-                        (when (xhr-resolved xhr)
-                          (let [r (xhr-response xhr)]
-                            (if (= 200 (:status r))
-                              (:body r)
-                              {:oops (:status r)}))))))})
-
-    (div
-      (b "Latest batch statistics")
-      (stats-displayer "stats-button" :stats))))
 
 (defn watch-stats-option [me]
   (tag-checkbox me "watch-progress"
@@ -67,10 +39,12 @@
 
 (defn watched-stats [me]
   (div
-    {:hidden (cF (not (<mget (md/mxu-find-name me "watch-progress") :on?)))}
+    {:hidden (cF
+               (not #_ (<mget (fmo me :starter) :job-id)
+                 (<mget (md/mxu-find-name me "watch-progress") :on?)))}
     {:name   "watcher"
      :reload (cI 0)
-     :xhr    (cF (when (and (<mget (md/mxu-find-name me "watch-progress") :on?)
+     :xhr    (cF (when (and (<mget (fmo me "watch-progress") :on?)
                             (<mget me :reload))
                    (let [job-status (fmov me "job-status")]
                      ;;;(pln :jobstat-val!!!!!!!! job-status)

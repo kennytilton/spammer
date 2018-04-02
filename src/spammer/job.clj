@@ -34,6 +34,7 @@
   (job-property job-id :status))
 
 (defn job-status-set [job-id status]
+  (pln :jstat-set job-id status)
   (swap! gJobs assoc-in [job-id :status] status))
 
 ;;; --- utils -------------------------------------------

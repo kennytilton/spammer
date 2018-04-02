@@ -1,6 +1,6 @@
 (ns spamux.email-input-builder
   (:require [clojure.string :as str]
-            [tiltontec.util.core :refer [pln]]
+            [tiltontec.util.core :refer [pln err]]
             [tiltontec.cell.base :refer [ia-type unbound]]
             [tiltontec.cell.core :refer-macros [cF+ cF cFonce] :refer [cI]]
             [tiltontec.cell.observer :refer-macros [fn-obs]]
@@ -26,88 +26,86 @@
 
 
             [cemerick.url :refer (url url-encode)]
-            [cljs.pprint :as pp]))
+            [cljs.pprint :as pp]
+            [spamux.component :refer [job-status fmo fmov current-job-id]]
+            [tiltontec.util.core :as ut]))
 
 (declare build-email-file-button build-status)
 
 (defn raw-email-file-builder []
-  (div {:style "border:2px;border-color:red"}
+  (div {:style {:padding      "9px"
+                :border       "solid"
+                :border-width "1px"
+                :border-color "gray"}}
     (p "Build a new file, if you like.")
     (input
-      {:name "email-volume"
-       :type "number"
+      {:name        "email-volume"
+       :type        "number"
        :placeholder "Number of K emails"
-       :onchange #(do
-                    ;; todo validate
-                    (println :emk (target-value %))
-                    (mset!> (evt-tag %) :value (target-value %)))}
-      {:value (cI nil)})
+       :oninput     #(mset!> (evt-tag %) :value (target-value %))
+       }
+      {:value (cI 10)})
     (build-email-file-button)
-    ;; (build-status)
-    ))
-
-#_
-(defn build-status []
-  (p
-    {:content (cF (or (when-let [s (<mget me :buildstatus)]
-                        (str/capitalize (name (:status s))))
-                    ""))
-     :style   "margin:12px"}
-
-    {:name      "build-status"
-     :value     (cF (<mget me :buildstatus))
-     :recheck   (cI 0)
-     :chk       (cF (when (and (= :start (<mget (fmo me :starter) :build-key))
-                               (<mget me :recheck))
-                      ;; (pln :chking-build!!!!)
-                      (send-xhr :get-runnin
-                        (pp/cl-format nil "checkbuild?buildid=~d" @build-id)
-                        {:accept :json})))
-
-     :buildstatus (cF+ [:obs (fn-obs
-                               ;;(pln :new-jstat new)
-                               (when (some #{(:status new)} ["pending" "running"])
-                                 (js/setTimeout #(with-cc
-                                                   ;;(pln :rechecking!)
-                                                   (mswap!> me :recheck inc)) 500)))]
-                    (when-let [xhr (<mget me :chk)]
-                      (if-let [r (xhr-response xhr)]
-                        (do
-                          ;;(pln :chk! (:status r) (:body r))
-                          (if (= 200 (:status r))
-                            {:when   (now)
-                             :status (:status (:body r))}
-                            {:status :error}))
-                        cache)))}))
+    (job-status "build-status" "Build status" :builder)))
 
 (defn build-email-file-button []
   (button
-    {:class   "pure-button"
-     :style "margin-left:18px"
-     :disabled (cF (nil? (<mget (mxu-find-name me "email-volume") :value)))
+    {:class    "pure-button"
+     :style    "margin-left:18px"
+     :disabled (cF (nil? (fmov me "email-volume")))
 
-     :onclick #(let [me (do (evt-tag %))]
-                 (assert me)
-                 (mset!> me :build-key
-                   (case (<mget me :build-key)
-                     nil :start
-                     :start :stop
-                     :stop :start)))
+     :onclick  #(let [me (do (evt-tag %))]
+                  (assert me)
+                  (cond
+                    (> (fmov me "email-volume") 5000)
+                    (js/alert "You will have to hack the code to exceed 5000k")
 
+                    :default
+                    (mset!> me :job-key
+                      (case (<mget me :job-key)
+                        nil :start
+                        :start :stop
+                        :stop :start))))
 
-     :content (cF (or (when-let [xhr (<mget me :xhr)]
-                        (when-let [r (xhr-response xhr)]
-                          (if (= 200 (:status r))
-                            (:body r)
-                            (str "<b>Something happened: " (:status r) "</b>"))))
-                    "<b>Build</b>"))}
+     :content  (cF (or (when-let [xhr (<mget me :xhr)]
+                         (when-let [r (xhr-response xhr)]
+                           (if (= 200 (:status r))
+                             (:body r)
+                             (str "<b>Something happened: " (:status r) "</b>"))))
+                     "<b>Build</b>"))}
 
-    {:build-key (cI nil)
-     :xhr      (cF (when-let [job (<mget me :build-key)]
-                    (send-xhr
-                      (case job
-                        :start (str "build?volumek="
-                                 (let [fw (mxu-find-name me "email-volume")]
-                                   (assert fw)
-                                   (<mget fw :value)))
-                        :stop "buildstop"))))}))
+    {:name      :builder
+     :job-key   (cI nil :ephemeral? true)
+     :jobstatus (cF (fmov me "build-status"))
+
+     :start     (cF (when-let [job (<mget me :job-key)]
+                      (pln :hello-job job)
+                      (send-xhr
+                        (case job
+                          :start (pp/cl-format nil "build?volumek=~a"
+                                   (let [fw (mxu-find-name me "email-volume")]
+                                     (assert fw)
+                                     (<mget fw :value)))
+
+                          :stop (pp/cl-format nil "stop?job-id=~a"
+                                  (<mget me :job-id)))
+                        {:accept :json})))
+
+     :job-id    (cF+ [:obs (fn-obs (when new
+                                     (pln :storing-job!!! new)
+                                     (reset! current-job-id new)))]
+                  (when-let [xhr (<mget me :start)]
+                    (pln :hello-xhr xhr)
+                    (when-let [r (xhr-response xhr)]
+                      (pln :start!!!! (:status r) (:body r))
+                      (if (= 200 (:status r))
+                        (:job-id (:body r))
+                        (ut/err (str "job start failed:" r))))))
+     :xhr       (cF (when-let [job (<mget me :build-key)]
+                      (send-xhr
+                        (case job
+                          :start (str "build?volumek="
+                                   (let [fw (mxu-find-name me "email-volume")]
+                                     (assert fw)
+                                     (<mget fw :value)))
+                          :stop "buildstop"))))}))
