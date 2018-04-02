@@ -47,14 +47,18 @@
                       (let [mtx me]
                         (assert mtx)
                         [(div {:style "margin:36px"}
-                           (h1 "Hello, SpamUX!")
+                           (h1 "SpamUX")
+                           (p "<i>Detect yourself before they do.")
                            (raw-email-file-builder)
                            (p "First, pick a file to make spam-detector-proof.")
                            (email-raw-files)
                            (jcl-panel)
-                           (watch-stats-option me)
-                           (watched-stats me)
-                           (show-stats))])))))
+                           (div {:style {:display        "flex"
+                                         :flex-direction "row"}}
+                             (div {:style "min-width:288px"}
+                               (watch-stats-option me)
+                               (watched-stats me))
+                             (show-stats)))])))))
 
 (let [root (dom/getElement "tagroot")
 

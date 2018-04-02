@@ -68,23 +68,23 @@
 (defn job-start [req]
   (let [{:keys [cookies params]} req]
     (pln :start-params params)
-    (do
-      (reset! batch-id (:jobid params))
-      (reset! cumulative-stats {})
-      (reset! gStart (System/currentTimeMillis))
-      (reset! batch-is-running? true)
-      (go
-        (email-file-to-sendfiles-mp
-          (merge params
-            {:outputp (= "true" (:outputp params))
-             :logfail (= "true" (:logfail params))}))
 
-        (swap! cumulative-stats
-          #(merge-with + % @latest-summary-stats))
-        (reset! batch-is-running? false))
-      {:status  200
-       :headers {"Content-Type" "text/html"}
-       :body    "<b>Stop!</b>"})))
+    (reset! batch-id (:jobid params))
+    (reset! cumulative-stats {})
+    (reset! gStart (System/currentTimeMillis))
+    (reset! batch-is-running? true)
+    (go
+      (email-file-to-sendfiles-mp
+        (merge params
+          {:outputp (= "true" (:outputp params))
+           :logfail (= "true" (:logfail params))}))
+
+      (swap! cumulative-stats
+        #(merge-with + % @latest-summary-stats))
+      (reset! batch-is-running? false))
+    {:status  200
+     :headers {"Content-Type" "text/html"}
+     :body    "<b>Stop!</b>"}))
 
 (defn job-running-stats [req]
   (let [{:keys [cookies params]} req]
@@ -124,12 +124,12 @@
     (prn :build-params params)
     (do
       (go
-        (reset! batch-is-building? false)
+        (reset! batch-is-building? (assoc params
+                                     :building true)
         (email-raw-file-build (Integer/parseInt (:volumek params)))
-        (reset! batch-is-building? false))
+        (swap! batch-is-building? assoc :building false)))
       {:status  200
-       :headers {"Content-Type" "text/html"}
-       :body    "<b>Building...</b>"})))
+       :headers {"Content-Type" "text/html"}})))
 
 (defn email-input-list [req]
   (let [files (into []

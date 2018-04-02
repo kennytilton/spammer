@@ -124,38 +124,36 @@
                           :stop "stop"))))}))
 
 (defn job-status []
-  (do
-    (pln :building-status)
-    (p
-      {:content (cF (or (when-let [s (<mget me :jobstatus)]
-                          (str/capitalize (name (:status s))))
-                      "Initial"))
-       :style   "margin:12px"}
-      {:name      "job-status"
-       :value     (cF (<mget me :jobstatus))
-       :recheck   (cI 0)
-       :chk       (cF (when (and (= :start (<mget (fmo me :starter) :job-key))
-                                 (<mget me :recheck))
-                        ;; (pln :chking-job!!!!)
-                        (send-xhr :get-runnin
-                          (pp/cl-format nil "checkjob?jobid=~d" @job-id)
-                          {:accept :json})))
+  (p
+    {:content (cF (or (when-let [s (<mget me :jobstatus)]
+                        (str/capitalize (name (:status s))))
+                    "Initial"))
+     :style   "margin:12px"}
+    {:name      "job-status"
+     :value     (cF (<mget me :jobstatus))
+     :recheck   (cI 0)
+     :chk       (cF (when (and (= :start (<mget (fmo me :starter) :job-key))
+                               (<mget me :recheck))
+                      ;; (pln :chking-job!!!!)
+                      (send-xhr :get-runnin
+                        (pp/cl-format nil "checkjob?jobid=~d" @job-id)
+                        {:accept :json})))
 
-       :jobstatus (cF+ [:obs (fn-obs
-                               ;;(pln :new-jstat new)
-                               (when (some #{(:status new)} ["pending" "running"])
-                                 (js/setTimeout #(with-cc
-                                                   ;;(pln :rechecking!)
-                                                   (mswap!> me :recheck inc)) 500)))]
-                    (when-let [xhr (<mget me :chk)]
-                      (if-let [r (xhr-response xhr)]
-                        (do
-                          ;;(pln :chk! (:status r) (:body r))
-                          (if (= 200 (:status r))
-                            {:when   (now)
-                             :status (:status (:body r))}
-                            {:status :error}))
-                        cache)))})))
+     :jobstatus (cF+ [:obs (fn-obs
+                             ;;(pln :new-jstat new)
+                             (when (some #{(:status new)} ["pending" "running"])
+                               (js/setTimeout #(with-cc
+                                                 ;;(pln :rechecking!)
+                                                 (mswap!> me :recheck inc)) 500)))]
+                  (when-let [xhr (<mget me :chk)]
+                    (if-let [r (xhr-response xhr)]
+                      (do
+                        ;;(pln :chk! (:status r) (:body r))
+                        (if (= 200 (:status r))
+                          {:when   (now)
+                           :status (:status (:body r))}
+                          {:status :error}))
+                      cache)))}))
 
 (defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"
