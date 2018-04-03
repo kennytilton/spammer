@@ -47,15 +47,15 @@ A clear indication of the thinness of this stack is that the ClojureScript compi
 ### Declarative and fast
 mxWeb code is declarative and fast, but not via ReactJS. In fact, mxWeb is *more* declarative because the data flow framework covers everything, not just the view. And because Matrix is *true* reactivity at the property level, state propagation (including to the DOM) is minimal without the cost of VDOM generation and diffing.
 
-We note that Facebook engineers now [explicitly reject](https://reactjs.org/docs/design-principles.html) the reactive paradigm and wish they had called it "Schedule", specifically because of its eagerness which they feel gets in the way of optimizations they have planned. Our take is that the hard art of UI programming is managing state, and reactive programming does that, while being faster than blind scheduling.
+We note that Facebook engineers now [explicitly reject](https://reactjs.org/docs/design-principles.html) the reactive paradigm and wish they had called React "Schedule", specifically because they feel reactive eagerness gets in the way of planned optimizations. Our take is that the hard art of UI programming is managing state and reactive programming does that, while being faster than blind scheduling.
 ### Single Source of Behavior
 Contrary to the erector set "separation of concerns" approach popular today, mxWeb deliberately joins all concerns in one block of code. Want to know how a widget works, or is failing to work? Just look at its definition, where everything from HTML to CSS to the model will be apparent. Because these objects communicate via data flow, identifying each other with something like CSS descriptors, they are eminently composable and movable. An example is the complex [`job-status` component](https://github.com/kennytilton/spammer/blob/master/resources/spamux/src/spamux/component.cljs) used in two places to track two different operations conducted against the service.
 
 Important to note here is that this SSB covers everything from model, to view, to callbacks, to database operations -- well, you get it. As [Buddha](https://en.wikipedia.org/wiki/Prat%C4%ABtyasamutp%C4%81da) and [Fred Brooks](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf) noted, everything is connected. We find Web development much easier with tools embracing that.
 ### Transparent reactivity
-You cannot really "notice" transparent reactivity because Matrix&trade; subscribe and notify are indeed transparent. Dependencies are automatically detected at run-time and state change is automatically propagated according to the resulting dependency graph. This one feature constitutes a complete paradigm shift.
+You cannot really "notice" transparent reactivity because Matrix&trade; subscribe and notify are indeed transparent*. Dependencies are automatically detected at run-time and state change is automatically propagated according to the resulting dependency graph. This one feature constitutes a complete paradigm shift.
 
-Well, those who have coded pub/sub manually may notice its absence, but it is there. MobX, binding.scala, CLJS Javelin, and good old Garnet KR are other good examples of transparent data flow.
+* Well, those who have coded pub/sub manually may notice its absence, but it is there. MobX, binding.scala, CLJS Javelin, and good old Garnet KR are other good examples of transparent data flow.
 ### Callback Heaven
 Speaking of things you cannot see, peruse the Spamux code for `send-xhr`. What you will not see are any callback handlers. The [XHR library](https://github.com/kennytilton/xhr) handles those and converts them into data flow "pulses", the normal data change mechanism of Matrix.
 
