@@ -44,36 +44,28 @@
        :recheck   (cI 0)
        :chk       (cF (when-let [job-id (and (<mget me :recheck)
                                              (<mget (fmo me job-starter) :job-id))]
-                        ;(pln :chking-job!!!! job-id)
-
                         (send-xhr :get-runnin
-                          (pp/cl-format nil "checkjob?job-id=~a" job-id)
-                          {:accept :json})))
+                          (str "checkjob?job-id=" job-id))))
 
        :jobstatus (cF+ [:obs (fn-obs
-                               ;(pln md-name :new-jstat new)
                                (when (some #{(:status new)} ["pending" "running"])
-                                 (js/setTimeout #(with-cc
-                                                   ;(pln :rechecking!)
-                                                   (mswap!> me :recheck inc)) 500)))]
+                                 (js/setTimeout
+                                   #(with-cc
+                                      (mswap!> me :recheck inc)) 500)))]
                     (when-let [xhr (<mget me :chk)]
                       (if-let [r (xhr-response xhr)]
-                        (do
-                          ;(pln :chk! (:status r) (:body r))
-                          (if (= 200 (:status r))
-                            (merge {:when (now)}
-                              (:body r))
-                            (throw "job-start failed")))
+                        (if (= 200 (:status r))
+                          (merge {:when (now)}
+                            (:body r))
+                          (throw "job-start failed"))
                         cache)))
 
        :job-id    (cF (when-let [js (<mget me :jobstatus)]
-                        ;(pln :hello-js!! js)
                         (:job-id js)))})))
 
 (defn fmo [me id-name]
   (or (mxu-find-name me id-name)
     (mxu-find-id me id-name)
-
     (throw (str "fmo> not id or name " id-name))))
 
 (defn fmov

@@ -100,6 +100,7 @@
 (defn fails-displayer
   ([source-name]
    (fails-displayer source-name :stats))
+
   ([source-name source-property]
    (div {:style "margin-left:36px"
          :hidden (cF (or

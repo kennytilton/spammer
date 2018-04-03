@@ -80,15 +80,10 @@
 
      :onclick  #(let [me (evt-tag %)
                       jobstat (fmov me "job-status")]
-
                   (mset!> me :job-key
                     (cond
-                      (nil? jobstat)
-                      :start
-
-                      (= "running" (:status jobstat))
-                      :stop
-
+                      (nil? jobstat)  :start
+                      (= "running" (:status jobstat)) :stop
                       :default :start)))
 
      :style    (cF (let [ltgreen "margin-left:24px;background:#8f8"
