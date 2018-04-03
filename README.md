@@ -17,10 +17,11 @@ git clone https://github.com/kennytilton/spammer.git <wherever>
 cd <wherever>/resources/spamux
 scripts/build
 ````
+Of course, if you leave off `<wherever>` from now on `<wherever>` is `spammer`.
 ## Usage
 To bring up the Web page UX for SpamGen:
 ````
-cd <wherever>/spamux
+cd <wherever>
 lein ring headless-server
 ````
 Make note of the port (3000? 3001?) on which the server starts. It will look like this:
