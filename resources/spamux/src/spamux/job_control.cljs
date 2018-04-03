@@ -80,8 +80,7 @@
 
      :onclick  #(let [me (evt-tag %)
                       jobstat (fmov me "job-status")]
-                  (pln :start-sees (<mget me :job-key)
-                    (fmov me "job-status"))
+
                   (mset!> me :job-key
                     (cond
                       (nil? jobstat)
@@ -90,8 +89,7 @@
                       (= "running" (:status jobstat))
                       :stop
 
-                      :default (do (pln :start-defaulting jobstat)
-                                   :start))))
+                      :default :start)))
 
      :style    (cF (let [ltgreen "margin-left:24px;background:#8f8"
                          ltred "margin-left:24px;background:#f88"]
@@ -126,7 +124,6 @@
                                   (pp/cl-format nil "stop?job-id=~a" jid))))))
 
      :job-id    (cF+ [:obs (fn-obs (when new
-                                     (pln :storing-job!!! new)
                                      (reset! current-job-id new)))]
                   (when-let [xhr (<mget me :start)]
                     (when-let [r (xhr-response xhr)]
@@ -148,14 +145,14 @@
                              (pln :rawfiles-sees bstat)
                              (send-xhr :get-raws "rawfiles")))
              }
-      {:value   (cI "em-7k.edn")                          ;; todo fix that this has to align with selected below
+      {:value   (cI "em-1k.edn")                          ;; todo fix that this has to align with selected below
        :options (cF (when-let [xhr (<mget me :xhr)]
                       (when-let [r (xhr-response xhr)]
                         (when (= 200 (:status r))
                           (:body r)))))}
       [(option {:enabled "false" :value "<none>"} "Pick a file, any file.")
        (map (fn [n s]
-              (option {:selected (= s "em-7k.edn")} s))
+              (option {:selected (= s "em-1k.edn")} s))
          (range)
          (<mget me :options))])))
 

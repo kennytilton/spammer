@@ -92,12 +92,10 @@
                         {:accept :json})))
 
      :job-id    (cF+ [:obs (fn-obs (when new
-                                     (pln :storing-job!!! new)
                                      (reset! current-job-id new)))]
                   (when-let [xhr (<mget me :start)]
                     (pln :hello-xhr xhr)
                     (when-let [r (xhr-response xhr)]
-                      (pln :start!!!! (:status r) (:body r))
                       (if (= 200 (:status r))
                         (:job-id (:body r))
                         (ut/err (str "job start failed:" r))))))

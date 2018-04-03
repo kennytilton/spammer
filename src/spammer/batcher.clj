@@ -218,12 +218,13 @@
       (assoc task
         :reason reason)
       :append true))
-  (xpln :email-fail reason task)
+
   (swap! (:stats w) update-in [:fails]
-    (fn [curr] (take-last 3 (conj curr
+    (fn [curr] (into []
+                 (take-last 3 (conj curr
                               (assoc task
-                                :reason reason)))))
-  
+                                :reason reason))))))
+
   (swap! (:stats w) update-in [reason] inc))
 
 

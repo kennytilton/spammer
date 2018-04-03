@@ -49,7 +49,7 @@
 
      :stats  (cF+ [:obs (fn-obs
                           (when new
-                            (pln :watcher-stats!!! new)
+                            ;;(pln :watcher-stats!!! new)
                             (js/setTimeout #(with-cc
                                               (mswap!> me :reload inc)) 1000)))]
                (or
@@ -101,12 +101,13 @@
   ([source-name]
    (fails-displayer source-name :stats))
   ([source-name source-property]
-   (div {:style "margin-left:36px"}
+   (div {:style "margin-left:36px"
+         :hidden (cF (or
+                       (not (<mget (md/mxu-find-name me "sample-fails") :on?))
+                       (not (<mget (fmo me :starter) :job-id))))}
      {:name  "fails-group"
       :fails (cF (let [src (mxu-find-name me source-name)]
-                   (pln :source!!!!! src source-property)
                    (let [fails (:fails (<mget src source-property))]
-                     (pln :fails-1!!! fails)
                      (or fails (when (not= cache unbound)
                                  cache)))))}
      (b "Fails")

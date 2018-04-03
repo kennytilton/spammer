@@ -131,8 +131,6 @@
                 (job-property job-id :workers)))
             :fails (into [] (take 3 fails))
             :run-duration (- (now) (job-property job-id :start)))]
-      (pln :raw-fails fails)
-      (pln :final final)
       final)
     (latest-summary-stats job-id)))
 
