@@ -24,16 +24,16 @@ To bring up the Web page UX for SpamGen:
 cd <wherever>
 lein ring headless-server
 ````
-Make note of the port (3000? 3001?) on which the server starts. It will look like this:
+Make note of the announcement of the port (3000? 3001?) on which the server starts. The announcement will look like this:
 ````bash
-Started server on port 3000
+Started server on port 300<x>
 ````
 Now open a browser and navigate to `localhost:3000` or whatever port was observed above. Select a file from the drop-down menu and click "Start". You should see something like this:
 
 ![Spamgen UX screenshot](https://github.com/kennytilton/spammer/blob/master/resources/images/spammer-ux.jpg)
 
 ## Things to Notice
-Here are some quick highlights to look out for in understanding what we saw above. Come back in a day or two to see this all fleshed out.
+Here are some quick highlights to look out for in understanding what we saw above. 
 ### Remaining work
 I took this exercise a *lot* further than planned, but called a halt before providing running statistics during builds and better formatting/less flashing for the diplayed cleaning "fails".
 
