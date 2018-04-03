@@ -35,8 +35,29 @@ Now open a browser and navigate to `localhost:3000` or whatever port was observe
 
 ![Spamgen UX screenshot](https://github.com/kennytilton/spammer/blob/master/resources/images/spammer-ux.jpg)
 
+## Things to Notice
+Here are some quick highlights to look out for in understanding what we saw above. Come back in a day or two to see this all fleshed out.
+### Remaining work
+I took this exercise a *lot* further than planned, but called a halt before providing running statistics during builds and better formatting/less flashing for the diplayed cleaning "fails".
+
+Missing is the much ballyhooed YAML integration using CircleCI's parser, but we have done that before. Thanks to the parser and the declarative authoring mxWeb supports, this is a straightforward task in which the real work is getting the YAML documentation right. Nothing wrong with that as a constraint.
+
+Also, on the whole, no I am not a graphic designer. And it shows.
+### The Un-framework
+If you look at the code of the nested SpamUX project, you will see that the mxWeb API looks and work just like HTML/CSS. A design imperative for mxWeb is that it be accessible to graphics designers. Even the embedded code is plain CLJS, not a novel creation such as JSX. 
+
+A clear indication of the thinness of this stack is that the ClojureScript compile to JS is the only pre-processing step required. Speaking of which, if you want to hack on Spamux, do `scripts/watch` istead of `scripts/build` in a terminal and you will get automatic rebuilds (but not hot loads -- last we looked, `figwheel` is not as capable ad the `lein mies` scripts at compilation and cannot handle mxWeb macrology0.
+### Single Source of Behavior
+Contrary to the erector set "separation of concerns" approach popular today, mxWeb deliberately joins all concerns in one block of code. Want to know how a widget works, or is failing to work? Just look at its definition, where everything from HTML to CSS to the model will be apparent. Because these objects communicate via data flow, identifying each other with something like CSS descriptors, they are eminently composable and movable.
+### Transparent reactivity
+You cannot really "notice" transparent reactivity because Matrix&trade; subscribe and notify are indeed transparent. Dependencies are automatically detected at run-time and state change is automatically propagated according to the resulting dependency graph. But this one feature changes everything. 
+
+MobX, binding.scala, and CLJS Javelin are other good examples of transparent data flow.
+### Callback Heaven
+Speaking of things you cannot see, peruse the Spamux code for `send-xhr`. What you will not see are any callback handlers. The [XHR library](https://github.com/kennytilton/xhr) handles those and converts them into data flow "pulses", the normal data change mechanism of Matrix.
+
 ## Future work
-RSN a complete walkthrough of features and underlying technology.
+
 
 ## License
 
