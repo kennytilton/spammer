@@ -20,18 +20,12 @@ Make note of the port (3000? 3001?) on which the server starts. It will look lik
 ````bash
 Started server on port 3000
 ````
-Now open a browser and navigate to `localhost:3000` or whatever port was observed above. You should see the header "Hello, SpamUX!?" and a "Start" button below that.
-### Caution!
-Clicking start causes it to run forever. And the button to turn to Stop! That is a hint.
+Now open a browser and navigate to `localhost:3000` or whatever port was observed above. Select a file from the drop-down menu and click "Start". You should see something like this:
 
-Anyway, click Start!. Now click "watch progress" to see running stats. [But look fast -- they disappear when the batch completes. Re-doing all that now.] Should look like this (except I will be changing things all the time):
-
-![Spamgen UX screenshot](https://github.com/kennytilton/spamux/blob/master/resources/images/sshot-1.png)
-
-Now keep an eye on the terminal where you ran Ring and click "Start". You should see that button turn to `Stop!`.
+![Spamgen UX screenshot](https://github.com/kennytilton/spammer/blob/master/resources/images/spammer-ux.jpg)
 
 ## Future work
-User control over sampling rate.
+RSN a complete walkthrough of features and underlying technology.
 
 ## License
 
