@@ -47,9 +47,10 @@
                 :border-width "1px"
                 :border-color "gray"}}
     (div
-      (p "<b>2. Pick a file to make spam-detector-proof.</b>")
+      (p "<b>2. Conigure the cleaning.</b>")
       (email-raw-files))
     (div {:style "display:flex; flex-direction:row"}
+      (span "Job options: ")
       (tag-checkbox me "outputp"
         "Generate output?" true
         {:name  "outputp"
@@ -70,9 +71,7 @@
         {:name  "watch-progress"
          :style "background:white;padding:6px"}))
 
-    (div {:style "margin-top:12px; display:flex; flex-direction:row"}
-      (b "<b>3.</b>")
-      (start-button))))
+    (start-button)))
 
 (defn start-button []
   (button

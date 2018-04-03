@@ -38,7 +38,8 @@
                 :border       "solid"
                 :border-width "1px"
                 :border-color "gray"}}
-    (b "1. Build a new file, if you like.")
+    (p (b "1. Build a new file, if you like."))
+    (span "File size in thousands: ")
     (input
       {:name        "email-volume"
        :type        "number"
@@ -47,7 +48,7 @@
        :oninput     #(mset!> (evt-tag %) :value (target-value %))
        }
       {:value (cI nil)})
-    (build-email-file-button)
+    (p (build-email-file-button))
     (job-status-view "build-status" "Build status" :builder)))
 
 (defn build-email-file-button []
