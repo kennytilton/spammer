@@ -14,7 +14,7 @@ Even better, although not demonstrated here, we have in the past built such fron
 In one terminal, `cd` to wherever you would like to clone this, then:
 ````bash
 git clone https://github.com/kennytilton/spammer.git <wherever>
-cd <wherever>/spamer/resources/spamux
+cd <wherever>/resources/spamux
 scripts/build
 ````
 ## Usage
