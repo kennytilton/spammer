@@ -38,10 +38,11 @@
                 :border       "solid"
                 :border-width "1px"
                 :border-color "gray"}}
-    (p "Build a new file, if you like.")
+    (b "1. Build a new file, if you like.")
     (input
       {:name        "email-volume"
        :type        "number"
+       :style "text-align:right"
        :placeholder "Number of K emails"
        :oninput     #(mset!> (evt-tag %) :value (target-value %))
        }
@@ -80,7 +81,6 @@
      :jobstatus (cF (fmov me "build-status"))
 
      :start     (cF (when-let [job (<mget me :job-key)]
-                      (pln :hello-job job)
                       (send-xhr
                         (case job
                           :start (pp/cl-format nil "build?volumek=~a"
@@ -95,7 +95,6 @@
      :job-id    (cF+ [:obs (fn-obs (when new
                                      (reset! current-job-id new)))]
                   (when-let [xhr (<mget me :start)]
-                    (pln :hello-xhr xhr)
                     (when-let [r (xhr-response xhr)]
                       (if (= 200 (:status r))
                         (:job-id (:body r))
@@ -108,3 +107,5 @@
                                      (assert fw)
                                      (<mget fw :value)))
                           :stop "buildstop"))))}))
+
+

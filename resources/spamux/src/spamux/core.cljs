@@ -50,10 +50,8 @@
                         (assert mtx)
                         [(div {:style "margin:36px"}
                            (h1 "SpamUX")
-                           (p "<i>Detect yourself. Before they do.")
+                           (h3 "<i>Detect yourself. Before they do.")
                            (raw-email-file-builder)
-                           (p "First, pick a file to make spam-detector-proof.")
-                           (email-raw-files)
                            (jcl-panel)
                            (div {:style {:display "flex"
                                          :flex-direction "row"}}

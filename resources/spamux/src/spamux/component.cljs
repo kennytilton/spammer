@@ -39,7 +39,7 @@
       {:content (cF (or (when-let [s (<mget me :jobstatus)]
                           (str/capitalize (name (:status s))))
                       "Initial"))
-       :style   "margin:12px"}
+       :style   "margin:12px;font-size:1em;background:white"}
       {:name      md-name
        :value     (cF (<mget me :jobstatus))
        :recheck   (cI 0)

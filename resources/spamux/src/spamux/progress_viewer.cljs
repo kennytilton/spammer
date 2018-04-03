@@ -98,12 +98,14 @@
                                    (f (vkey stats))))))}))))))
 
 
+(def spam-format "~{<p :style 'background:#FCC;min-width:250px;max-width:250px'>~a</p>~}")
+
 (defn fails-displayer
   ([source-name]
    (fails-displayer source-name :stats))
 
   ([source-name source-property]
-   (div {:style "margin-left:36px"
+   (div {:style  "margin-left:36px"
          :hidden (cF (or
                        (not (<mget (md/mxu-find-name me "sample-fails") :on?))
                        (not (<mget (fmo me :starter) :job-id))))}
@@ -113,4 +115,7 @@
                      (or fails (when (not= cache unbound)
                                  cache)))))}
      (b "Fails")
-     (span {:content (cF (str (<mget (fmo me "fails-group") :fails)))}))))
+     (div {:style   "background:#fdd"
+         :content (cF (pp/cl-format nil spam-format
+                        (map #(with-out-str (pp/pprint %))
+                          (<mget (fmo me "fails-group") :fails))))}))))

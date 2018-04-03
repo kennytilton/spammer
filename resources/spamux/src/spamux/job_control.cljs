@@ -36,14 +36,19 @@
   (pln :eko!!! key value)
   value)
 
-(declare start-button)
+(declare start-button email-raw-files)
 
 ;; todo keep option choices in a cookie
 (defn jcl-panel []
-  (div {:style {:padding      "9px"
+
+  (div {:style {:margin-top "12px"
+                :padding      "9px"
                 :border       "solid"
                 :border-width "1px"
                 :border-color "gray"}}
+    (div
+      (p "<b>2. Pick a file to make spam-detector-proof.</b>")
+      (email-raw-files))
     (div {:style "display:flex; flex-direction:row"}
       (tag-checkbox me "outputp"
         "Generate output?" true
@@ -63,8 +68,10 @@
       (tag-checkbox me "watch-progress"
         "Watch progress" true
         {:name  "watch-progress"
-         :style "background:white;padding:6px"})
+         :style "background:white;padding:6px"}))
 
+    (div {:style "margin-top:12px; display:flex; flex-direction:row"}
+      (b "<b>3.</b>")
       (start-button))))
 
 (defn start-button []
@@ -78,7 +85,7 @@
                       jobstat (fmov me "job-status")]
                   (mset!> me :job-key
                     (cond
-                      (nil? jobstat)  :start
+                      (nil? jobstat) :start
                       (= "running" (:status jobstat)) :stop
                       :default :start)))
 
@@ -133,21 +140,20 @@
              :style    "background:white"
              :onchange #(mset!> (evt-tag %) :value (target-value %))
              }
-      {:value   (cI nil #_ "em-1k.edn")
+      {:value   (cI nil #_"em-1k.edn")
        :reload  (cF (:status (<mget (mxu-find-name me :builder) :jobstatus)))
        :xhr     (cF (let [bstat (<mget me :reload)]
-                       (pln :rawfiles-sees-reload!!! bstat)
-                       (send-xhr :get-raws "rawfiles")))
+                      (send-xhr :get-raws "rawfiles")))
 
        :options (cF (when-let [xhr (<mget me :xhr)]
                       (when-let [r (xhr-response xhr)]
                         (when (= 200 (:status r))
                           (:body r)))))}
-      [(option {:enabled "false"
+      [(option {:enabled  "false"
                 :selected true?
-                :value "<none>"} "Pick a file, any file.")
+                :value    "<none>"} "Pick a file, any file.")
        (map (fn [n s]
-              (option #_ {:selected (= s "em-1k.edn")} s))
+              (option #_{:selected (= s "em-1k.edn")} s))
          (range)
          (<mget me :options))])))
 
