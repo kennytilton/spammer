@@ -10,7 +10,8 @@
 
             [tiltontec.model.core
              :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
-                     mxi-find mxu-find-name mxu-find-type mxu-find-id]
+                     mxi-find mxu-find-name mxu-find-type mxu-find-id
+                     fmo fmov]
              :as md]
 
             [tiltontec.xhr
@@ -26,7 +27,7 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.component :refer [ fmo fmov current-job-id]]))
+            [spamux.component :refer [current-job-id]]))
 
 (def jobs (atom {}))
 
@@ -64,12 +65,7 @@
         {:name  "watch-progress"
          :style "background:white;padding:6px"})
 
-      (start-button))
-
-    #_ (div {:style {:display        "flex"
-                  :flex-direction "row"}}
-
-      )))
+      (start-button))))
 
 (defn start-button []
   (button
@@ -136,18 +132,22 @@
              :class    "pure-input-1-2"
              :style    "background:white"
              :onchange #(mset!> (evt-tag %) :value (target-value %))
-             :xhr      (cF (let [bstat (<mget (mxu-find-name me :builder) :jobstatus)]
-                             (pln :rawfiles-sees bstat)
-                             (send-xhr :get-raws "rawfiles")))
              }
-      {:value   (cI "em-1k.edn")                          ;; todo fix that this has to align with selected below
+      {:value   (cI nil #_ "em-1k.edn")
+       :reload  (cF (:status (<mget (mxu-find-name me :builder) :jobstatus)))
+       :xhr     (cF (let [bstat (<mget me :reload)]
+                       (pln :rawfiles-sees-reload!!! bstat)
+                       (send-xhr :get-raws "rawfiles")))
+
        :options (cF (when-let [xhr (<mget me :xhr)]
                       (when-let [r (xhr-response xhr)]
                         (when (= 200 (:status r))
                           (:body r)))))}
-      [(option {:enabled "false" :value "<none>"} "Pick a file, any file.")
+      [(option {:enabled "false"
+                :selected true?
+                :value "<none>"} "Pick a file, any file.")
        (map (fn [n s]
-              (option {:selected (= s "em-1k.edn")} s))
+              (option #_ {:selected (= s "em-1k.edn")} s))
          (range)
          (<mget me :options))])))
 

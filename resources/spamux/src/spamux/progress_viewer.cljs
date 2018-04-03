@@ -12,7 +12,8 @@
 
             [tiltontec.model.core
              :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
-                     mxi-find mxu-find-name mxu-find-type mxu-find-id]
+                     mxi-find mxu-find-name mxu-find-type mxu-find-id
+                     fmo fmov]
              :as md]
 
             [tiltontec.xhr
@@ -26,7 +27,7 @@
             [tiltontec.webmx.html :refer [mxu-find-tag]]
             [tiltontec.webmx.widget :refer [tag-checkbox]]
 
-            [spamux.component :refer [fmo fmov current-job-id]]
+            [spamux.component :refer [current-job-id]]
             [cljs.pprint :as pp]))
 
 (declare json-view stats-displayer)

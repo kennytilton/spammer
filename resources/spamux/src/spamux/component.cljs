@@ -10,7 +10,8 @@
 
             [tiltontec.model.core
              :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
-                     mxi-find mxu-find-name mxu-find-type mxu-find-id]
+                     mxi-find mxu-find-name mxu-find-type mxu-find-id
+                     fmo fmov]
              :as md]
 
             [tiltontec.xhr
@@ -62,17 +63,3 @@
 
        :job-id    (cF (when-let [js (<mget me :jobstatus)]
                         (:job-id js)))})))
-
-(defn fmo [me id-name]
-  (or (mxu-find-name me id-name)
-    (mxu-find-id me id-name)
-    (throw (str "fmo> not id or name " id-name))))
-
-(defn fmov
-  ([me id-name]
-   (fmov me id-name :value))
-  ([me id-name slot-name]
-   (when-let [mx (fmo me id-name)]
-     (if (contains? @mx slot-name)
-       (<mget mx slot-name)
-       (throw (str "fmov> " id-name " lacks " slot-name " property"))))))

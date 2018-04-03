@@ -10,7 +10,8 @@
 
             [tiltontec.model.core
              :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
-                     mxi-find mxu-find-name mxu-find-type mxu-find-id]
+                     mxi-find mxu-find-name mxu-find-type mxu-find-id
+                     fmo fmov]
              :as md]
 
             [tiltontec.xhr
@@ -27,7 +28,7 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.component :refer [job-status-view fmo fmov current-job-id]]
+            [spamux.component :refer [job-status-view current-job-id]]
             [tiltontec.util.core :as ut]))
 
 (declare build-email-file-button build-status)

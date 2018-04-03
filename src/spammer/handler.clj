@@ -41,11 +41,7 @@
     (batch-stats req))
 
   (GET "/runningstats" req
-    (or (job-not-found req)
-      {:status  200
-       :headers {"Content-Type" "application/json"}
-       :body    (generate-string
-                  (running-stats (req-job-id req)))}))
+    (running-stats req))
 
   (GET "/checkjob" req
     (job-check req))
@@ -61,7 +57,6 @@
     (wrap-resource "spamux")
     (wrap-content-type)
     (wrap-defaults site-defaults)))
-
 
 (defn job-start [req]
   (let [{:keys [cookies params]} req
@@ -115,24 +110,27 @@
      :body    (generate-string
                 (latest-summary-stats (req-job-id req)))}))
 
-(defn running-stats [job-id]
-  (if (= :running (job-property job-id :status))
-    (let [fails (into []
-                  (apply concat
-                    (map #(:fails @(:stats %))
-                      (job-property job-id :workers))))
-          final
-          (assoc
-            (apply merge-with +
-              (map #(select-keys @(:stats %)
-                      [:sent-ct :rejected-score :rejected-dup-addr
-                       :rejected-overall-mean
-                       :rejected-span-mean])
-                (job-property job-id :workers)))
-            :fails (into [] (take 3 fails))
-            :run-duration (- (now) (job-property job-id :start)))]
-      final)
-    (latest-summary-stats job-id)))
+(defn running-stats [req]
+  (or (job-not-found req)
+    (let [job-id (req-job-id req)
+          stats (if (= :running (job-property job-id :status))
+                  (let [fails (into []
+                                (apply concat
+                                  (map #(:fails @(:stats %))
+                                    (job-property job-id :workers))))]
+                    (assoc
+                      (apply merge-with +
+                        (map #(select-keys @(:stats %)
+                                [:sent-ct :rejected-score :rejected-dup-addr
+                                 :rejected-overall-mean
+                                 :rejected-span-mean])
+                          (job-property job-id :workers)))
+                      :fails (into [] (take 3 fails))
+                      :run-duration (- (now) (job-property job-id :start))))
+                  (latest-summary-stats job-id))]
+    {:status  200
+     :headers {"Content-Type" "application/json"}
+     :body    (generate-string stats)})))
 
 (defn job-check [req]
   (or (job-not-found req)
@@ -155,9 +153,7 @@
 ;; todo combine with start
 (defn email-input-build [req]
   (let [{:keys [cookies params]} req
-
         job-id (str (swap! latest-job-id inc))]
-    (prn :build-params job-id params)
     (go
       (job-status-set job-id :running)
       (email-raw-file-build (Integer/parseInt (:volumek params)))
