@@ -26,6 +26,11 @@
   ;;(pln :job-prop job-id property)
   (get-in @gJobs [job-id property]))
 
+(defn job-property-set! [job-id property  value]
+  ;;(pln :job-prop job-id property)
+  (swap! gJobs assoc-in [job-id property] value)
+  (get-in @gJobs [job-id property]))
+
 (defn latest-summary-stats [job-id]
   (job-property job-id :latest-summary-stats))
 
@@ -35,7 +40,7 @@
 
 (defn job-status-set [job-id status]
   (pln :jstat-set job-id status)
-  (swap! gJobs assoc-in [job-id :status] status))
+  (job-property-set! job-id :status status))
 
 ;;; --- utils -------------------------------------------
 

@@ -50,9 +50,8 @@
 
      :stats  (cF+ [:obs (fn-obs
                           (when new
-                            ;;(pln :watcher-stats!!! new)
                             (js/setTimeout #(with-cc
-                                              (mswap!> me :reload inc)) 1000)))]
+                                              (mswap!> me :reload inc)) 100)))]
                (or
                  (when-let [xhr (<mget me :xhr)]
                    (when-let [r (xhr-response xhr)]
@@ -97,7 +96,6 @@
                                  (when-let [stats (<mget ss :stats)]
                                    (f (vkey stats))))))}))))))
 
-
 (def spam-format "~{<p :style 'background:#FCC;min-width:250px;max-width:250px'>~a</p>~}")
 
 (defn fails-displayer
@@ -106,9 +104,9 @@
 
   ([source-name source-property]
    (div {:style  "margin-left:36px"
-         :hidden (cF (or
-                       (not (<mget (md/mxu-find-name me "sample-fails") :on?))
-                       (not (<mget (fmo me :starter) :job-id))))}
+         :hidden (cF (not (and
+                            (<mget (md/mxu-find-name me "sample-fails") :on?)
+                            (<mget (fmo me :starter) :job-id))))}
      {:name  "fails-group"
       :fails (cF (let [src (mxu-find-name me source-name)]
                    (let [fails (:fails (<mget src source-property))]

@@ -39,7 +39,7 @@
       {:content (cF (or (when-let [s (<mget me :jobstatus)]
                           (str/capitalize (name (:status s))))
                       "Initial"))
-       :style   "margin:12px;font-size:1.5em"}
+       :style   "margin:12px;font-size:1em"}
       {:name      md-name
        :value     (cF (<mget me :jobstatus))
        :recheck   (cI 0)
@@ -52,7 +52,7 @@
                                (when (some #{(:status new)} ["pending" "running"])
                                  (js/setTimeout
                                    #(with-cc
-                                      (mswap!> me :recheck inc)) 500)))]
+                                      (mswap!> me :recheck inc)) 50)))]
                     (when-let [xhr (<mget me :chk)]
                       (if-let [r (xhr-response xhr)]
                         (if (= 200 (:status r))

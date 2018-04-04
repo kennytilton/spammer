@@ -90,7 +90,7 @@
                                      (<mget fw :value)))
 
                           :stop (pp/cl-format nil "stop?job-id=~a"
-                                  (<mget me :job-id)))
+                                  (:job-id @me)))
                         {:accept :json})))
 
      :job-id    (cF+ [:obs (fn-obs (when new

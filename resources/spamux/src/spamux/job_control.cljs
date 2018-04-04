@@ -47,7 +47,7 @@
                 :border-width "1px"
                 :border-color "gray"}}
     (div
-      (p "<b>2. Conigure the cleaning.</b>")
+      (p "<b>2. Configure the cleaning.</b>")
       (email-raw-files))
     (div {:style "display:flex; flex-direction:row"}
       (span "Job options: ")
@@ -117,7 +117,7 @@
                                    (fmov me "log-fail-p" :on?)
                                    (fmov me "email-file-raw"))
 
-                          :stop (when-let [jid @current-job-id]
+                          :stop (when-let [jid (:job-id @me)]
                                   (pp/cl-format nil "stop?job-id=~a" jid))))))
 
      :job-id    (cF+ [:obs (fn-obs (when new
@@ -133,7 +133,7 @@
         :style "margin-bottom:18px"}
     (label {:for   "email-file-raw"
             :style "margin-right:6px"}
-      "File to clean")
+      "File to clean:")
     (select {:id       "email-file-raw"
              :class    "pure-input-1-2"
              :style    "background:white"

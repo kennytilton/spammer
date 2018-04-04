@@ -99,8 +99,6 @@
 
     (pln :email!!!!! filename job-id verbose outputp logfail)
 
-
-
     (let [em-addrs-hit (ref #{})
           shared-chan (chan)
 
@@ -156,12 +154,9 @@
 
       ;; --- feed the workers ----------------------------------------
 
-      (pln :feeding-off!!!! filename)
-
       (p :feed-workers
         (with-open [in (java.io.PushbackReader. (clojure.java.io/reader
                                                   (str "bulkinput/" filename)))]
-          (pln :we-in! in)
           (let [edn-seq (repeatedly (partial edn/read {:eof :fini} in))]
             (doseq [em-chunk (take-while (partial not= :fini) edn-seq)]
               ;; todo switch to loop so we can break out

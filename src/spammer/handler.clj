@@ -155,8 +155,9 @@
   (let [{:keys [cookies params]} req
         job-id (str (swap! latest-job-id inc))]
     (go
+
       (job-status-set job-id :running)
-      (email-raw-file-build (Integer/parseInt (:volumek params)))
+      (email-raw-file-build job-id (Integer/parseInt (:volumek params)))
       (job-status-set job-id :complete))
 
     {:status  200
