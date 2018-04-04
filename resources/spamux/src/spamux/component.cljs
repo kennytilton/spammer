@@ -26,9 +26,10 @@
             [tiltontec.webmx.widget :refer [tag-checkbox]]
 
             [cemerick.url :refer (url url-encode)]
-            [cljs.pprint :as pp]))
+            [cljs.pprint :as pp]
+            ))
 
-(declare fmo)
+(declare xhr?-ok-body)
 
 (defn job-status-view [md-name title job-starter]
   (div {:style "min-width:144px"}
@@ -51,13 +52,11 @@
                                  (js/setTimeout
                                    #(with-cc
                                       (mswap!> me :recheck inc)) 50)))]
-                    (when-let [xhr (<mget me :chk)]
-                      (if-let [r (xhr-response xhr)]
-                        (if (= 200 (:status r))
-                          (merge {:when (now)}
-                            (:body r))
-                          (throw "job-start failed"))
-                        cache)))
+                    (if-let [body (xhr?-ok-body (<mget me :chk))]
+                        (merge {:when (now)}
+                            body)
+                        (when (not= cache unbound)
+                          cache)))
 
        :job-id    (cF (when-let [js (<mget me :jobstatus)]
                         (:job-id js)))})))

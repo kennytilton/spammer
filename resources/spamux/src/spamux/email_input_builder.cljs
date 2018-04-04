@@ -28,7 +28,7 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.component :refer [job-status-view]]
+            [spamux.component :refer [job-status-view xhr?-ok-body xhr?-response]]
             [tiltontec.util.core :as ut]))
 
 (declare build-email-file-button build-status)
@@ -59,6 +59,7 @@
 
      :onclick  #(let [me (do (evt-tag %))]
                   (assert me)
+                  (pln :build-click!!! (fmov me "email-volume"))
                   (cond
                     (> (fmov me "email-volume") 5000)
                     (js/alert "You will have to hack the code to exceed 5000k")
@@ -70,11 +71,7 @@
                         :start :stop
                         :stop :start))))
 
-     :content  (cF (or (when-let [xhr (<mget me :xhr)]
-                         (when-let [r (xhr-response xhr)]
-                           (if (= 200 (:status r))
-                             (:body r)
-                             (str "<b>Something happened: " (:status r) "</b>"))))
+     :content  (cF (or (xhr?-ok-body (<mget me :xhr))
                      "<b>Build</b>"))}
 
     {:name      :builder
@@ -93,11 +90,9 @@
                                   (:job-id @me)))
                         {:accept :json})))
 
-     :job-id    (cF (when-let [xhr (<mget me :start)]
-                    (when-let [r (xhr-response xhr)]
-                      (if (= 200 (:status r))
-                        (:job-id (:body r))
-                        (ut/err (str "job start failed:" r))))))
+     :job-id    (cF (when-let [body (xhr?-ok-body (<mget me :start))]
+                      (:job-id body)))
+
      :xhr       (cF (when-let [job (<mget me :build-key)]
                       (send-xhr
                         (case job
@@ -106,5 +101,3 @@
                                      (assert fw)
                                      (<mget fw :value)))
                           :stop "buildstop"))))}))
-
-
