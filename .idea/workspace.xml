@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80d5a462-ace9-4f4a-b6a0-8121dc305398" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" afterPath="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/batcher.clj" afterPath="$PROJECT_DIR$/src/spammer/batcher.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/genlist.clj" afterPath="$PROJECT_DIR$/src/spammer/genlist.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/handler.clj" afterPath="$PROJECT_DIR$/src/spammer/handler.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spammer/job.clj" afterPath="$PROJECT_DIR$/src/spammer/job.clj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +17,8 @@
       <file leaf-file-name="job_control.cljs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="49" column="19" lean-forward="false" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+            <state relative-caret-position="527">
+              <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -54,7 +47,7 @@
       <file leaf-file-name="email_input_builder.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
+            <state relative-caret-position="1564">
               <caret line="92" column="46" lean-forward="false" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
               <folding />
             </state>
@@ -64,8 +57,8 @@
       <file leaf-file-name="component.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="54" column="66" lean-forward="false" selection-start-line="54" selection-start-column="66" selection-end-line="54" selection-end-column="66" />
+            <state relative-caret-position="812">
+              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -192,11 +185,11 @@
         <option value="$PROJECT_DIR$/resources/spamux/out/spamux/email_input_builder.cljs" />
         <option value="$PROJECT_DIR$/src/spammer/batcher.clj" />
         <option value="$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs" />
-        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs" />
         <option value="$PROJECT_DIR$/src/spammer/handler.clj" />
         <option value="$PROJECT_DIR$/src/spammer/job.clj" />
         <option value="$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs" />
         <option value="$PROJECT_DIR$/src/spammer/genlist.clj" />
+        <option value="$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs" />
         <option value="$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs" />
       </list>
     </option>
@@ -285,7 +278,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/spammer" />
     <property name="cursive.last.file.extension./Users/kennethtilton/spammer/src" value="clj" />
   </component>
-  <component name="ReplState" timestamp="1522873861920">{:repl-history {:ide [], :local [{:command &quot;(def xxx (atom {}))&quot;, :offset 19, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx assoc 1 {:aaa 42 :bbb []})&quot;, :offset 37, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] inc)&quot;, :offset 28, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa 43] inc)&quot;, :offset 31, :ns &quot;spammer.handler&quot;} {:command &quot;xxx&quot;, :offset 3, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa 43}] )&quot;, :offset 30, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa}] 43 )&quot;, :offset 30, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa}] assoc 43 )&quot;, :offset 36, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] inc )&quot;, :offset 29, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] 43 )&quot;, :offset 28, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx update-in xxx [1 :aaa] 43 )&quot;, :offset 38, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in @xxx [1 :aaa] inc)&quot;, :offset 29, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx update-in [1 :aaa] inc)&quot;, :offset 34, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx assoc-in [1 :aaa] 0)&quot;, :offset 31, :ns &quot;spammer.handler&quot;} {:command &quot;(defn job-not-found-response [job-id]\n  {:status  404\n   :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n   :body    (generate-string {:job-id job-id})})&quot;, :offset 150, :ns &quot;spammer.handler&quot;} {:command &quot;(defn req-job-id [req]\n  (assoc-in req [:params :job-id] req))&quot;, :offset 62, :ns &quot;spammer.handler&quot;} {:command &quot;(defn get-job [job-id]\n  (get @gJobs job-id))&quot;, :offset 45, :ns &quot;spammer.job&quot;} {:command &quot;(def gJobs {})&quot;, :offset 14, :ns &quot;spammer.job&quot;} {:command &quot;(println @gJobs)&quot;, :offset 16, :ns &quot;spammer.job&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1522875195053">{:repl-history {:ide [], :local [{:command &quot;(def xxx (atom {}))&quot;, :offset 19, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx assoc 1 {:aaa 42 :bbb []})&quot;, :offset 37, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] inc)&quot;, :offset 28, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa 43] inc)&quot;, :offset 31, :ns &quot;spammer.handler&quot;} {:command &quot;xxx&quot;, :offset 3, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa 43}] )&quot;, :offset 30, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa}] 43 )&quot;, :offset 30, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 {:aaa}] assoc 43 )&quot;, :offset 36, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] inc )&quot;, :offset 29, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in xxx [1 :aaa] 43 )&quot;, :offset 28, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx update-in xxx [1 :aaa] 43 )&quot;, :offset 38, :ns &quot;spammer.handler&quot;} {:command &quot;(update-in @xxx [1 :aaa] inc)&quot;, :offset 29, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx update-in [1 :aaa] inc)&quot;, :offset 34, :ns &quot;spammer.handler&quot;} {:command &quot;(swap! xxx assoc-in [1 :aaa] 0)&quot;, :offset 31, :ns &quot;spammer.handler&quot;} {:command &quot;(defn job-not-found-response [job-id]\n  {:status  404\n   :headers {\&quot;Content-Type\&quot; \&quot;application/json\&quot;}\n   :body    (generate-string {:job-id job-id})})&quot;, :offset 150, :ns &quot;spammer.handler&quot;} {:command &quot;(defn req-job-id [req]\n  (assoc-in req [:params :job-id] req))&quot;, :offset 62, :ns &quot;spammer.handler&quot;} {:command &quot;(defn get-job [job-id]\n  (get @gJobs job-id))&quot;, :offset 45, :ns &quot;spammer.job&quot;} {:command &quot;(def gJobs {})&quot;, :offset 14, :ns &quot;spammer.job&quot;} {:command &quot;(println @gJobs)&quot;, :offset 16, :ns &quot;spammer.job&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -724,6 +717,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/spammer/genlist.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="68" column="26" lean-forward="false" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="92" column="46" lean-forward="false" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/progress_viewer.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1921">
@@ -740,34 +749,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/email_input_builder.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="92" column="46" lean-forward="false" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/component.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="54" column="66" lean-forward="false" selection-start-line="54" selection-start-column="66" selection-end-line="54" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/spammer/genlist.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="68" column="26" lean-forward="false" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+        <state relative-caret-position="812">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/spamux/src/spamux/job_control.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="49" column="19" lean-forward="false" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+        <state relative-caret-position="527">
+          <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
           <folding />
         </state>
       </provider>

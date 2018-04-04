@@ -27,7 +27,9 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.component :refer [current-job-id]]))
+            [spamux.component
+             :refer [current-job-id
+                     xhr?-ok-body xhr?-response]]))
 
 (def jobs (atom {}))
 
@@ -41,7 +43,7 @@
 ;; todo keep option choices in a cookie
 (defn jcl-panel []
 
-  (div {:style {:margin-top "12px"
+  (div {:style {:margin-top   "12px"
                 :padding      "9px"
                 :border       "solid"
                 :border-width "1px"
@@ -99,7 +101,6 @@
 
      :content  (cF (or
                      (when-let [js (<mget me :jobstatus)]
-
                        (str "<b>" (case (:status js)
                                     "running" "Stop"
                                     "Start") "</b>"))
@@ -122,11 +123,9 @@
 
      :job-id    (cF+ [:obs (fn-obs (when new
                                      (reset! current-job-id new)))]
-                  (when-let [xhr (<mget me :start)]
-                    (when-let [r (xhr-response xhr)]
-                      (if (= 200 (:status r))
-                        (:job-id (:body r))
-                        (throw (str "job start failed:" r))))))}))
+                  (when-let [body (xhr?-ok-body (<mget me :start))]
+                    (:job-id body)))
+     }))
 
 (defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"
@@ -134,25 +133,22 @@
     (label {:for   "email-file-raw"
             :style "margin-right:6px"}
       "File to clean:")
+
     (select {:id       "email-file-raw"
              :class    "pure-input-1-2"
              :style    "background:white"
-             :onchange #(mset!> (evt-tag %) :value (target-value %))
-             }
-      {:value   (cI nil #_"em-1k.edn")
+             :onchange #(mset!> (evt-tag %) :value (target-value %))}
+      {:value   (cI "em-100k.edn")
        :reload  (cF (:status (<mget (mxu-find-name me :builder) :jobstatus)))
        :xhr     (cF (let [bstat (<mget me :reload)]
                       (send-xhr :get-raws "rawfiles")))
 
-       :options (cF (when-let [xhr (<mget me :xhr)]
-                      (when-let [r (xhr-response xhr)]
-                        (when (= 200 (:status r))
-                          (:body r)))))}
+       :options (cF (xhr?-ok-body (<mget me :xhr)))}
+
       [(option {:enabled  "false"
                 :selected true?
                 :value    "<none>"} "Pick a file, any file.")
        (map (fn [n s]
-              (option #_{:selected (= s "em-1k.edn")} s))
+              (option {:selected (= s "em-100k.edn")} s))
          (range)
          (<mget me :options))])))
-

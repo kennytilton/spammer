@@ -63,3 +63,14 @@
 
        :job-id    (cF (when-let [js (<mget me :jobstatus)]
                         (:job-id js)))})))
+
+(defn xhr?-response
+  "Tolerates nil XHR assuming will arrive later in data flow"
+  [xhr]
+  (when xhr
+    (xhr-response xhr)))
+
+(defn xhr?-ok-body [xhr]
+  (when-let [r (xhr?-response xhr)]
+    (when (= 200 (:status r))
+      (:body r))))
