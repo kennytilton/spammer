@@ -28,7 +28,7 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.component :refer [job-status-view current-job-id]]
+            [spamux.component :refer [job-status-view]]
             [tiltontec.util.core :as ut]))
 
 (declare build-email-file-button build-status)
@@ -93,9 +93,7 @@
                                   (:job-id @me)))
                         {:accept :json})))
 
-     :job-id    (cF+ [:obs (fn-obs (when new
-                                     (reset! current-job-id new)))]
-                  (when-let [xhr (<mget me :start)]
+     :job-id    (cF (when-let [xhr (<mget me :start)]
                     (when-let [r (xhr-response xhr)]
                       (if (= 200 (:status r))
                         (:job-id (:body r))

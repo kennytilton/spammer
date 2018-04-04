@@ -27,7 +27,6 @@
             [tiltontec.webmx.html :refer [mxu-find-tag]]
             [tiltontec.webmx.widget :refer [tag-checkbox]]
 
-            [spamux.component :refer [current-job-id]]
             [cljs.pprint :as pp]))
 
 (declare json-view stats-displayer)
@@ -45,7 +44,8 @@
                      ;;;(pln :jobstat-val!!!!!!!! job-status)
                      (when (some #{(:status job-status)} ["pending" "running"])
                        (send-xhr :get-runnin
-                         (pp/cl-format nil "runningstats?job-id=~a" @current-job-id)
+                         (pp/cl-format nil "runningstats?job-id=~a"
+                           (<mget (fmo me :starter) :job-id))
                          {:accept :json})))))
 
      :stats  (cF+ [:obs (fn-obs

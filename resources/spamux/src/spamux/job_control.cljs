@@ -28,8 +28,7 @@
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
             [spamux.component
-             :refer [current-job-id
-                     xhr?-ok-body xhr?-response]]))
+             :refer [xhr?-ok-body xhr?-response]]))
 
 (def jobs (atom {}))
 
@@ -121,11 +120,13 @@
                           :stop (when-let [jid (:job-id @me)]
                                   (pp/cl-format nil "stop?job-id=~a" jid))))))
 
-     :job-id    (cF+ [:obs (fn-obs (when new
-                                     (reset! current-job-id new)))]
-                  (when-let [body (xhr?-ok-body (<mget me :start))]
-                    (:job-id body)))
+     :job-id    (cF (when-let [body (xhr?-ok-body (<mget me :start))]
+                      (:job-id body)))
      }))
+
+#_
+(when-let [google (with-synapse (:s-goog)
+                    (send-unparsed-xhr :s-goog "http://google.com" false))])
 
 (defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"

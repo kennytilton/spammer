@@ -28,8 +28,6 @@
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]))
 
-(def current-job-id (atom nil))
-
 (declare fmo)
 
 (defn job-status-view [md-name title job-starter]
@@ -63,6 +61,8 @@
 
        :job-id    (cF (when-let [js (<mget me :jobstatus)]
                         (:job-id js)))})))
+
+
 
 (defn xhr?-response
   "Tolerates nil XHR assuming will arrive later in data flow"
