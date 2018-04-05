@@ -63,7 +63,7 @@ Speaking of things you cannot see, peruse the Spamux code for `send-xhr`. What y
 
 You *will* see some trickery to achieve asynchronous polling of the back-end, using some sophisticated data flow mechanisms. That looks like a pattern that can, and should, safely be wrapped in a friendlier macro. Hopefully today.
 
-The XHR library is a good example of how a little bit of glue code than get a challenging tool playing nicely in the data flow paradigm. When we say Matrix data flow covers everything, this is why: a one-time effort wraps any tool in the code needed to work within Matrix as a reactive component.
+The XHR library is a good example of how a little bit of glue code can persuade a challenging tool like XHR to play nicely in the data flow paradigm. When we say Matrix data flow covers everything, this is how we arrange that: a one-time effort wraps any tool in the code needed to work within Matrix as a reactive component.
 
 ## Future work
 The YAML integration, and someday The Grail: using data flow across Web sockects to simply even the simple XHR library.
