@@ -31,6 +31,9 @@
 
 (declare xhr?-ok-body)
 
+(defn if-bound [x]
+  (when (not= x unbound) x))
+
 (defn job-status-view [md-name title job-starter]
   (div {:style "min-width:144px"}
     (b title)
@@ -52,8 +55,9 @@
                                  (js/setTimeout
                                    #(with-cc
                                       (mswap!> me :recheck inc)) 50)))]
-                    (when-let [body (xhr?-ok-body (<mget me :chk))]
-                      (merge {:when (now)} body)))
+                    (if-let [body (xhr?-ok-body (<mget me :chk))]
+                      (merge {:when (now)} body)
+                      (if-bound cache)))
 
        :job-id    (cF (when-let [js (<mget me :jobstatus)]
                         (:job-id js)))})))
