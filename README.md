@@ -34,7 +34,20 @@ Now open a browser and navigate to `localhost:3000` or whatever port was observe
 
 ![Spamgen UX screenshot](https://github.com/kennytilton/spammer/blob/master/resources/images/spammer-ux.jpg)
 
-## Things to Notice
+## My Workflow
+Here is how I work on this full-stack project. In no particular order:
+* In a terminal, `cd spammer/resources/spamux` and then `scripts/watch`.
+* In another terminal, `cd spammer` and `lein ring server-headless`.
+* Once the server is started, browse `localhost:3000` in your favorite browser.
+* Open the `spammer` directory in IntelliJ. Another editor would be fine.
+* Edit either the back end or front end, keeping an eye on the terminals for build errors.
+* Re-load the browser page after front-end changes.
+
+### Notes
+* Again, in the past Figwheel compilation has failed to build this beast. The breakdown seemed to come when I created a macro-writing macro in the mxWeb module. If anyone pines for Figwheel I imagine this coud be sorted out.
+* Having the front end as a nested subdirectory was just the path of least resistance. 
+
+## Architectural Things to Notice
 Here are some quick highlights to look out for in understanding what we saw above. 
 ### Remaining work
 I took this exercise a *lot* further than planned, but called a halt before providing running statistics during builds and better formatting/less flashing for the diplayed cleaning "fails".
