@@ -27,8 +27,9 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.component
-             :refer [xhr?-ok-body xhr?-response]]))
+            [spamux.util
+             :refer [xhr?-ok-body xhr?-response]]
+            [spamux.job :refer [make-job]))
 
 (def jobs (atom {}))
 
@@ -83,16 +84,12 @@
 
      :onclick  #(let [me (evt-tag %)
                       info (fmov :job-info)]
-
-                  (send-xhr
-                    (case (<mget me :action)
-                      :start (pp/cl-format nil "start?job-type=clean&outputp=~a&logfail=~a&filename=~a"
-                               (fmov me "outputp" :on?)
-                               (fmov me "log-fail-p" :on?)
-                               (fmov me "email-file-raw"))
-
-                      :stop (when-let [jid (:job-id @me)]
-                              (pp/cl-format nil "stop?job-id=~a" jid)))))
+                  (mset!> (mxu-find-type me ::spamux) :job
+                    (make-job
+                      :job-type :clean
+                      :filename (fmov me "email-file-raw")
+                      :outputp (fmov me "outputp" :on?)
+                      :log-fail-p (fmov me "log-fail-p" :on?))))
 
      :style    (cF (let [ltgreen "margin-left:24px;background:#8f8"
                          ltred "margin-left:24px;background:#f88"]
@@ -104,7 +101,7 @@
                            ltgreen))
                        ltgreen)))
 
-     :content  (cF (b (string-capitalize (<mget me :action))))
+     :content  (cF (b "Clean" #_ (str/string-capitalize (<mget me :action))))
      }
     {:name   :starter
      :action (cF (if-let [info (fmov :job-info)]
@@ -118,18 +115,19 @@
   (div {:style "min-width:144px"}
     (b title)
     (p
-      {:content (cF (or (when-let [s (<mget me :jobstatus)]
+      {:content (cF (or #_ (when-let [s (<mget me :jobstatus)]
                           (str/capitalize (name (:status s))))
                       "Initial"))
        :style   "margin:12px;font-size:1em"}
       {:name    :job-info
+       :value (cF (<mget me :info))
        :recheck (cI 0)
-       :chk     (cF (when-let [job-id (and (<mget me :recheck)
+       :chk     nil #_ (cF (when-let [job-id (and (<mget me :recheck)
                                            (<mget (fmo me job-starter) :job-id))]
                       (send-xhr :get-runnin
                         (str "checkjob?job-id=" job-id))))
 
-       :info    (cF+ [:obs (fn-obs
+       :info    nil #_ (cF+ [:obs (fn-obs
                              (when (some #{(:status new)} ["pending" "running"])
                                (js/setTimeout
                                  #(with-cc
@@ -151,7 +149,7 @@
              :class    "pure-input-1-2"
              :style    "background:white"
              :onchange #(mset!> (evt-tag %) :value (target-value %))}
-      {:value   (cI "em-100k.edn")
+      {:value   (cI "em-4k.edn")
        :reload  (cF (:status (<mget (mxu-find-name me :builder) :jobstatus)))
        :xhr     (cF (let [bstat (<mget me :reload)]
                       (send-xhr :get-raws "rawfiles")))
@@ -162,6 +160,6 @@
                 :selected true?
                 :value    "<none>"} "Pick a file, any file.")
        (map (fn [n s]
-              (option {:selected (= s "em-100k.edn")} s))
+              (option {:selected (= s "em-4k.edn")} s))
          (range)
          (<mget me :options))])))

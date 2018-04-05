@@ -46,6 +46,7 @@
 (defn matrix-build! []
   (md/make ::spamux
     :job (cI nil) ;; start with one job at a time
+
     :mx-dom (cFonce (md/with-par me
                       (let [mtx me]
                         (assert mtx)
@@ -61,9 +62,7 @@
                              (fails-displayer "watcher")))])))))
 
 (let [root (dom/getElement "tagroot")
-
       app-matrix (matrix-build!)
-
       app-dom (binding [*webmx-trace* nil]                  ;; <-- set to nil if console too noisy
                 (tag-dom-create
                   (md/<mget app-matrix :mx-dom)))
