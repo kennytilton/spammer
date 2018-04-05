@@ -61,6 +61,8 @@ You cannot really "notice" transparent reactivity because Matrix&trade; subscrib
 ### Callback Heaven
 Speaking of things you cannot see, peruse the Spamux code for `send-xhr`. What you will not see are any callback handlers. The [XHR library](https://github.com/kennytilton/xhr) handles those and converts them into data flow "pulses", the normal data change mechanism of Matrix.
 
+You *will* see some trickery to achieve asynchronous polling of the back-end, using some sophisticated data flow mechanisms. That looks like a pattern that can, and should, safely be wrapped in a friendlier macro. Hopefully today.
+
 The XHR library is a good example of how a little bit of glue code than get a challenging tool playing nicely in the data flow paradigm. When we say Matrix data flow covers everything, this is why: a one-time effort wraps any tool in the code needed to work within Matrix as a reactive component.
 
 ## Future work
