@@ -24,7 +24,7 @@ The above builds the JS for our front-end. Now we can bring up our server, which
 To get the Web page UX for SpamGen served:
 ````
 cd <wherever>
-lein ring headless-server
+lein ring server-headless
 ````
 Make note of the announcement of the port (3000? 3001?) on which the server starts. The announcement will look like this:
 ````bash
