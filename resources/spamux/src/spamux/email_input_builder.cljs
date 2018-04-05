@@ -28,7 +28,8 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.component :refer [job-status-view xhr?-ok-body xhr?-response]]
+            [spamux.component :refer [job-status-view]]
+            [spamux.util :refer [xhr?-ok-body if-bound]]
             [tiltontec.util.core :as ut]))
 
 (declare build-email-file-button build-status)
@@ -40,16 +41,17 @@
                 :border-color "gray"}}
     (p (b "1. Build a new file, if you like."))
     (span "File size in thousands: ")
-    (input
-      {:name        "email-volume"
-       :type        "number"
-       :style "text-align:right"
-       :placeholder "Number of K emails"
-       :oninput     #(mset!> (evt-tag %) :value (target-value %))
-       }
-      {:value (cI nil)})
-    (p (build-email-file-button))
-    (job-status-view "build-status" "Build status" :builder)))
+    ;(input
+    ;  {:name        "email-volume"
+    ;   :type        "number"
+    ;   :style "text-align:right"
+    ;   :placeholder "Number of K emails"
+    ;   :oninput     #(mset!> (evt-tag %) :value (target-value %))
+    ;   }
+    ;  {:value (cI nil)})
+    ;(p (build-email-file-button))
+    ;(job-status-view "build-status" "Build status" :builder)
+    ))
 
 (defn build-email-file-button []
   (button
@@ -78,7 +80,7 @@
      :job-key   (cI nil :ephemeral? true)
      :jobstatus (cF (fmov me "build-status"))
 
-     :start     (cF (when-let [job (<mget me :job-key)]
+     :start     nil #_ (cF (when-let [job (<mget me :job-key)]
                       (send-xhr
                         (case job
                           :start (pp/cl-format nil "build?volumek=~a"
@@ -93,7 +95,7 @@
      :job-id    (cF (when-let [body (xhr?-ok-body (<mget me :start))]
                       (:job-id body)))
 
-     :xhr       (cF (when-let [job (<mget me :build-key)]
+     :xhr       nil #_ (cF (when-let [job (<mget me :job-key)]
                       (send-xhr
                         (case job
                           :start (str "build?volumek="

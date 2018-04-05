@@ -42,8 +42,6 @@
   (pln :jstat-set job-id status)
   (job-property-set! job-id :status status))
 
-;;; --- utils -------------------------------------------
-
 (defn pln [& args]
   (locking *out*
     (println (str/join " " args))))

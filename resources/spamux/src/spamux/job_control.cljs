@@ -10,7 +10,7 @@
 
             [tiltontec.model.core
              :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
-                     mxi-find mxu-find-name mxu-find-type mxu-find-id
+                     fasc mxi-find mxu-find-name mxu-find-type mxu-find-id
                      fmo fmov]
              :as md]
 
@@ -28,21 +28,13 @@
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
             [spamux.util
-             :refer [xhr?-ok-body xhr?-response]]
-            [spamux.job :refer [make-job]))
-
-(def jobs (atom {}))
-
-
-(defn- eko [key value]
-  (pln :eko!!! key value)
-  value)
+             :refer [mx-find-matrix xhr?-ok-body xhr?-response]]
+            [spamux.job :refer [make-job]]))
 
 (declare start-button email-raw-files)
 
-;; todo keep option choices in a cookie
 (defn jcl-panel []
-
+  (pln :jclp tiltontec.model.core/*par*)
   (div {:style {:margin-top   "12px"
                 :padding      "9px"
                 :border       "solid"
@@ -53,12 +45,12 @@
       (email-raw-files))
     (div {:style "display:flex; flex-direction:row"}
       (span "Job options: ")
-      (tag-checkbox me "outputp"
+      (tag-checkbox me "output?"
         "Generate output?" true
-        {:name  "outputp"
+        {:name  "output?"
          :style "background:white;padding:6px"})
 
-      (tag-checkbox me "log-fail-p"
+      (tag-checkbox me "log-fails?"
         "Log fails?" false
         {:name  "log-fails"
          :style "background:white;padding:6px"})
@@ -76,35 +68,37 @@
     (start-button)))
 
 (defn start-button []
+  (pln :starter tiltontec.model.core/*par*)
   (button
     {:class    "pure-button"
      :disabled (cF (let [raw-file (fmov me "email-file-raw")]
                      (or (nil? raw-file)
                        (= raw-file "<none>"))))
 
-     :onclick  #(let [me (evt-tag %)
-                      info (fmov :job-info)]
-                  (mset!> (mxu-find-type me ::spamux) :job
-                    (make-job
-                      :job-type :clean
-                      :filename (fmov me "email-file-raw")
-                      :outputp (fmov me "outputp" :on?)
-                      :log-fail-p (fmov me "log-fail-p" :on?))))
+     :onclick  #(let [me (evt-tag %)]
+                  (mset!> (mx-find-matrix me) :job
+                    #_ (make-job {:filename "em-4k.edn"})
+                    (make-job {
+                               :job-type   :clean
+                               :filename   (fmov me "email-file-raw")
+                               :output?    (fmov me "output?" :on?)
+                               :log-fails? (fmov me "log-fails?" :on?)
+                               })))
 
      :style    (cF (let [ltgreen "margin-left:24px;background:#8f8"
                          ltred "margin-left:24px;background:#f88"]
                      ;; todo make better
                      (or
-                       (if-let [info (fmov :job-info)]
+                       (if-let [info nil #_ (fmov me :job-info)]
                          (case (:status info)
                            "running" ltred
                            ltgreen))
                        ltgreen)))
 
-     :content  (cF (b "Clean" #_ (str/string-capitalize (<mget me :action))))
+     :content  (cF "Clean" #_(str/string-capitalize (<mget me :action)))
      }
     {:name   :starter
-     :action (cF (if-let [info (fmov :job-info)]
+     :action :start #_ (cF (if-let [info (fmov me :job-info)]
                    (case (:status info)
                      "running" :stop
                      :start)
@@ -115,32 +109,21 @@
   (div {:style "min-width:144px"}
     (b title)
     (p
-      {:content (cF (or #_ (when-let [s (<mget me :jobstatus)]
-                          (str/capitalize (name (:status s))))
+      {:content (cF (or #_(when-let [s (<mget me :jobstatus)]
+                            (str/capitalize (name (:status s))))
                       "Initial"))
        :style   "margin:12px;font-size:1em"}
       {:name    :job-info
-       :value (cF (<mget me :info))
-       :recheck (cI 0)
-       :chk     nil #_ (cF (when-let [job-id (and (<mget me :recheck)
-                                           (<mget (fmo me job-starter) :job-id))]
-                      (send-xhr :get-runnin
-                        (str "checkjob?job-id=" job-id))))
+       :value   (cF (<mget me :info))
+       })))
 
-       :info    nil #_ (cF+ [:obs (fn-obs
-                             (when (some #{(:status new)} ["pending" "running"])
-                               (js/setTimeout
-                                 #(with-cc
-                                    (mswap!> me :recheck inc)) 50)))]
-                  (if-let [body (xhr?-ok-body (<mget me :chk))]
-                    (merge {:when (now)} body)
-                    (if-bound cache)))})))
 #_(when-let [google (with-synapse (:s-goog)
                       (send-unparsed-xhr :s-goog "http://google.com" false))])
 
 (defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"
         :style "margin-bottom:18px"}
+
     (label {:for   "email-file-raw"
             :style "margin-right:6px"}
       "File to clean:")
@@ -150,7 +133,7 @@
              :style    "background:white"
              :onchange #(mset!> (evt-tag %) :value (target-value %))}
       {:value   (cI "em-4k.edn")
-       :reload  (cF (:status (<mget (mxu-find-name me :builder) :jobstatus)))
+       :reload  nil ;; hhack (cF (:status (<mget (mxu-find-name me :builder) :jobstatus)))
        :xhr     (cF (let [bstat (<mget me :reload)]
                       (send-xhr :get-raws "rawfiles")))
 

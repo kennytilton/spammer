@@ -35,7 +35,9 @@
      :refer [raw-email-file-builder]]
 
     [spamux.job-control
-     :refer [jcl-panel  email-raw-files]]
+     :refer [jcl-panel job-info email-raw-files]]
+
+    [spamux.job :refer [make-job]]
 
     [spamux.component :refer [job-status-view]]))
 
@@ -44,22 +46,25 @@
 (tufte/add-basic-println-handler! {})
 
 (defn matrix-build! []
+  (println ::spamux)
   (md/make ::spamux
-    :job (cI nil) ;; start with one job at a time
+    ;; start with one job at a time
+    :job (cI nil)
 
     :mx-dom (cFonce (md/with-par me
                       (let [mtx me]
                         (assert mtx)
+                        (pln :mtx mtx)
                         [(div {:style "margin:36px"}
                            (h1 "SpamUX")
                            (h3 "<i>Detect yourself. Before they do.&trade;")
                            (raw-email-file-builder)
                            (jcl-panel)
-                           (div {:style {:display "flex"
+                           #_ (div {:style {:display "flex"
                                          :flex-direction "row"}}
                              (job-info "job-status" "Job status" :starter)
-                             (watched-stats me)
-                             (fails-displayer "watcher")))])))))
+                             #_ (watched-stats me)
+                             #_ (fails-displayer "watcher")))])))))
 
 (let [root (dom/getElement "tagroot")
       app-matrix (matrix-build!)
