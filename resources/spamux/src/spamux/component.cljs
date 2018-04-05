@@ -52,11 +52,8 @@
                                  (js/setTimeout
                                    #(with-cc
                                       (mswap!> me :recheck inc)) 50)))]
-                    (if-let [body (xhr?-ok-body (<mget me :chk))]
-                        (merge {:when (now)}
-                            body)
-                        (when (not= cache unbound)
-                          cache)))
+                    (when-let [body (xhr?-ok-body (<mget me :chk))]
+                      (merge {:when (now)} body)))
 
        :job-id    (cF (when-let [js (<mget me :jobstatus)]
                         (:job-id js)))})))
