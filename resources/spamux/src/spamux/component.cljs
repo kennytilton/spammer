@@ -27,12 +27,10 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
+
+            [spamux.util :refer [xhr?-ok-body if-bound]]
             ))
 
-(declare xhr?-ok-body)
-
-(defn if-bound [x]
-  (when (not= x unbound) x))
 
 (defn job-status-view [md-name title job-starter]
   (div {:style "min-width:144px"}
@@ -57,20 +55,4 @@
                                       (mswap!> me :recheck inc)) 50)))]
                     (if-let [body (xhr?-ok-body (<mget me :chk))]
                       (merge {:when (now)} body)
-                      (if-bound cache)))
-
-       :job-id    (cF (when-let [js (<mget me :jobstatus)]
-                        (:job-id js)))})))
-
-
-
-(defn xhr?-response
-  "Tolerates nil XHR assuming will arrive later in data flow"
-  [xhr]
-  (when xhr
-    (xhr-response xhr)))
-
-(defn xhr?-ok-body [xhr]
-  (when-let [r (xhr?-response xhr)]
-    (when (= 200 (:status r))
-      (:body r))))
+                      (if-bound cache)))})))

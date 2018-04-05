@@ -82,51 +82,63 @@
                        (= raw-file "<none>"))))
 
      :onclick  #(let [me (evt-tag %)
-                      jobstat (fmov me "job-status")]
-                  (mset!> me :job-key
-                    (cond
-                      (nil? jobstat) :start
-                      (= "running" (:status jobstat)) :stop
-                      :default :start)))
+                      info (fmov :job-info)]
+
+                  (send-xhr
+                    (case (<mget me :action)
+                      :start (pp/cl-format nil "start?job-type=clean&outputp=~a&logfail=~a&filename=~a"
+                               (fmov me "outputp" :on?)
+                               (fmov me "log-fail-p" :on?)
+                               (fmov me "email-file-raw"))
+
+                      :stop (when-let [jid (:job-id @me)]
+                              (pp/cl-format nil "stop?job-id=~a" jid)))))
 
      :style    (cF (let [ltgreen "margin-left:24px;background:#8f8"
                          ltred "margin-left:24px;background:#f88"]
+                     ;; todo make better
                      (or
-                       (when-let [js (<mget me :jobstatus)]
-                         (case (:status js)
+                       (if-let [info (fmov :job-info)]
+                         (case (:status info)
                            "running" ltred
                            ltgreen))
                        ltgreen)))
 
-     :content  (cF (or
-                     (when-let [js (<mget me :jobstatus)]
-                       (str "<b>" (case (:status js)
-                                    "running" "Stop"
-                                    "Start") "</b>"))
-                     "<b>Start!</b>"))
+     :content  (cF (b (string-capitalize (<mget me :action))))
      }
-    {:name      :starter
-     :job-key   (cI nil :ephemeral? true)
-     :jobstatus (cF (fmov me "job-status"))
-
-     :start     (cF (when-let [job (<mget me :job-key)]
-                      (send-xhr
-                        (case job
-                          :start (pp/cl-format nil "start?job-type=clean&outputp=~a&logfail=~a&filename=~a"
-                                   (fmov me "outputp" :on?)
-                                   (fmov me "log-fail-p" :on?)
-                                   (fmov me "email-file-raw"))
-
-                          :stop (when-let [jid (:job-id @me)]
-                                  (pp/cl-format nil "stop?job-id=~a" jid))))))
-
-     :job-id    (cF (when-let [body (xhr?-ok-body (<mget me :start))]
-                      (:job-id body)))
+    {:name   :starter
+     :action (cF (if-let [info (fmov :job-info)]
+                   (case (:status info)
+                     "running" :stop
+                     :start)
+                   :start))
      }))
 
-#_
-(when-let [google (with-synapse (:s-goog)
-                    (send-unparsed-xhr :s-goog "http://google.com" false))])
+(defn job-info [title job-starter]
+  (div {:style "min-width:144px"}
+    (b title)
+    (p
+      {:content (cF (or (when-let [s (<mget me :jobstatus)]
+                          (str/capitalize (name (:status s))))
+                      "Initial"))
+       :style   "margin:12px;font-size:1em"}
+      {:name    :job-info
+       :recheck (cI 0)
+       :chk     (cF (when-let [job-id (and (<mget me :recheck)
+                                           (<mget (fmo me job-starter) :job-id))]
+                      (send-xhr :get-runnin
+                        (str "checkjob?job-id=" job-id))))
+
+       :info    (cF+ [:obs (fn-obs
+                             (when (some #{(:status new)} ["pending" "running"])
+                               (js/setTimeout
+                                 #(with-cc
+                                    (mswap!> me :recheck inc)) 50)))]
+                  (if-let [body (xhr?-ok-body (<mget me :chk))]
+                    (merge {:when (now)} body)
+                    (if-bound cache)))})))
+#_(when-let [google (with-synapse (:s-goog)
+                      (send-unparsed-xhr :s-goog "http://google.com" false))])
 
 (defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"

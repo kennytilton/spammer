@@ -45,6 +45,7 @@
 
 (defn matrix-build! []
   (md/make ::spamux
+    :job (cI nil) ;; start with one job at a time
     :mx-dom (cFonce (md/with-par me
                       (let [mtx me]
                         (assert mtx)
@@ -55,7 +56,7 @@
                            (jcl-panel)
                            (div {:style {:display "flex"
                                          :flex-direction "row"}}
-                             (job-status-view "job-status" "Job status" :starter)
+                             (job-info "job-status" "Job status" :starter)
                              (watched-stats me)
                              (fails-displayer "watcher")))])))))
 
@@ -69,10 +70,6 @@
 
       start-ms (.getTime (js/Date.))
       start$ (tmc/to-string (tmc/from-long start-ms))]
-
-  ;; (prn :start!!!! start-ms start$)
-
-  ;;(prn :app-dom!!!! (str app-dom))
 
   (set! (.-innerHTML root) nil)
   (dom/appendChild root app-dom)
