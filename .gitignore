@@ -1,3 +1,4 @@
+.idea/
 resources/webmx/out/
 resources/webmx/checkouts/
 bulkmail/*.edn
