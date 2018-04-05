@@ -18,8 +18,10 @@ cd <wherever>/resources/spamux
 scripts/build
 ````
 Of course, if you leave off `<wherever>` from now on `<wherever>` is `spammer`.
+
+The above builds the JS for our front-end. Now we can bring up our server, which happens also to include the data chomping service we will be driving from the front-end. Down the road I think the service itslef should be reached via XHR. Anyway, dringing up the server...
 ## Usage
-To bring up the Web page UX for SpamGen:
+To get the Web page UX for SpamGen served:
 ````
 cd <wherever>
 lein ring headless-server
