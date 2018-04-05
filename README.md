@@ -15,6 +15,7 @@ In one terminal, `cd` to wherever you would like to clone this, then:
 ````bash
 git clone https://github.com/kennytilton/spammer.git <wherever>
 cd <wherever>/resources/spamux
+git checkout lastgood
 scripts/build
 ````
 Of course, if you leave off `<wherever>` from now on `<wherever>` is `spammer`.
