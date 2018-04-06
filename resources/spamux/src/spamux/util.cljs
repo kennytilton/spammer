@@ -31,11 +31,9 @@
 (defn now []
   (.getTime (js/Date.)))
 
-
 (defn eko [key value]
   (pln :eko!!! key value)
   value)
-
 
 (defn xhr?-response
   "Tolerates nil XHR assuming will arrive later in data flow"
@@ -64,22 +62,26 @@
 
 ;;; --- utils -------------------------------------------
 
-(defn xhr-poller [id uri re-poll-test re-poll-after]
+(defn xhr-poller
+  ([id uri re-poll-test re-poll-after]
+   (xhr-poller id uri re-poll-test re-poll-after (constantly true)))
   ;; todo GC these
-  (with-synapse (id)
-    (md/make ::poller
-      :re-poll (cI 0)
-      :re-poll-test re-poll-test
-      :xhr (cF (when (<mget me :re-poll)
-                 (pln :poller-sending id uri)
-                 (send-xhr :get-running uri)))
-      :response (cF+ [:obs (fn-obs
-                             (when ((:re-poll-test @me) new)
-                               (js/setTimeout
-                                 #(with-cc
-                                    (mswap!> me :re-poll inc)) re-poll-after)))]
-                  (if-let [body (xhr?-ok-body (<mget me :xhr))]
-                    (do
-                      (pln :poller-body!!! id body)
-                      (merge {:when (now)} body))
-                    (if-bound cache))))))
+  ([id uri re-poll-test re-poll-after new-poller-when]
+   (with-synapse (id)
+     (when-let [final-uri (if (string? uri)
+                            uri (uri))]
+       (pln :making-poller id final-uri)
+       (md/make ::poller
+         :re-poll (cI 0)
+         :re-poll-test re-poll-test
+         :xhr (cF (when (<mget me :re-poll)
+                    (send-xhr :get-running final-uri)))
+         :response (cF+ [:obs (fn-obs
+                                (when ((:re-poll-test @me) new)
+                                  (js/setTimeout
+                                    #(with-cc
+                                       (mswap!> me :re-poll inc)) re-poll-after)))]
+                     (if-let [body (xhr?-ok-body (<mget me :xhr))]
+                       (do
+                         (merge {:when (now)} body))
+                       (if-bound cache))))))))

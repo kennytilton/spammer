@@ -50,7 +50,7 @@
        :placeholder "Number of K emails"
        :oninput     #(mset!> (evt-tag %) :value (target-value %))
        }
-      {:value (cI nil)})
+      {:value (cI 35)})
     (p (build-email-file-button))))
 
 (defn build-email-file-button []
@@ -63,7 +63,7 @@
                  (mset!> (mx-find-matrix me) :job
                    (make-xhr-job {
                               :job-type   :build
-                              :uri (pp/cl-format nil "build?volumek=~a"
+                              :uri (pp/cl-format nil "start?job-type=build&volumek=~a"
                                      (let [fw (mxu-find-name me "email-volume")]
                                        (assert fw)
                                        (<mget fw :value)))

@@ -31,9 +31,6 @@
   (GET "/rawfiles" req
     (email-input-list req))
 
-  (GET "/build" req
-    (email-input-build req))
-
   (GET "/start" req
     (job-start req))
 
@@ -66,18 +63,21 @@
 
     (swap! gJobs assoc job-id
       (merge params
-        {:job-id     job-id                                 ;; duh
+        {:job-id     job-id
+         :job-type (:job-type params)
          :full-stats {}
          :start      (System/currentTimeMillis)
          :status     :running}))
 
-    ;; (pln :again (get @gJobs job-id))
     (go
-      (email-file-to-sendfiles-mp job-id)
-      (pln :job-fini! job-id)
+      (case (:job-type params)
+        "clean" (email-file-to-sendfiles-mp job-id)
+        "build" (email-raw-file-build job-id (Integer/parseInt (:volumek params))))
 
       (swap! gJobs update-in [job-id :full-stats]
         #(merge-with + % (latest-summary-stats job-id)))
+
+
 
       (job-status-set job-id :complete))
 
@@ -114,25 +114,31 @@
   (or (job-not-found req)
     (let [job-id (req-job-id req)
           stats (if (= :running (job-property job-id :status))
-                  (let [fails (into []
-                                (apply concat
-                                  (map #(:fails @(:stats %))
-                                    (job-property job-id :workers))))]
-                    (assoc
-                      (apply merge-with +
-                        (map #(select-keys @(:stats %)
-                                [:sent-ct :rejected-score :rejected-dup-addr
-                                 :rejected-overall-mean
-                                 :rejected-span-mean])
-                          (job-property job-id :workers)))
-                      :fails (into [] (take 3 fails))
-                      :run-duration (- (now) (job-property job-id :start))))
+                  (case (job-property job-id :job-type)
+                    "clean" (let [fails (into []
+                                          (apply concat
+                                            (map #(:fails @(:stats %))
+                                              (job-property job-id :workers))))]
+                              (assoc
+                                (apply merge-with +
+                                  (map #(select-keys @(:stats %)
+                                          [:sent-ct :rejected-score :rejected-dup-addr
+                                           :rejected-overall-mean
+                                           :rejected-span-mean])
+                                    (job-property job-id :workers)))
+                                :fails (into [] (take 3 fails))))
+
+                    "build" {:run-duration (- (now) (job-property job-id :start))
+                             :built-ct (job-property job-id :built-ct)})
                   (merge
-                    (latest-summary-stats job-id)
+                    (case (job-property job-id :job-type)
+                      "clean" (latest-summary-stats job-id)
+                      "build" {:run-duration (- (now) (job-property job-id :start))
+                               :built-ct (job-property job-id :built-ct)})
                     {:status "complete"}))]
-    {:status  200
-     :headers {"Content-Type" "application/json"}
-     :body    (generate-string stats)})))
+      {:status  200
+       :headers {"Content-Type" "application/json"}
+       :body    (generate-string stats)})))
 
 (defn job-check [req]
   (or (job-not-found req)
@@ -152,20 +158,6 @@
        :headers {"Content-Type" "text/html"}
        :body    "<b>Start</b>"})))
 
-;; todo combine with start
-(defn email-input-build [req]
-  (let [{:keys [cookies params]} req
-        job-id (str (swap! latest-job-id inc))]
-    (go
-
-      (job-status-set job-id :running)
-      (email-raw-file-build job-id (Integer/parseInt (:volumek params)))
-      (job-status-set job-id :complete))
-
-    {:status  200
-     :headers {"Content-Type" "application/json"}
-     :body    (generate-string {:job-id job-id})}))
-
 (defn email-input-list [req]
   (pln :inputs-reqyested!!!!)
   (let [files (into []
@@ -175,7 +167,7 @@
                       (map bean
                         (file-seq
                           (clojure.java.io/file "bulkinput")))))))]
-    (pln :files!!!!!!!!! files)
+    ;;(pln :files!!!!!!!!! files)
     {:status  200
      :headers {"Content-Type" "application/json"}
      :body    (generate-string files)}))

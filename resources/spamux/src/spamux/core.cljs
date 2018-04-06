@@ -10,6 +10,7 @@
     ;; --- matrix ------------
     [tiltontec.util.core :refer [pln]]
     [tiltontec.cell.core :refer-macros [cF+ cF cFonce] :refer [cI]]
+    [tiltontec.cell.observer :refer-macros [fn-obs]]
 
     [tiltontec.model.core
      :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
@@ -50,7 +51,7 @@
 (defn matrix-build! []
   (md/make ::spamux
     ;; start with one job at a time
-    :job (cI nil)
+    :job (cI nil :obs (fn-obs (pln :matrix-sees-new (when new (:job-type @new)))))
 
     :mx-dom (cFonce (md/with-par me
                       (let [mtx me]
