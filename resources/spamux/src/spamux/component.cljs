@@ -28,31 +28,21 @@
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
 
-            [spamux.util :refer [xhr?-ok-body if-bound]]
+            [spamux.util :refer [xhr?-ok-body if-bound mx-find-matrix]]
+            [spamux.job :refer [mtx-job make-xhr-job]]
             ))
 
 
-(defn job-status-view [md-name title job-starter]
-  (div {:style "min-width:144px"}
+(defn job-status-view [title job-type]
+  (div {:style "min-width:144px"
+        :hidden (cF (nil? (<mget me :value)))}
+
+    {:value (cF (when-let [job (mtx-job me)]
+                  (when (= job-type (:job-type @job))
+                    (when-let [s (<mget job :status)]
+                      (str/capitalize (:status s))))))}
+
     (b title)
     (p
-      {:content (cF (or (when-let [s (<mget me :jobstatus)]
-                          (str/capitalize (name (:status s))))
-                      "Initial"))
-       :style   "margin:12px;font-size:1em"}
-      {:name      md-name
-       :value     (cF (<mget me :jobstatus))
-       :recheck   (cI 0)
-       :chk       (cF (when-let [job-id (and (<mget me :recheck)
-                                             (<mget (fmo me job-starter) :job-id))]
-                        (send-xhr :get-runnin
-                          (str "checkjob?job-id=" job-id))))
-
-       :jobstatus (cF+ [:obs (fn-obs
-                               (when (some #{(:status new)} ["pending" "running"])
-                                 (js/setTimeout
-                                   #(with-cc
-                                      (mswap!> me :recheck inc)) 50)))]
-                    (if-let [body (xhr?-ok-body (<mget me :chk))]
-                      (merge {:when (now)} body)
-                      (if-bound cache)))})))
+      {:content (cF (<mget (mx-par me) :value))
+       :style   "margin:12px;font-size:1em"})))

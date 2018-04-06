@@ -26,37 +26,22 @@
              xhr-selection xhr-to-map xhr-name-to-map xhr-response]]
 
     [spamux.util :refer [xhr?-ok-body mx-find-matrix if-bound
-                         xhr-poller]]
+                         xhr-poller syn-xhr-ok-body]]
     [cljs.pprint :as pp]))
 
-(defn syn-xhr-ok-body [me id uri]
-  (when-let [r (xhr-response
-                 (with-synapse (id)
-                   (send-xhr uri)))]
-    (when (= 200 (:status r))
-      (:body r))))
 
-
-(defn make-job
+(defn make-xhr-job
   "Make a matrix incarnation of a todo on initial entry"
   [islots]
-  (assert (:filename islots))
+  (assert (:uri islots))
 
   (let [net-slots (merge
                     {
                      :type       ::job
                      :created    (now)
                      :job-type   :clean
-                     :output?    false
-                     :log-fails? false
-
                      :job-id     (cF (:job-id (syn-xhr-ok-body me :jidx
-                                                (pp/cl-format nil
-                                                  "start?job-type=~a&filename=~a&outputp=~a&logfail=~a"
-                                                  (name (:job-type @me))
-                                                  (:filename @me) ;; :filename must be supplied in islots
-                                                  (:output @me)
-                                                  (:log-fails? @me)))))
+                                                (:uri @me))))
 
                      :status     (cF (when-let [job-id (<mget me :job-id)]
                                        (let [poller (xhr-poller :check-job

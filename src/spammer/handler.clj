@@ -165,6 +165,7 @@
      :body    (generate-string {:job-id job-id})}))
 
 (defn email-input-list [req]
+  (pln :inputs-reqyested!!!!)
   (let [files (into []
                 (map :name
                   (filter :file
@@ -172,6 +173,7 @@
                       (map bean
                         (file-seq
                           (clojure.java.io/file "bulkinput")))))))]
+    (pln :files!!!!!!!!! files)
     {:status  200
      :headers {"Content-Type" "application/json"}
      :body    (generate-string files)}))

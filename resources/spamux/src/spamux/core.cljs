@@ -35,15 +35,20 @@
      :refer [raw-email-file-builder]]
 
     [spamux.job-control
-     :refer [jcl-panel job-info email-raw-files]]
+     :refer [jcl-panel email-raw-files]]
 
-    [spamux.job :refer [make-job]]
+    [spamux.job :refer [make-xhr-job]]
+
+
 
     [spamux.component :refer [job-status-view]]))
 
 (enable-console-print!)
 
 (tufte/add-basic-println-handler! {})
+
+(def hbox {:display "flex"
+           :flex-direction "row"})
 
 (defn matrix-build! []
   (println ::spamux)
@@ -58,11 +63,12 @@
                         [(div {:style "margin:36px"}
                            (h1 "SpamUX")
                            (h3 "<i>Detect yourself. Before they do.&trade;")
-                           (raw-email-file-builder)
-                           (jcl-panel)
-                           (div {:style {:display "flex"
-                                         :flex-direction "row"}}
-                             (job-info "Job status" )
+                           (div {:style (merge hbox
+                                          {:align-items "stretch"})}
+                             (raw-email-file-builder)
+                             (jcl-panel))
+                           (div {:style hbox}
+                             (job-status-view "Job status" :clean)
                              (watched-stats me)
                              (fails-displayer "watcher")))])))))
 

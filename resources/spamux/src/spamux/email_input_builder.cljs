@@ -29,7 +29,9 @@
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
             [spamux.component :refer [job-status-view]]
-            [spamux.util :refer [xhr?-ok-body if-bound]]
+            [spamux.util :refer [xhr?-ok-body if-bound mx-find-matrix
+                                 syn-xhr-ok-body]]
+            [spamux.job :refer [make-xhr-job]]
             [tiltontec.util.core :as ut]))
 
 (declare build-email-file-button build-status)
@@ -50,7 +52,7 @@
        }
       {:value (cI nil)})
     (p (build-email-file-button))
-    (job-status-view "build-status" "Build status" :builder)
+    (job-status-view "Build status" :build)
     ))
 
 (defn build-email-file-button []
@@ -59,47 +61,17 @@
      :style    "margin-left:18px"
      :disabled (cF (nil? (fmov me "email-volume")))
 
-     :onclick  #(let [me (do (evt-tag %))]
-                  (assert me)
-                  (pln :build-click!!! (fmov me "email-volume"))
-                  (cond
-                    (> (fmov me "email-volume") 5000)
-                    (js/alert "You will have to hack the code to exceed 5000k")
+     :onclick #(let [me (evt-tag %)]
+                 (mset!> (mx-find-matrix me) :job
+                   (make-xhr-job {
+                              :job-type   :build
+                              :uri (pp/cl-format nil "build?volumek=~a"
+                                     (let [fw (mxu-find-name me "email-volume")]
+                                       (assert fw)
+                                       (<mget fw :value)))
+                              })))
 
-                    :default
-                    (mset!> me :job-key
-                      (case (<mget me :job-key)
-                        nil :start
-                        :start :stop
-                        :stop :start))))
 
-     :content  (cF (or (xhr?-ok-body (<mget me :xhr))
-                     "<b>Build</b>"))}
+     :content  "<b>Build</b>"}
 
-    {:name      :builder
-     :job-key   (cI nil :ephemeral? true)
-     :jobstatus (cF (fmov me "build-status"))
-
-     :start     nil #_ (cF (when-let [job (<mget me :job-key)]
-                      (send-xhr
-                        (case job
-                          :start (pp/cl-format nil "build?volumek=~a"
-                                   (let [fw (mxu-find-name me "email-volume")]
-                                     (assert fw)
-                                     (<mget fw :value)))
-
-                          :stop (pp/cl-format nil "stop?job-id=~a"
-                                  (:job-id @me)))
-                        {:accept :json})))
-
-     :job-id    (cF (when-let [body (xhr?-ok-body (<mget me :start))]
-                      (:job-id body)))
-
-     :xhr       nil #_ (cF (when-let [job (<mget me :job-key)]
-                      (send-xhr
-                        (case job
-                          :start (str "build?volumek="
-                                   (let [fw (mxu-find-name me "email-volume")]
-                                     (assert fw)
-                                     (<mget fw :value)))
-                          :stop "buildstop"))))}))
+    {:name      :builder}))

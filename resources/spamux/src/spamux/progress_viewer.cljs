@@ -37,9 +37,11 @@
 (defn watched-stats [me]
   (div
     {
-     :hidden false #_ (cF (not (and
+     :hidden (cF (not (and
                         (<mget (md/mxu-find-name me "watch-progress") :on?)
-                        (<mget (mx-find-matrix me) :job-id))))
+                        (when-let [job (mtx-job me)]
+                          (= :clean (:job-type @job))
+                          (<mget job :job-id)))))
      }
     {:name   "watcher"
      :reload (cI 0)
@@ -49,14 +51,14 @@
                                 (<mget (fmo me "watch-progress") :on?)
                                 (<mget me :reload)
                                 (mtx-job me))]
-                   ;;(pln :chking (<mget job :status))
+                 (when (= :clean (:job-type @job))
                    (when-let [job-status (:status (<mget job :status))]
                      ;;(pln :jobstat-val!!!!!!!! job-status)
                      (when (some #{job-status} ["pending" "running"])
                        (send-xhr :get-runnin
                          (pp/cl-format nil "runningstats?job-id=~a"
                            (:job-id @job))
-                         {:accept :json})))))
+                         {:accept :json}))))))
 
      :stats  (cF+ [:obs (fn-obs
                           (when new

@@ -1,5 +1,6 @@
 (ns spamux.util
   (:require
+
     [tiltontec.cell.base :refer [ia-type unbound]]
     [tiltontec.cell.core :refer-macros [cF+ cF cFonce] :refer [cI]]
     [tiltontec.cell.observer :refer-macros [fn-obs]]
@@ -21,6 +22,20 @@
              xhr-selection xhr-to-map xhr-name-to-map xhr-response]]
     [clojure.string :as str]))
 
+(defn pln [& args]
+  (locking *out*
+    (println (str/join " " args))))
+
+(defn xpln [& args])
+
+(defn now []
+  (.getTime (js/Date.)))
+
+
+(defn eko [key value]
+  (pln :eko!!! key value)
+  value)
+
 
 (defn xhr?-response
   "Tolerates nil XHR assuming will arrive later in data flow"
@@ -40,21 +55,16 @@
   (assert (mxu-find-type mx :spamux.core/spamux))
   (mxu-find-type mx :spamux.core/spamux))
 
+(defn syn-xhr-ok-body [me id uri]
+  (when-let [r (xhr-response
+                 (with-synapse (id)
+                   (pln :sending!!!! uri)
+                   (send-xhr uri)))]
+    (pln :rrr!!!! r)
+    (when (= 200 (:status r))
+      (:body r))))
+
 ;;; --- utils -------------------------------------------
-
-(defn pln [& args]
-  (locking *out*
-    (println (str/join " " args))))
-
-(defn xpln [& args])
-
-(defn now []
-  (.getTime (js/Date.)))
-
-
-(defn eko [key value]
-  (pln :eko!!! key value)
-  value)
 
 (defn xhr-poller [id uri re-poll-test]
   ;; todo GC these

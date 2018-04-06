@@ -28,14 +28,14 @@
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
             [spamux.util
-             :refer [mx-find-matrix xhr?-ok-body xhr?-response]]
-            [spamux.job :refer [make-job]]))
+             :refer [syn-xhr-ok-body if-bound mx-find-matrix xhr?-ok-body xhr?-response]]
+            [spamux.job :refer [mtx-job make-xhr-job]]))
 
 (declare start-button email-raw-files)
 
 (defn jcl-panel []
   (pln :jclp tiltontec.model.core/*par*)
-  (div {:style {:margin-top   "12px"
+  (div {:style {:margin-left "24px"
                 :padding      "9px"
                 :border       "solid"
                 :border-width "1px"
@@ -70,55 +70,26 @@
 (defn start-button []
   (pln :starter tiltontec.model.core/*par*)
   (button
-    {:class    "pure-button"
+    {
+     :class    "pure-button"
      :disabled (cF (let [raw-file (fmov me "email-file-raw")]
                      (or (nil? raw-file)
                        (= raw-file "<none>"))))
 
      :onclick  #(let [me (evt-tag %)]
                   (mset!> (mx-find-matrix me) :job
-                    (make-job {
-                               :job-type   :clean
-                               :filename   (fmov me "email-file-raw")
-                               :output?    (fmov me "output?" :on?)
-                               :log-fails? (fmov me "log-fails?" :on?)
-                               })))
+                    (make-xhr-job {:job-type :clean
+                               :uri (pp/cl-format nil
+                                      "start?job-type=clean&filename=~a&outputp=~a&logfail=~a"
+                                      (fmov me "email-file-raw")
+                                      (fmov me "output?" :on?)
+                                      (fmov me "log-fails?" :on?))})))
 
-     :style    (cF (str "margin:18px;"
-                     (let [ltgreen "background:#8f8"
-                         ltred "background:#f88"]
-                     ;; todo make better
-                     (or
-                       (if-let [info nil #_ (fmov me :job-info)]
-                         (case (:status info)
-                           "running" ltred
-                           ltgreen))
-                       ltgreen))))
+     :style    "margin:18px"
 
      :content  (cF "Clean" #_(str/string-capitalize (<mget me :action)))
      }
-    {:name   :starter
-     :action :start #_ (cF (if-let [info (fmov me :job-info)]
-                   (case (:status info)
-                     "running" :stop
-                     :start)
-                   :start))
-     }))
-
-(defn job-info [title]
-  (div {:style "min-width:144px"}
-    (b title)
-    (p
-      {:content (cF (or (let [mtx (mx-find-matrix me)]
-                          (assert mtx)
-                          (if-let [job (<mget mtx :job)]
-                            (when-let [s (<mget job :status)]
-                              (str/capitalize (:status s)))
-                          "jobless"))))
-       :style   "margin:12px;font-size:1em"})))
-
-#_(when-let [google (with-synapse (:s-goog)
-                      (send-unparsed-xhr :s-goog "http://google.com" false))])
+    {:name   :starter}))
 
 (defn email-raw-files []
   (div {:class "pure-u-1 pure-u-md-1-3"
@@ -133,11 +104,21 @@
              :style    "background:white"
              :onchange #(mset!> (evt-tag %) :value (target-value %))}
       {:value   (cI "em-4k.edn")
-       :reload  nil ;; hhack (cF (:status (<mget (mxu-find-name me :builder) :jobstatus)))
+       #_ :options  #_ (cF (let [xx (when (or (when-let [job (mtx-job me)]
+                                      (and (= :build (:job-type @job))
+                                           (= "complete" (:status (<mget job :status)))))
+                                  (= cache unbound))
+                            (syn-xhr-ok-body me :get-raws "rawfiles"))]
+                   (pln :xx xx)
+                   (or xx (if-bound cache))))
+       :reload  (cF (when-let [job (mtx-job me)]
+                      (when (= :build (:job-type @job))
+                        (= "complete" (:status (<mget job :status))))))
        :xhr     (cF (let [bstat (<mget me :reload)]
                       (send-xhr :get-raws "rawfiles")))
 
-       :options (cF (xhr?-ok-body (<mget me :xhr)))}
+       :options (cF (xhr?-ok-body (<mget me :xhr)))
+       }
 
       [(option {:enabled  "false"
                 :selected true?
