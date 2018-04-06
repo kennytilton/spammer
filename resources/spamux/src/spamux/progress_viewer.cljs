@@ -29,103 +29,94 @@
 
             [cljs.pprint :as pp]
 
-            [spamux.job :refer [mtx-job mtx-job-id]]
-            [spamux.util :refer [mx-find-matrix]]))
+            [spamux.job :refer [mtx-job mtx-job-id mtx-job-type]]
+            [spamux.util :refer [if-bound xhr-poller mx-find-matrix]]))
 
 (declare json-view stats-displayer)
 
+(defn job-status-view [title]
+  (div {:style "min-width:144px"
+        :hidden (cF (nil? (<mget me :value)))}
+
+    {:value (cF (when-let [job (mtx-job me)]
+                  (when-let [s (<mget job :status)]
+                    (str/capitalize (:status s)))))}
+
+    (b title)
+    (p
+      {:content (cF (<mget (mx-par me) :value))
+       :style   "margin:12px;font-size:1em"})))
+
 (defn watched-stats [me]
   (div
-    {
-     :hidden (cF (not (and
+    {:hidden (cF (not (and
                         (<mget (md/mxu-find-name me "watch-progress") :on?)
                         (when-let [job (mtx-job me)]
                           (= :clean (:job-type @job))
-                          (<mget job :job-id)))))
-     }
-    {:name   "watcher"
-     :reload (cI 0)
-     :xhr    (cF (assert (fmo me "watch-progress"))
-               (assert (<mget (fmo me "watch-progress") :on?))
-               (when-let [job (and
-                                (<mget (fmo me "watch-progress") :on?)
-                                (<mget me :reload)
-                                (mtx-job me))]
-                 (when (= :clean (:job-type @job))
-                   (when-let [job-status (:status (<mget job :status))]
-                     ;;(pln :jobstat-val!!!!!!!! job-status)
-                     (when (some #{job-status} ["pending" "running"])
-                       (send-xhr :get-runnin
-                         (pp/cl-format nil "runningstats?job-id=~a"
-                           (:job-id @job))
-                         {:accept :json}))))))
-
-     :stats  (cF+ [:obs (fn-obs
-                          (when new
-                            (js/setTimeout #(with-cc
-                                              (mswap!> me :reload inc)) 100)))]
-               (or
-                 (when-let [xhr (<mget me :xhr)]
-                   (when-let [r (xhr-response xhr)]
-                     (if (= 200 (:status r))
-                       (assoc (:body r) :now (.getTime (js/Date.)))
-                       {:oops (:status r)})))
-                 (when-not (= cache unbound)                ;;(pln :cache-out cache)
-                   cache)))}
+                          (<mget job :job-id)))))}
     (div
       (b "Running stats")
-      (stats-displayer "watcher"))))
+      (stats-displayer))))
 
-(defn stats-displayer
-  ([source-name]
-   (stats-displayer source-name :stats))
-  ([source-name source-property]
-   (div {:style "margin-left:36px"}
-     {:name  "stat-group"
-      :stats (cF (<mget (mxu-find-name me source-name) source-property))}
 
-     (for [[lbl vkey fmtr] [["Duration" :run-duration
-                             (fn [val]
-                               (pp/cl-format nil "~,3f" (/ val 1000.0)))]
-                            ["Sent" :sent-ct]
-                            ["Dup Email" :rejected-dup-addr]
-                            ["High score" :rejected-score]
-                            ["High mean" :rejected-overall-mean]
-                            ["Span mean" :rejected-span-mean]]]
-       (div {:style {:display        "flex",
-                     :flex-direction "row"}} {}
-         (span {:style   {:min-width "96px"
-                          :margin    "2px"}
-                :content (str lbl ": ")})
-         (span {:style   {:min-width     "72px"
-                          :margin        "2px"
-                          :padding-right "2px"
-                          :text-align    "right"
-                          :font-weight   "bold"
-                          :background    "white"}
-                :content (let [f (or fmtr str)]
-                           (cF (let [ss (mxu-find-name me "stat-group")]
-                                 (when-let [stats (<mget ss :stats)]
-                                   (f (vkey stats))))))}))))))
+(defn stats-displayer []
+  (div {:style "margin-left:36px"}
+    {:name  "stat-group"
+     :stats (cF
+              (when-let [job-id (and
+                                  (<mget (fmo me "watch-progress") :on?)
+                                  (= :clean (mtx-job-type me))
+                                  (mtx-job-id me))]
+
+                (let [poller (xhr-poller :poll-running
+                               (str "runningstats?job-id=" job-id)
+                               (fn [response]
+                                 (pln :fails!!!! (:fails response))
+                                 (not= "complete"
+                                   (:status response)))
+                               3000)]
+                  (<mget poller :response))))}
+
+    (for [[lbl vkey fmtr] [["Duration" :run-duration
+                            (fn [val]
+                              (pp/cl-format nil "~,3f" (/ val 1000.0)))]
+                           ["Sent" :sent-ct]
+                           ["Dup Email" :rejected-dup-addr]
+                           ["High score" :rejected-score]
+                           ["High mean" :rejected-overall-mean]
+                           ["Span mean" :rejected-span-mean]]]
+      (div {:style {:display        "flex",
+                    :flex-direction "row"}} {}
+        (span {:style   {:min-width "96px"
+                         :margin    "2px"}
+               :content (str lbl ": ")})
+        (span {:style   {:min-width     "72px"
+                         :margin        "2px"
+                         :padding-right "2px"
+                         :text-align    "right"
+                         :font-weight   "bold"
+                         :background    "white"}
+               :content (let [f (or fmtr str)]
+                          (cF (when-let [ss (mxu-find-name me "stat-group")]
+                                (pln :bam!!ss ss)
+                                (when-let [stats (<mget ss :stats)]
+                                  (f (vkey stats))))))})))))
 
 (def spam-format "~{<p :style 'background:#FCC;min-width:250px;max-width:250px'>~a</p>~}")
 
-(defn fails-displayer
-  ([source-name]
-   (fails-displayer source-name :stats))
-
-  ([source-name source-property]
-   (div {:style  "margin-left:36px"
-         :hidden (cF (not (and
-                            (<mget (md/mxu-find-name me "sample-fails") :on?)
-                            (mtx-job-id me))))}
-     {:name  "fails-group"
-      :fails (cF (let [src (mxu-find-name me source-name)]
-                   (let [fails (:fails (<mget src source-property))]
-                     (or fails (when (not= cache unbound)
-                                 cache)))))}
-     (b "Fails")
-     (div {:style   "background:#fdd"
-           :content (cF (pp/cl-format nil spam-format
-                          (map #(with-out-str (pp/pprint %))
-                            (<mget (fmo me "fails-group") :fails))))}))))
+(defn fails-displayer []
+  (div {:style  "margin-left:36px"
+            :hidden (cF (not (and
+                               (<mget (md/mxu-find-name me "sample-fails") :on?)
+                               (mtx-job-id me)
+                               (= :clean (mtx-job-type me)))))}
+        {:name  "fails-group"
+         :fails (cF (let [src (mxu-find-name me "stat-group")]
+                      (assert src)
+                      (let [fails (:fails (<mget src :stats))]
+                        (or fails (if-bound cache)))))}
+        (b "Fails")
+        (div {:style   "background:#fdd"
+              :content (cF (pp/cl-format nil spam-format
+                             (map #(with-out-str (pp/pprint %))
+                               (<mget (fmo me "fails-group") :fails))))})))

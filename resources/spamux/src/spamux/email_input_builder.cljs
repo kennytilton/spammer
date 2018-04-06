@@ -28,7 +28,7 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.component :refer [job-status-view]]
+
             [spamux.util :refer [xhr?-ok-body if-bound mx-find-matrix
                                  syn-xhr-ok-body]]
             [spamux.job :refer [make-xhr-job]]
@@ -51,9 +51,7 @@
        :oninput     #(mset!> (evt-tag %) :value (target-value %))
        }
       {:value (cI nil)})
-    (p (build-email-file-button))
-    (job-status-view "Build status" :build)
-    ))
+    (p (build-email-file-button))))
 
 (defn build-email-file-button []
   (button

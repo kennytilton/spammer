@@ -58,27 +58,28 @@
 (defn syn-xhr-ok-body [me id uri]
   (when-let [r (xhr-response
                  (with-synapse (id)
-                   (pln :sending!!!! uri)
                    (send-xhr uri)))]
-    (pln :rrr!!!! r)
     (when (= 200 (:status r))
       (:body r))))
 
 ;;; --- utils -------------------------------------------
 
-(defn xhr-poller [id uri re-poll-test]
+(defn xhr-poller [id uri re-poll-test re-poll-after]
   ;; todo GC these
   (with-synapse (id)
     (md/make ::poller
       :re-poll (cI 0)
       :re-poll-test re-poll-test
       :xhr (cF (when (<mget me :re-poll)
+                 (pln :poller-sending id uri)
                  (send-xhr :get-running uri)))
       :response (cF+ [:obs (fn-obs
                              (when ((:re-poll-test @me) new)
                                (js/setTimeout
                                  #(with-cc
-                                    (mswap!> me :re-poll inc)) 200)))]
+                                    (mswap!> me :re-poll inc)) re-poll-after)))]
                   (if-let [body (xhr?-ok-body (<mget me :xhr))]
-                    (merge {:when (now)} body)
+                    (do
+                      (pln :poller-body!!! id body)
+                      (merge {:when (now)} body))
                     (if-bound cache))))))

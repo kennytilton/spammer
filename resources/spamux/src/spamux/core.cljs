@@ -29,7 +29,7 @@
 
     ;; --- the beef --------------------------------
     [spamux.progress-viewer
-     :refer [fails-displayer watched-stats]]
+     :refer [job-status-view watched-stats fails-displayer]]
 
     [spamux.email-input-builder
      :refer [raw-email-file-builder]]
@@ -37,11 +37,8 @@
     [spamux.job-control
      :refer [jcl-panel email-raw-files]]
 
-    [spamux.job :refer [make-xhr-job]]
+    [spamux.job :refer [make-xhr-job]]))
 
-
-
-    [spamux.component :refer [job-status-view]]))
 
 (enable-console-print!)
 
@@ -51,7 +48,6 @@
            :flex-direction "row"})
 
 (defn matrix-build! []
-  (println ::spamux)
   (md/make ::spamux
     ;; start with one job at a time
     :job (cI nil)
@@ -63,14 +59,18 @@
                         [(div {:style "margin:36px"}
                            (h1 "SpamUX")
                            (h3 "<i>Detect yourself. Before they do.&trade;")
+
                            (div {:style (merge hbox
-                                          {:align-items "stretch"})}
+                                          {:margin-top "24px"
+                                           :align-items "stretch"})}
                              (raw-email-file-builder)
                              (jcl-panel))
-                           (div {:style hbox}
-                             (job-status-view "Job status" :clean)
+
+                           (div {:style (merge hbox
+                                          {:margin-top "24px"})}
+                             (job-status-view "Job status")
                              (watched-stats me)
-                             (fails-displayer "watcher")))])))))
+                             (fails-displayer)))])))))
 
 (let [root (dom/getElement "tagroot")
       app-matrix (matrix-build!)

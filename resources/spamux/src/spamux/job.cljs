@@ -35,28 +35,24 @@
   [islots]
   (assert (:uri islots))
 
-  (let [net-slots (merge
-                    {
-                     :type       ::job
-                     :created    (now)
-                     :job-type   :clean
-                     :job-id     (cF (:job-id (syn-xhr-ok-body me :jidx
-                                                (:uri @me))))
+  (apply md/make (flatten (into []
+                            (merge
+                              {
+                               :type     ::job
+                               :created  (now)
+                               :job-type :clean
+                               :job-id   (cF (:job-id (syn-xhr-ok-body me :jidx
+                                                        (:uri @me))))
 
-                     :status     (cF (when-let [job-id (<mget me :job-id)]
-                                       (let [poller (xhr-poller :check-job
-                                                      (str "checkjob?job-id=" job-id)
-                                                      (fn [response]
-                                                        (some #{(:status response)} ["pending" "running"])))]
-                                         (<mget poller :response))))
-                     }
-                    islots)
-
-        job (do                                             ;;(pln :netslots net-slots)
-              (apply md/make (flatten (into [] net-slots))))]
-
-    job))
-
+                               :status   (cF (when-let [job-id (<mget me :job-id)]
+                                               (let [poller (xhr-poller :check-job
+                                                              (str "checkjob?job-id=" job-id)
+                                                              (fn [response]
+                                                                (some #{(:status response)} ["pending" "running"]))
+                                                              1000)]
+                                                 (<mget poller :response))))
+                               }
+                              islots)))))
 
 (defn mtx-job [mx]
   (<mget (mx-find-matrix mx) :job))
@@ -64,3 +60,7 @@
 (defn mtx-job-id [mx]
   (when-let [job (mtx-job mx)]
     (<mget job :job-id)))
+
+(defn mtx-job-type [mx]
+  (when-let [job (mtx-job mx)]
+    (:job-type @job)))

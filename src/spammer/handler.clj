@@ -127,7 +127,9 @@
                           (job-property job-id :workers)))
                       :fails (into [] (take 3 fails))
                       :run-duration (- (now) (job-property job-id :start))))
-                  (latest-summary-stats job-id))]
+                  (merge
+                    (latest-summary-stats job-id)
+                    {:status "complete"}))]
     {:status  200
      :headers {"Content-Type" "application/json"}
      :body    (generate-string stats)})))

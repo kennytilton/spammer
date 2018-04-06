@@ -49,7 +49,7 @@
     (div {:style "display:flex; flex-direction:row"}
       (span "Job options: ")
       (tag-checkbox me "output?"
-        "Generate output?" true
+        "Generate output?" false
         {:name  "output?"
          :style "background:white;padding:6px"})
 
@@ -95,7 +95,6 @@
     {:name :starter}))
 
 (defn email-raw-files []
-  (pln :building :email-raw-files)
   (div {:class "pure-u-1 pure-u-md-1-3"
         :style "margin-bottom:18px"}
 
@@ -107,7 +106,7 @@
              :class    "pure-input-1-2"
              :style    "background:white"
              :onchange #(mset!> (evt-tag %) :value (target-value %))}
-      {:value   (cI "em-4k.edn")
+      {:value   (cI "em-100k.edn")
        :options (cF (let [menu me
                           xhr (with-synapse (:getraws)
                                 (when (or (when-let [job (mtx-job menu)]
@@ -119,9 +118,8 @@
                         (if-bound cache))))}
 
       [(option {:enabled  "false"
-                :selected true
+                ;;:selected true
                 :value    "<none>"} "Pick a file, any file.")
-       (map (fn [n s]
-              (option {:selected (= s "em-4k.edn")} s))
-         (range)
+       (map (fn [s]
+              (option {:selected (= s "em-100k.edn")} s))
          (<mget me :options))])))
