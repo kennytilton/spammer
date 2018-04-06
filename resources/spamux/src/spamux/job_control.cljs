@@ -77,7 +77,6 @@
 
      :onclick  #(let [me (evt-tag %)]
                   (mset!> (mx-find-matrix me) :job
-                    #_ (make-job {:filename "em-4k.edn"})
                     (make-job {
                                :job-type   :clean
                                :filename   (fmov me "email-file-raw")
@@ -85,15 +84,16 @@
                                :log-fails? (fmov me "log-fails?" :on?)
                                })))
 
-     :style    (cF (let [ltgreen "margin-left:24px;background:#8f8"
-                         ltred "margin-left:24px;background:#f88"]
+     :style    (cF (str "margin:18px;"
+                     (let [ltgreen "background:#8f8"
+                         ltred "background:#f88"]
                      ;; todo make better
                      (or
                        (if-let [info nil #_ (fmov me :job-info)]
                          (case (:status info)
                            "running" ltred
                            ltgreen))
-                       ltgreen)))
+                       ltgreen))))
 
      :content  (cF "Clean" #_(str/string-capitalize (<mget me :action)))
      }
@@ -105,17 +105,17 @@
                    :start))
      }))
 
-(defn job-info [title job-starter]
+(defn job-info [title]
   (div {:style "min-width:144px"}
     (b title)
     (p
-      {:content (cF (or #_(when-let [s (<mget me :jobstatus)]
-                            (str/capitalize (name (:status s))))
-                      "Initial"))
-       :style   "margin:12px;font-size:1em"}
-      {:name    :job-info
-       :value   (cF (<mget me :info))
-       })))
+      {:content (cF (or (let [mtx (mx-find-matrix me)]
+                          (assert mtx)
+                          (if-let [job (<mget mtx :job)]
+                            (when-let [s (<mget job :status)]
+                              (str/capitalize (:status s)))
+                          "jobless"))))
+       :style   "margin:12px;font-size:1em"})))
 
 #_(when-let [google (with-synapse (:s-goog)
                       (send-unparsed-xhr :s-goog "http://google.com" false))])

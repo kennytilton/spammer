@@ -6,6 +6,9 @@
     [tiltontec.cell.integrity
      :refer-macros [with-cc with-integrity]
      :refer []]
+    [tiltontec.cell.synapse
+     :refer-macros [with-synapse]
+     :refer []]
 
     [tiltontec.model.core
      :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
@@ -52,3 +55,20 @@
 (defn eko [key value]
   (pln :eko!!! key value)
   value)
+
+(defn xhr-poller [id uri re-poll-test]
+  ;; todo GC these
+  (with-synapse (id)
+    (md/make ::poller
+      :re-poll (cI 0)
+      :re-poll-test re-poll-test
+      :xhr (cF (when (<mget me :re-poll)
+                 (send-xhr :get-running uri)))
+      :response (cF+ [:obs (fn-obs
+                             (when ((:re-poll-test @me) new)
+                               (js/setTimeout
+                                 #(with-cc
+                                    (mswap!> me :re-poll inc)) 200)))]
+                  (if-let [body (xhr?-ok-body (<mget me :xhr))]
+                    (merge {:when (now)} body)
+                    (if-bound cache))))))

@@ -27,25 +27,35 @@
             [tiltontec.webmx.html :refer [mxu-find-tag]]
             [tiltontec.webmx.widget :refer [tag-checkbox]]
 
-            [cljs.pprint :as pp]))
+            [cljs.pprint :as pp]
+
+            [spamux.job :refer [mtx-job mtx-job-id]]
+            [spamux.util :refer [mx-find-matrix]]))
 
 (declare json-view stats-displayer)
 
 (defn watched-stats [me]
   (div
-    {:hidden (cF (or
-                   (not (<mget (md/mxu-find-name me "watch-progress") :on?))
-                   (not (<mget (fmo me :starter) :job-id))))}
+    {
+     :hidden false #_ (cF (not (and
+                        (<mget (md/mxu-find-name me "watch-progress") :on?)
+                        (<mget (mx-find-matrix me) :job-id))))
+     }
     {:name   "watcher"
      :reload (cI 0)
-     :xhr    (cF (when (and (<mget (fmo me "watch-progress") :on?)
-                            (<mget me :reload))
-                   (let [job-status (fmov me "job-status")]
-                     ;;;(pln :jobstat-val!!!!!!!! job-status)
-                     (when (some #{(:status job-status)} ["pending" "running"])
+     :xhr    (cF (assert (fmo me "watch-progress"))
+               (assert (<mget (fmo me "watch-progress") :on?))
+               (when-let [job (and
+                                (<mget (fmo me "watch-progress") :on?)
+                                (<mget me :reload)
+                                (mtx-job me))]
+                   ;;(pln :chking (<mget job :status))
+                   (when-let [job-status (:status (<mget job :status))]
+                     ;;(pln :jobstat-val!!!!!!!! job-status)
+                     (when (some #{job-status} ["pending" "running"])
                        (send-xhr :get-runnin
                          (pp/cl-format nil "runningstats?job-id=~a"
-                           (<mget (fmo me :starter) :job-id))
+                           (:job-id @job))
                          {:accept :json})))))
 
      :stats  (cF+ [:obs (fn-obs
@@ -106,7 +116,7 @@
    (div {:style  "margin-left:36px"
          :hidden (cF (not (and
                             (<mget (md/mxu-find-name me "sample-fails") :on?)
-                            (<mget (fmo me :starter) :job-id))))}
+                            (mtx-job-id me))))}
      {:name  "fails-group"
       :fails (cF (let [src (mxu-find-name me source-name)]
                    (let [fails (:fails (<mget src source-property))]
@@ -114,6 +124,6 @@
                                  cache)))))}
      (b "Fails")
      (div {:style   "background:#fdd"
-         :content (cF (pp/cl-format nil spam-format
-                        (map #(with-out-str (pp/pprint %))
-                          (<mget (fmo me "fails-group") :fails))))}))))
+           :content (cF (pp/cl-format nil spam-format
+                          (map #(with-out-str (pp/pprint %))
+                            (<mget (fmo me "fails-group") :fails))))}))))

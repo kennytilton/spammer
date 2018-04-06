@@ -60,11 +60,11 @@
                            (h3 "<i>Detect yourself. Before they do.&trade;")
                            (raw-email-file-builder)
                            (jcl-panel)
-                           #_ (div {:style {:display "flex"
+                           (div {:style {:display "flex"
                                          :flex-direction "row"}}
-                             (job-info "job-status" "Job status" :starter)
-                             #_ (watched-stats me)
-                             #_ (fails-displayer "watcher")))])))))
+                             (job-info "Job status" )
+                             (watched-stats me)
+                             (fails-displayer "watcher")))])))))
 
 (let [root (dom/getElement "tagroot")
       app-matrix (matrix-build!)
