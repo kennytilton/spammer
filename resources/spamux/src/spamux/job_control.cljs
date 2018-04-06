@@ -7,6 +7,9 @@
             [tiltontec.cell.integrity
              :refer-macros [with-cc with-integrity]
              :refer []]
+            [tiltontec.cell.synapse
+             :refer-macros [with-synapse]
+             :refer []]
 
             [tiltontec.model.core
              :refer [matrix mx-par <mget <mget mset!> mset!> mswap!>
@@ -34,8 +37,8 @@
 (declare start-button email-raw-files)
 
 (defn jcl-panel []
-  (pln :jclp tiltontec.model.core/*par*)
-  (div {:style {:margin-left "24px"
+  (pln :building-jcl-panel!!!)
+  (div {:style {:margin-left  "24px"
                 :padding      "9px"
                 :border       "solid"
                 :border-width "1px"
@@ -79,19 +82,20 @@
      :onclick  #(let [me (evt-tag %)]
                   (mset!> (mx-find-matrix me) :job
                     (make-xhr-job {:job-type :clean
-                               :uri (pp/cl-format nil
-                                      "start?job-type=clean&filename=~a&outputp=~a&logfail=~a"
-                                      (fmov me "email-file-raw")
-                                      (fmov me "output?" :on?)
-                                      (fmov me "log-fails?" :on?))})))
+                                   :uri      (pp/cl-format nil
+                                               "start?job-type=clean&filename=~a&outputp=~a&logfail=~a"
+                                               (fmov me "email-file-raw")
+                                               (fmov me "output?" :on?)
+                                               (fmov me "log-fails?" :on?))})))
 
      :style    "margin:18px"
 
      :content  (cF "Clean" #_(str/string-capitalize (<mget me :action)))
      }
-    {:name   :starter}))
+    {:name :starter}))
 
 (defn email-raw-files []
+  (pln :building :email-raw-files)
   (div {:class "pure-u-1 pure-u-md-1-3"
         :style "margin-bottom:18px"}
 
@@ -104,24 +108,18 @@
              :style    "background:white"
              :onchange #(mset!> (evt-tag %) :value (target-value %))}
       {:value   (cI "em-4k.edn")
-       #_ :options  #_ (cF (let [xx (when (or (when-let [job (mtx-job me)]
-                                      (and (= :build (:job-type @job))
-                                           (= "complete" (:status (<mget job :status)))))
-                                  (= cache unbound))
-                            (syn-xhr-ok-body me :get-raws "rawfiles"))]
-                   (pln :xx xx)
-                   (or xx (if-bound cache))))
-       :reload  (cF (when-let [job (mtx-job me)]
-                      (when (= :build (:job-type @job))
-                        (= "complete" (:status (<mget job :status))))))
-       :xhr     (cF (let [bstat (<mget me :reload)]
-                      (send-xhr :get-raws "rawfiles")))
-
-       :options (cF (xhr?-ok-body (<mget me :xhr)))
-       }
+       :options (cF (let [menu me
+                          xhr (with-synapse (:getraws)
+                                (when (or (when-let [job (mtx-job menu)]
+                                            (and (= :build (:job-type @job))
+                                                 (= "complete" (:status (<mget job :status)))))
+                                        (= cache unbound))  ;; force initial load
+                                  (send-xhr :get-raws "rawfiles")))]
+                      (or (xhr?-ok-body xhr)
+                        (if-bound cache))))}
 
       [(option {:enabled  "false"
-                :selected true?
+                :selected true
                 :value    "<none>"} "Pick a file, any file.")
        (map (fn [n s]
               (option {:selected (= s "em-4k.edn")} s))
