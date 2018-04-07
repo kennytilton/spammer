@@ -64,24 +64,4 @@
                             (let [fw (mxu-find-name me "email-volume")]
                               (assert fw)
                               (<mget fw :value)))
-                     })))
-  #_
-  (button
-    {:class    "pure-button"
-     :style    "margin-left:18px"
-     :disabled (cF (nil? (fmov me "email-volume")))
-
-     :onclick #(let [me (evt-tag %)]
-                 (mset!> (mx-find-matrix me) :job
-                   (make-xhr-job {
-                              :job-type   :build
-                              :uri (pp/cl-format nil "start?job-type=build&volumek=~a"
-                                     (let [fw (mxu-find-name me "email-volume")]
-                                       (assert fw)
-                                       (<mget fw :value)))
-                              })))
-
-
-     :content  "<b>Build</b>"}
-
-    {:name      :builder}))
+                     }))))

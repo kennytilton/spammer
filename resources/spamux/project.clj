@@ -10,7 +10,7 @@
                  [cheshire "5.8.0"]
                  [com.taoensso/tufte "1.1.2"]
                  [com.tiltontec/matrix "0.1.3-SNAPSHOT"]
-                 [com.tiltontec/webmx "0.1.0-SNAPSHOT"]
+                 [com.tiltontec/webmx "0.1.1-SNAPSHOT"]
                  [com.tiltontec/xhr "0.1.1-SNAPSHOT"]
                  [com.cemerick/url "0.1.1"]]
   :jvm-opts ^:replace ["-Xmx1g" "-server"]

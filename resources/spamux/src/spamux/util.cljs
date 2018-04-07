@@ -70,7 +70,6 @@
    (with-synapse (id)
      (when-let [final-uri (if (string? uri)
                             uri (uri))]
-       (pln :making-poller id final-uri)
        (md/make ::poller
          :re-poll (cI 0)
          :re-poll-test re-poll-test

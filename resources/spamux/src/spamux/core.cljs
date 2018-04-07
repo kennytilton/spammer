@@ -30,7 +30,7 @@
 
     ;; --- the beef --------------------------------
     [spamux.progress-viewer
-     :refer [job-status-view watched-stats fails-displayer]]
+     :refer [job-status-view stats-displayer fails-displayer]]
 
     [spamux.email-input-builder
      :refer [raw-email-file-builder]]
@@ -51,26 +51,30 @@
 (defn matrix-build! []
   (md/make ::spamux
     ;; start with one job at a time
-    :job (cI nil :obs (fn-obs (pln :matrix-sees-new (when new (:job-type @new)))))
+    :job (cI nil)
 
     :mx-dom (cFonce (md/with-par me
                       (let [mtx me]
-                        (assert mtx)
-                        (pln :mtx mtx)
                         [(div {:style "margin:36px"}
-                           (h1 "SpamUX")
-                           (h3 "<i>Detect yourself. Before they do.&trade;")
+                           (h1 {:class "bouncer"
+                                :style "text-align: center"}
+                             "Spam UX")
+                           (h3 {:style "text-align: center"}
+                             "<i>Detect yourself. Before they do.&trade;")
 
-                           (div {:style (merge hbox
+                           (div {:class "fazer"
+                                 :style (merge hbox
                                           {:margin-top "24px"
                                            :align-items "stretch"})}
                              (raw-email-file-builder)
                              (jcl-panel))
 
-                           (div {:style (merge hbox
+                           (div {:class "fazer"
+                                 :style (merge hbox
                                           {:margin-top "24px"})}
+
                              (job-status-view "Job status")
-                             (watched-stats me)
+                             (stats-displayer)
                              (fails-displayer)))])))))
 
 (let [root (dom/getElement "tagroot")
