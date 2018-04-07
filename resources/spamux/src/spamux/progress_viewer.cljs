@@ -39,8 +39,8 @@
         :hidden (cF (nil? (<mget me :value)))}
 
     {:value (cF (when-let [job (mtx-job me)]
-                  (pln :status-sees-job)
                   (when-let [s (<mget job :status)]
+                    (pln :view-sees!!!! s)
                     (str/capitalize (:status s)))))}
 
     (b title)
@@ -115,8 +115,7 @@
 (def spam-format "~{<p :style 'background:#FCC;min-width:250px;max-width:250px'>~a</p>~}")
 
 (defn fails-displayer []
-  (h2 "fails")
-  #_(div {:style  "margin-left:36px"
+  (div {:style  "margin-left:36px"
           :hidden (cF (not (and
                              (<mget (md/mxu-find-name me "sample-fails") :on?)
                              (mtx-job-id me)

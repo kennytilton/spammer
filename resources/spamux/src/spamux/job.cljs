@@ -20,6 +20,10 @@
      :refer-macros [with-cc with-integrity]
      :refer []]
 
+    [tiltontec.webmx.gen :refer [evt-tag target-value]
+     :refer-macros [h1 h2 h3 h4 h5 input div span button p b a li ul
+                    select option label]]
+
     [tiltontec.xhr
      :refer [make-xhr send-xhr send-unparsed-xhr xhr-send xhr-await xhr-status
              xhr-status-key xhr-resolved xhr-error xhr-error? xhrfo synaptic-xhr synaptic-xhr-unparsed
@@ -27,8 +31,8 @@
 
     [spamux.util :refer [xhr?-ok-body mx-find-matrix if-bound
                          xhr-poller syn-xhr-ok-body]]
-    [cljs.pprint :as pp]))
-
+    [cljs.pprint :as pp]
+    [clojure.string :as str]))
 
 (defn make-xhr-job
   "Make a matrix incarnation of a todo on initial entry"
@@ -45,12 +49,17 @@
                                                         (:uri @me))))
 
                                :status   (cF (when-let [job-id (<mget me :job-id)]
-                                               (let [poller (xhr-poller :check-job
-                                                              (str "checkjob?job-id=" job-id)
-                                                              (fn [response]
-                                                                (some #{(:status response)} ["pending" "running"]))
-                                                              1000)]
-                                                 (<mget poller :response))))
+                                             (let [poller (xhr-poller :check-job
+                                                            (str "checkjob?job-id=" job-id)
+                                                            (fn [response]
+                                                              (some #{(:status response)} ["pending" "running"]))
+                                                            1000)]
+                                               (<mget poller :response))))
+                               :stopped  (cI nil
+                                           :obs (fn-obs
+                                                  (when new
+                                                    (when (:job-id @me) ;; paranoia
+                                                      (send-xhr (str "stop?job-id=" (:job-id @me)))))))
                                }
                               islots)))))
 
@@ -64,3 +73,41 @@
 (defn mtx-job-type [mx]
   (when-let [job (mtx-job mx)]
     (:job-type @job)))
+
+(defn mtx-job-running?
+  ([me]
+   (mtx-job-running? me nil))
+  ([me matching-type]
+   (when-let [job (mtx-job me)]
+     (when (or (nil? matching-type)
+             (= matching-type (:job-type @job)))
+       (let [status (:status (<mget job :status))
+             sum (some #{status}
+                   ["complete" "aborted"])]
+         (empty? sum))))))
+
+(defn job-start-button [job-type disabler jobber]
+  (button
+    {
+     :class    "pure-button"
+     :disabled (cF (when (not= (<mget me :action) :stop)
+                     (or
+                       (mtx-job-running? me)
+                       (disabler me))))
+
+     :onclick  #(let [me (evt-tag %)]
+                  (case (<mget me :action)
+                    :stop (mset!> (mtx-job me) :stopped true)
+                    :start (mset!> (mx-find-matrix me) :job
+                             (jobber me))))
+
+     :style    "margin:18px"
+
+     :content  (cF (str/capitalize (name (<mget me :action))))
+     }
+    {
+     :action (cF (if (mtx-job-running? me job-type)
+                 :stop :start))
+     }))
+
+

@@ -1,7 +1,7 @@
 .idea/
 resources/webmx/out/
 resources/webmx/checkouts/
-bulkmail/*.edn
+bulkmail/job*/*.edn
 **/.DS_Store
 **/.idea/
 /target

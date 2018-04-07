@@ -31,7 +31,7 @@
 
             [spamux.util :refer [xhr?-ok-body if-bound mx-find-matrix
                                  syn-xhr-ok-body]]
-            [spamux.job :refer [make-xhr-job]]
+            [spamux.job :refer [make-xhr-job job-start-button]]
             [tiltontec.util.core :as ut]))
 
 (declare build-email-file-button build-status)
@@ -50,10 +50,22 @@
        :placeholder "Number of K emails"
        :oninput     #(mset!> (evt-tag %) :value (target-value %))
        }
-      {:value (cI 35)})
+      {:value (cI nil)})
     (p (build-email-file-button))))
 
 (defn build-email-file-button []
+  (job-start-button :build
+    (fn [me]
+      (nil? (fmov me "email-volume")))
+    (fn [me]
+      (make-xhr-job {
+                     :job-type   :build
+                     :uri (pp/cl-format nil "start?job-type=build&volumek=~a"
+                            (let [fw (mxu-find-name me "email-volume")]
+                              (assert fw)
+                              (<mget fw :value)))
+                     })))
+  #_
   (button
     {:class    "pure-button"
      :style    "margin-left:18px"
