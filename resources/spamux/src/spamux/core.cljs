@@ -32,11 +32,8 @@
     [spamux.progress-viewer
      :refer [job-status-view stats-displayer fails-displayer]]
 
-    [spamux.email-input-builder
-     :refer [raw-email-file-builder]]
-
     [spamux.job-control
-     :refer [jcl-panel email-raw-files]]
+     :refer [builder-panel cleaner-panel]]
 
     [spamux.job :refer [make-xhr-job]]))
 
@@ -66,8 +63,8 @@
                                  :style (merge hbox
                                           {:margin-top "24px"
                                            :align-items "stretch"})}
-                             (raw-email-file-builder)
-                             (jcl-panel))
+                             (builder-panel)
+                             (cleaner-panel))
 
                            (div {:class "fazer"
                                  :style (merge hbox
@@ -77,14 +74,11 @@
                              (stats-displayer)
                              (fails-displayer)))])))))
 
-(let [root (dom/getElement "tagroot")
+(let [root (dom/getElement "tagroot") ;; <-- make sure this is in your index.html
       app-matrix (matrix-build!)
       app-dom (binding [*webmx-trace* nil]                  ;; <-- set to nil if console too noisy
                 (tag-dom-create
-                  (md/<mget app-matrix :mx-dom)))
-
-      start-ms (.getTime (js/Date.))
-      start$ (tmc/to-string (tmc/from-long start-ms))]
+                  (md/<mget app-matrix :mx-dom)))]
 
   (set! (.-innerHTML root) nil)
   (dom/appendChild root app-dom)

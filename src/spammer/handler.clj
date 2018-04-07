@@ -34,9 +34,6 @@
   (GET "/start" req
     (job-start req))
 
-  (GET "/batchstats" req
-    (batch-stats req))
-
   (GET "/runningstats" req
     (running-stats req))
 
@@ -102,13 +99,6 @@
     (throw (str "no job-id in request")))
   (when-not (get-job (req-job-id req))
     (job-not-found-response (req-job-id req))))
-
-(defn batch-stats [req]
-  (or (job-not-found req)
-    {:status  200
-     :headers {"Content-Type" "application/json"}
-     :body    (generate-string
-                (latest-summary-stats (req-job-id req)))}))
 
 (defn running-stats [req]
   (or (job-not-found req)

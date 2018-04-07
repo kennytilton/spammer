@@ -50,7 +50,6 @@
   (when (not= x unbound) x))
 
 (defn mx-find-matrix [mx]
-  (assert (mxu-find-type mx :spamux.core/spamux))
   (mxu-find-type mx :spamux.core/spamux))
 
 (defn syn-xhr-ok-body [me id uri]
