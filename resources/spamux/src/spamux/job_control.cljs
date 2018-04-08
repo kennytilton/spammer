@@ -35,10 +35,48 @@
             [spamux.job :refer [mtx-job make-xhr-job mtx-job-running? mtx-job-id
                                 job-start-button]]))
 
+;;; --- builder interface --------------------------
+
+(defn builder-panel []
+  (div {:style {:padding      "9px"
+                :min-width "350px"
+                :border       "solid"
+                :border-width "1px"
+                :border-color "gray"}}
+    (p (b "1. Build a new file to be cleaned."))
+
+    (label {:for   "email-volume"
+            :style "margin-right:6px"}
+      "File size in thousands:")
+    (input
+      {:id "email-volume"
+       :name        "email-volume"
+       :type        "number"
+       :style "text-align:right"
+       :placeholder "Number of K emails"
+       :oninput     #(mset!> (evt-tag %) :value (target-value %))
+       }
+      {:value (cI nil)})
+    (p (build-email-file-button))))
+
+(defn build-email-file-button []
+  (job-start-button :build
+    (fn [me]
+      (nil? (fmov me "email-volume")))
+    (fn [me]
+      (make-xhr-job {
+                     :job-type   :build
+                     :uri (pp/cl-format nil "start?job-type=build&volumek=~a"
+                            (let [fw (mxu-find-name me "email-volume")]
+                              (assert fw)
+                              (<mget fw :value)))
+                     }))))
+
 (declare  email-raw-files)
 
 (defn cleaner-panel []
-  (div {:style {:margin-left  "24px"
+  (div {:style {:min-width "350px"
+                :margin-left  "24px"
                 :padding      "9px"
                 :border       "solid"
                 :border-width "1px"
@@ -115,34 +153,3 @@
               (option {:selected false #_ (= s "em-100k.edn")} s))
          (<mget me :options))])))
 
-;;; --- builder interface --------------------------
-
-(defn builder-panel []
-  (div {:style {:padding      "9px"
-                :border       "solid"
-                :border-width "1px"
-                :border-color "gray"}}
-    (p (b "1. Build a new file, if you like."))
-    (span "File size in thousands: ")
-    (input
-      {:name        "email-volume"
-       :type        "number"
-       :style "text-align:right"
-       :placeholder "Number of K emails"
-       :oninput     #(mset!> (evt-tag %) :value (target-value %))
-       }
-      {:value (cI nil)})
-    (p (build-email-file-button))))
-
-(defn build-email-file-button []
-  (job-start-button :build
-    (fn [me]
-      (nil? (fmov me "email-volume")))
-    (fn [me]
-      (make-xhr-job {
-                     :job-type   :build
-                     :uri (pp/cl-format nil "start?job-type=build&volumek=~a"
-                            (let [fw (mxu-find-name me "email-volume")]
-                              (assert fw)
-                              (<mget fw :value)))
-                     }))))
