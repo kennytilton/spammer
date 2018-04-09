@@ -22,6 +22,7 @@ Some help:
 * The \<p> tag is already in place ready for you to replace "Your solutuion here" with a CLJS form returning "Projected file size \<N>mb.".
 * The Matrix incarnation of the DOM volume \<input> is returned by `(fmo "email-volume")`. Trust us on this at this early stage.
 * The current value of the DOM volume widget can be accessed as (<mget V :value), where V is the Matrix incarnation of the \<input>. Note that the value will be the string value as offered by the DOM element.
+
 Some things you will get for free:
 * We track `oninput` instead of `onchange` to satisfy "as the user edits". 
 * The `mset!>` setter initiates propagation of any change to any dependents, so that id done.
@@ -30,9 +31,12 @@ Some things you will get for free:
 
 You will find more help and instructions in the source code itself if you execute the second rerequisite:
 
-> git checkout ex-1
-
+````bash
+git checkout ex-1
+````
 Now open [job_control.cljs](https://github.com/kennytilton/spammer/blob/master/resources/spamux/src/spamux/job_control.cljs) in your favorite editor and look for the string "Start Here" at about line 70. The instructions there are meant to take you the rest of the way. Again, please file an Issue if you get stuck on the instructions or exercises.
+
+For re-building and testing your changes, the instructions on the main README still hold.
 
 See you at the pub when you are done!
 
