@@ -1,6 +1,6 @@
 # Exercise Group 1
 
-[Important! These instructions may need help. Please file an Issue if you have any problems with these exercises, including not being able to solve an exercise. As a pedagogic goad answers will not be provided, but you will get help from the author.]
+[Important! These instructions may need help. Please file an Issue if you have any problems with these exercises, including not being able to solve an exercise. As a pedagogic goad answers will not be provided, but you will get help direct from the author.]
 
 ## The goal
 Our goal in this first group of exercises is to give the reader a hands-on feel for data flow programming, a subcategory of reactive programming in which individual properties are declared as functional formulas that are re-evaluated whenever necessary. 
@@ -12,7 +12,7 @@ This Spammer project includes a Web app front end in `resources/spamux` served b
 
 > Build and run Spammer by following the instructions in [the main README](https://github.com/kennytilton/spammer/blob/master/README.md).
 
-## The RFE
+## The mock RFE behind these exercises
 We are getting reports that users are accidentally creating huge files because they do not notice that volume input is for *thousands* of emails. We want, as a warning, to preview for the user the size of the file they will be building, and give it a green or pink background if the size is below/above 100mb.
 
 The first goal is an HTML \<p> tag with the content "Projected file size \<N>mb." We want this to dynamically update as the user edits the email volume input field, disappearing altogether if the field is blank. ANd we want it hidden until they enter a value.
