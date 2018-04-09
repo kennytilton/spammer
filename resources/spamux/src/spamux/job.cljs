@@ -1,11 +1,10 @@
 (ns spamux.job
   (:require
     [tiltontec.util.core :refer [pln now]]
-    [tiltontec.cell.base :refer [ia-type unbound]]
+    [tiltontec.cell.base :refer [ia-type unbound when-bound]]
     [tiltontec.cell.core :refer-macros [cF+ cF cFonce] :refer [cI]]
     [tiltontec.cell.observer :refer-macros [fn-obs]]
 
-    [tiltontec.cell.core :refer-macros [cF+ cF cFonce] :refer [cI]]
     [tiltontec.cell.synapse
      :refer-macros [with-synapse]
      :refer []]
@@ -27,12 +26,14 @@
     [tiltontec.xhr
      :refer [make-xhr send-xhr send-unparsed-xhr xhr-send xhr-await xhr-status
              xhr-status-key xhr-resolved xhr-error xhr-error? xhrfo synaptic-xhr synaptic-xhr-unparsed
-             xhr-selection xhr-to-map xhr-name-to-map xhr-response]]
+             xhr-selection xhr-to-map xhr-name-to-map xhr-response
+             xhr?-ok-body xhr-poller syn-xhr-ok-body]]
 
-    [spamux.util :refer [xhr?-ok-body mx-find-matrix if-bound
-                         xhr-poller syn-xhr-ok-body]]
     [cljs.pprint :as pp]
     [clojure.string :as str]))
+
+(defn mx-find-matrix [mx]
+  (mxu-find-type mx :spamux.core/spamux))
 
 (defn make-xhr-job
   "Make a matrix incarnation of a todo on initial entry"

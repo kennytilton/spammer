@@ -1,7 +1,7 @@
 (ns spamux.progress-viewer
   (:require [clojure.string :as str]
             [tiltontec.util.core :refer [pln]]
-            [tiltontec.cell.base :refer [ia-type unbound]]
+            [tiltontec.cell.base :refer [ia-type unbound when-bound]]
             [tiltontec.cell.core :refer-macros [cF+ cF cFonce] :refer [cI]]
             [tiltontec.cell.observer :refer-macros [fn-obs]]
             [tiltontec.cell.integrity
@@ -19,7 +19,7 @@
             [tiltontec.xhr
              :refer [make-xhr send-xhr send-unparsed-xhr xhr-send xhr-await xhr-status
                      xhr-status-key xhr-resolved xhr-error xhr-error? xhrfo synaptic-xhr synaptic-xhr-unparsed
-                     xhr-selection xhr-to-map xhr-name-to-map xhr-response]]
+                     xhr-selection xhr-to-map xhr-name-to-map xhr-response xhr-poller]]
 
             [tiltontec.webmx.gen :refer [evt-tag target-value]
              :refer-macros [h1 h2 h3 h4 h5 input div span button p b a li ul
@@ -30,7 +30,7 @@
             [cljs.pprint :as pp]
 
             [spamux.job :refer [mtx-job mtx-job-id mtx-job-type]]
-            [spamux.util :refer [if-bound xhr-poller mx-find-matrix]]))
+            ))
 
 (declare json-view stats-displayer)
 
@@ -115,7 +115,7 @@
      :fails (cF (let [src (mxu-find-name me "stat-group")]
                   (assert src)
                   (let [fails (:fails (<mget src :stats))]
-                    (or fails (if-bound cache)))))}
+                    (or fails (when-bound cache)))))}
     (b "Fails")
     (div {:style   "background:#fdd"
           :content (cF (pp/cl-format nil spam-format

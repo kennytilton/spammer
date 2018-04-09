@@ -1,7 +1,7 @@
 (ns spamux.job-control
   (:require [clojure.string :as str]
             [tiltontec.util.core :refer [pln now]]
-            [tiltontec.cell.base :refer [ia-type unbound]]
+            [tiltontec.cell.base :refer [ia-type unbound when-bound ]]
             [tiltontec.cell.core :refer-macros [cF+ cF cFonce] :refer [cI]]
             [tiltontec.cell.observer :refer-macros [fn-obs]]
             [tiltontec.cell.integrity
@@ -20,7 +20,8 @@
             [tiltontec.xhr
              :refer [make-xhr send-xhr send-unparsed-xhr xhr-send xhr-await xhr-status
                      xhr-status-key xhr-resolved xhr-error xhr-error? xhrfo synaptic-xhr synaptic-xhr-unparsed
-                     xhr-selection xhr-to-map xhr-name-to-map xhr-response]]
+                     xhr-selection xhr-to-map xhr-name-to-map xhr-response
+                     syn-xhr-ok-body  xhr?-ok-body xhr?-response]]
 
             [tiltontec.webmx.gen :refer [evt-tag target-value]
              :refer-macros [h1 h2 h3 h4 h5 input div span button p b a li ul
@@ -30,8 +31,7 @@
 
             [cemerick.url :refer (url url-encode)]
             [cljs.pprint :as pp]
-            [spamux.util
-             :refer [syn-xhr-ok-body if-bound mx-find-matrix xhr?-ok-body xhr?-response]]
+
             [spamux.job :refer [mtx-job make-xhr-job mtx-job-running? mtx-job-id
                                 job-start-button]]))
 
@@ -144,7 +144,7 @@
                                         (= cache unbound))  ;; force initial load
                                   (send-xhr :get-raws "rawfiles")))]
                       (or (xhr?-ok-body xhr)
-                        (if-bound cache))))}
+                        (when-bound cache))))}
 
       [(option {:enabled "false"
                 :selected true
